@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.7)  13 MAY 2012 19:20
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.7)  15 MAY 2012 18:19
 entering extended mode
  %&-line parsing enabled.
 **resumen.tex
@@ -827,37 +827,43 @@ nas u or-ga-ni-za-ciones, que par-tic-i-pan ac-ti-va-mente en el proyecto,
  []
 
 [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
-[20] (./resumen.aux) ) 
+[20]
+Overfull \hbox (13.72331pt too wide) in paragraph at lines 1002--1004
+[]\OT1/cmr/m/n/10 Basado en el li-bro \OT1/cmr/bx/n/10 A Guide To The Project M
+an-ag-ment Body Of Knowl-edge (PMBOK[]GUIDE)
+ []
+
+<CC.png, id=390, 88.33pt x 31.11626pt>
+File: CC.png Graphic file (type png)
+ <use CC.png> [21 <./CC.png>]
+(./resumen.aux) ) 
 Here is how much of TeX's memory you used:
- 14254 strings out of 495061
- 246469 string characters out of 1182622
+ 14261 strings out of 495061
+ 246529 string characters out of 1182622
  305820 words of memory out of 3000000
- 16888 multiletter control sequences out of 15000+50000
+ 16892 multiletter control sequences out of 15000+50000
  13082 words of font info for 50 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  56i,8n,55p,689b,650s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section.8} has been reference
-d but does not exist, replaced by a fixed one
-
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmbx8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.p
-fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb>
-Output written on resumen.pdf (20 pages, 303932 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbsy
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+mi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on resumen.pdf (21 pages, 309380 bytes).
 PDF statistics:
- 499 PDF objects out of 1000 (max. 8388607)
- 252 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 510 PDF objects out of 1000 (max. 8388607)
+ 253 named destinations out of 1000 (max. 500000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 
