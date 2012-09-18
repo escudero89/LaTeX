@@ -1,4 +1,5 @@
 \documentclass[10pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
 \usepackage[utf8x]{inputenc}
 \usepackage{ucs}
 \usepackage[spanish]{babel}
@@ -26,8 +27,8 @@ La \textbf{tarea principal} de cualquier sistema de gestión de memoria es traer
 \begin{itemize}
 \item Monoproceso.
 \item Multiproceso.
-\subitem - Particiones Fijas.
-\subitem - Particiones Variables.
+\subitem + Particiones Fijas.
+\subitem + Particiones Variables.
 \end{itemize}
 \columnbreak
 \textbf{Con intercambio:}
@@ -43,13 +44,11 @@ La \textbf{tarea principal} de cualquier sistema de gestión de memoria es traer
 
 \paragraph{Sistema multiproceso.} El SO subdivide la memoria dinámicamente para hacer sitio a varios procesos. Esto se conoce como \textbf{gestión de memoria}.
  
-\subparagraph{- Particiones Fijas.} La memoria es subdividida en áreas de capacidad fijas -de ahí el nombre-. Estas no se modifican durante toda la ejecución del sistema. La gestión consistirá entonces en asignar las particiones según la solicitud de los procesos y conocer que particiones están libres y cuales vacías.
+\subparagraph{+ Particiones Fijas.} La memoria es subdividida en áreas de capacidad fijas -de ahí el nombre-. Estas no se modifican durante toda la ejecución del sistema. La gestión consistirá entonces en asignar las particiones según la solicitud de los procesos y conocer que particiones están libres y cuales vacías.
 
 \underline{Dificultad:} Según el método de administración de memoria, será utilizar una \textbf{única cola} de procesos peticionales o \textbf{múltiples colas} asegurando una a cada partición.
 
-\subparagraph{- Particiones Variables.} El SO arranca con una \textbf{única partición} que ocupa \underline{toda la capacidad disponible}. 
-
-A medida que los procesos soliciten espacio de memoria, se irán creando las particiones que correspondan, de manera de satisfacer los pedidos recibidos. Cuando no haya más espacio disponible, no podrán hacerse nuevas asignaciones ni ejecutarse nuevos procesos.
+\subparagraph{+ Particiones Variables.} El SO arranca con una \textbf{única partición} que ocupa \underline{toda} la capacidad disponible. A medida que los procesos soliciten espacio de memoria, se irán creando las particiones que correspondan, de manera de satisfacer los pedidos recibidos. Cuando no haya más espacio disponible, no podrán hacerse nuevas asignaciones ni ejecutarse nuevos procesos.
 
 \subsection{Reubicación, Protección e Intercambio}
 
@@ -67,7 +66,7 @@ Según el SO, el intercambio se realiza sobre un área del disco conformado por 
 
 \paragraph{Mapa de Bits.} Se divide a la memoria en un conjunto de \textit{particiones fijas} y se crea un \textbf{mapa de bits}, con tantos \textit{bits} como particiones que se hayan definido: un \textbf{1} indicará a la partición como \textbf{ocupada}, y un \textbf{0} como \textbf{disponible}.
 
-Al momento de solicitur un espeacio en la memoria, el SO deberá revisar el \textit{mapa de bits} para determinar la asignación y si esta es posible. Existen cuatro algoritmos para cumplimentar esta búsqueda:
+Al momento de solicitar un espeacio en la memoria, el SO deberá revisar el \textit{mapa de bits} para determinar la asignación y si esta es posible. Existen cuatro algoritmos para llevar a cabo esta búsqueda:
 \begin{itemize}
 \item \textbf{Primer ajuste.} Se revisa el mapa desde el principio hasta encontrar un espacio contiguo libre que cumpla el requerimiento.
 \item \textbf{Siguiente ajuste.} Igual al anterior, pero comienza a revisar desde la última posición en la que quedó el puntero en su última asignación.
@@ -171,7 +170,7 @@ La fragmentación es generada cuando durante el reemplazo de procesos quedan hue
 Existe otro tipo de fragmentación conocida como \textbf{fragmentación interna}, la cual es generada cuando se reserva más memoria de la que el proceso va realmente a usar. Sin embargo a diferencia de la externa, estos huecos \textbf{no se pueden compactar} para ser utilizados. Se debe de \textbf{esperar a la finalización} del proceso para que se libere el bloque completo de la memoria.
 
 \subsubsection{Fragmentación interna}
-Es la pérdida de espacio en disco debido al hecho de que el tamaño de un determinado archivo sea inferior al tamaño del cluster, ya que teóricamente el archivo estaría obligado a ser referenciado como un cluster completo. Los cluster(s) son contiguos de forma que desde el último bit del archivo situado en el cluster "a" hasta el primer bit del archivo situado en el cluster contiguo (es decir "b") queda un espacio sobrante siempre teniendo la condición de que el archivo del cluster "a" fuera más pequeño que el cluster en sí.
+Es la pérdida de espacio en disco debido al hecho de que el tamaño de un determinado archivo sea inferior al tamaño del cluster, ya que teóricamente el archivo estaría obligado a ser referenciado como un cluster completo. Los cluster(s) son contiguos de forma que desde el último bit del archivo situado en el cluster $a$ hasta el primer bit del archivo situado en el cluster contiguo (es decir $b$) queda un espacio sobrante siempre teniendo la condición de que el archivo del cluster $a$ fuera más pequeño que el cluster en sí.
 
 Por eso se sugiere no disponer de un gran tamaño de partición en los discos nuevos donde la capacidad es muy importante. Por ejemplo si nuestro clúster es de 18KB (18.432 bytes) por más que un archivo ocupe menos, en nuestro disco ocupara 18KB. Esto sugiere una pérdida de ese espacio que dice utilizar pero no utiliza.
 
@@ -181,7 +180,7 @@ Por eso, en nuestro ejemplo, un archivo de 3KB ocupara en nuestro disco lo mismo
 \subsubsection{Fragmentación externa}
 Este tipo de fragmentación aparece como consecuencia de las distintas políticas de ajuste de bloques que tiene un sistema de ficheros, o al utilizar asignaciones dinámicas de bloques en el caso de la memoria. En el sistema de ficheros, la sucesiva creación y eliminación de ficheros de distintos tamaños puede conducir al aislamiento de los bloques libres de un disco y, dependiendo de la política de ajuste, su no elección para futuros ficheros.
 
-En la memoria del sistema la fragmentación se produce cuando los procesos asignados han ocupado posiciones no contiguas de memoria dejando demasiados bloques libres de pequeño tamaño, en los que no "caben" nuevos procesos.
+En la memoria del sistema la fragmentación se produce cuando los procesos asignados han ocupado posiciones no contiguas de memoria dejando demasiados bloques libres de pequeño tamaño, en los que no \textit{caben} nuevos procesos.
 
 En sistemas de ficheros la desfragmentación trata de resolver este problema, alineando los bloques de datos contiguos y juntando los bloques libres, produciendo así fragmentos mayores que sí serán elegidos para futuros ficheros. En la memoria principal se soluciona compactando los procesos para que estos ocupen posiciones contiguas y dejar los bloques libres juntos, o también se soluciona con la paginación de memoria.
 
@@ -205,6 +204,15 @@ Dentro de \textit{velocidades de los discos}, tenemos de 5.400, 7.200, 10.000 y 
 \subsection{Planificación de discos}
 Como se ha visto una de las razones de la diferencia de rendimientos en un disco es el tiempo de búsqueda (\textit{seek time}). Para un proceso sencillo puede haber un gran número de solicitudes de entradas de salida. Si se eligen estas solicitudes en un orden aleatorio, se obtendría el peor rendimiento posible
 
+En general, para cualquier algoritmo, el \textbf{rendimiento} depende mucho del \textbf{número} y \textbf{tipo} de las \textbf{peticiones}. Si la cola está prácticamente vacía, cualquier algoritmo es válido. La \textbf{planificación} intenta minimizar el tiempo de posicionamiento.
+
+El \textbf{servicio de peticiones} puede estar muy influenciado por el método de asignación de espacio en disco utilizado:
+\begin{itemize}
+\item Con \textbf{asignación contigua}: peticiones que reducen el tiempo de
+posicionamiento.
+\item Con \textbf{asignación no contigua} (\textit{enlazado} ó \textit{indexado}): mayor aprovechamiento de disco pero mayor tiempo de posicionamiento.
+\end{itemize}
+
 \subsubsection{FIFO (first in first out)}
 Las solicitudes se procesan en un orden secuencial. Es una estrategia justa para todos los procesos. Esta técnica se parece mucho a una planificación aleatoria si hay muchos procesos.
 
@@ -219,7 +227,7 @@ Las solicitudes se procesan en un orden secuencial. Es una estrategia justa para
 Se elige la solicitud que requiera el menor movimiento posible del brazo del disco desde su posición actual. Con esto se procura el mínimo tiempo de búsqueda.
 
 \begin{itemize}
-\item Puede ser injusto. Supongamos que tenemos una petición tipo [0 280 23 --- 44 --- ]. Se ejecutarán primero todos los que están luego del cero y por último el 280, a pesar de haber estado segundo en la lista.
+\item Puede ser injusto. Supongamos que tenemos una petición tipo [0 280 23 44]. Se ejecutarán primero todos los que están luego del cero y por último el 280, a pesar de haber estado segundo en la lista.
 \item Puede causar inadmisión de algunas peticiones. Si hay 2000 peticiones y la última esta en un extremo, va a demorar una banda hasta llegar.
 \item Con el FIFO mantenemos el orden, mientras acá puede haber alguna que no se ejecute.
 \end{itemize}
@@ -229,5 +237,126 @@ El brazo se mueve en una sola dirección, atendiendo todas las solicitudes a su 
 
 \subsubsection{C-Scan (scan cíclico)}
 Es una variación del scan, pero la cabeza al llegar de un extremo al otro del disco vuelven al comienzo sin atender ninguna petición. El tiempo de espera es más uniforme que en el scan y trata a los cilindros como una lista circular donde enlazan al último con el primero. Este método se usa con frecuencia.
+
+\section{Sistema de Archivos}
+
+\subsection{Concepto de Archivo}
+Colección de información relacionada y almacenada en un dispositivo de almacenamiento secundario. Espacio de direcciones lógicas contiguas.
+\begin{itemize}
+\item \textbf{Tipos de archivos}: regulares, directorios, de dispositivo.
+\item \textbf{Formas de acceso}: secuencial, aleatorio, otros.
+\item \textbf{Atributos (metadatos):}
+\begin{itemize}
+\item \textbf{Nombre}: única información en formato legible.
+\item \textbf{Tipo}: cuando el sistema soporte diferentes tipos.
+\item \textbf{Localización}: información sobre su localización en el dispositivo.
+\item \textbf{Tamaño}: tamaño actual del archivo.
+\item \textbf{Protección}: controla quién puede leer, escribir y ejecutar.
+\item \textbf{Tiempo, fecha e identificación del usuario}: necesario para protección, seguridad y monitorización.
+\end{itemize}
+
+\item \textbf{Operaciones sobre archivos:}
+\begin{itemize}
+\item \textbf{Gestión:}
+\subitem + Crear.
+\subitem + Borrar.
+\subitem + Renombrar.
+\subitem + Copiar.
+\subitem + Establecer y obtener atributos.
+\item \textbf{Procesamiento:}
+\subitem + Abrir y Cerrar.
+\subitem + Leer.
+\subitem + Escribir.
+\end{itemize}
+\end{itemize}
+
+\subsection{Estructura de Directorios}
+Colección de nodos conteniendo información acerca de todos los archivos. Tanto la estructura de directorios como los archivos residen en el almacenamiento secundario.
+
+La organización (lógica) de los directorios
+debe proporcionar:
+\begin{itemize}
+\item \textbf{Eficiencia}: localización rápida de un archivo.
+\item \textbf{Denominación}: adecuada a los usuarios
+\subitem + Dos usuarios pueden tener el mismo nombre para diferentes archivos.
+\subitem + El mismo archivo puede tener varios nombres.
+\item \textbf{Agrupación}: agrupar los archivos de forma lógica según sus propiedades.
+\end{itemize}
+
+Casos de estructuras de directorios:
+\begin{itemize}
+\item \textbf{A un único nivel:}
+\subitem + Problema de denominación.
+\subitem + Problema de agrupación.
+\item \textbf{A dos niveles:}
+\subitem + Diferentes usuarios pueden tener archivos con igual nombre.
+\subitem + No hay posibilidad de agrupación.
+\item \textbf{En árbol:}
+\subitem + Necesidad de búsquedas eficientes.
+\subitem + Posibilidad de agrupación.
+\subitem + Directorio actual (de trabajo).
+\subitem + Nombres de camino absolutos y relativos.
+\item \textbf{En grafo:}
+\subitem + Compartición de subdirectorios y archivos.
+\subitem + Más flexibles y complejos.
+\end{itemize}
+
+\subsection{Estructura del Sistema de Archivos}
+Un sistema de archivos posee dos problemas de diseño diferentes:
+\begin{enumerate}
+\item Definir cómo debe ver el usuario el sistema de archivos.
+\item Definir los algoritmos y estructuras de datos que deben crearse para establecer la correspondencia entre el sistema de archivos lógico y los dispositivos físicos donde se almacenan.
+\end{enumerate}
+Por eficiencia, el SO mantiene una \textbf{tabla indexada} (por \textit{descriptor} de
+archivo) de archivos abiertos.
+
+\subsection{Métodos de Asignación de Espacio}
+Consiste en asignar espacio en disco para almacenar bloques en forma eficiente respecto de la utilización del espacio y posterior acceso con rapidez.
+
+\subsubsection{Contiguo}
+Cada archivo ocupa un conjunto de bloques contiguos en disco.
+\begin{itemize}
+\item \textbf{Ventajas:}
+\subitem + Sencillo: solo necesita la localización de comienzo y la longitud.
+\subitem + Buenos tanto el tiempo de acceso secuencial como el directo.
+\item \textbf{Desventajas:}
+\subitem + Derroche de espacio.
+\subitem + No se conoce inicialmente el tamaño.
+\subitem + Los archivos no pueden crecer, a no ser que se realice compactación. Ineficiente.
+\end{itemize}
+
+\subsubsection{No Contiguo - Enlazado}
+Cada archivo es una lista enlazada de bloques de disco. Los bloques pueden estar dispersos en el disco.
+
+\begin{itemize}
+\item \textbf{Ventajas:}
+\subitem + Basta almacenar el puntero al primer bloque del archivo.
+\subitem + El archivo puede crecer dinámicamente cuando hay bloques de disco libres. No es necesario compactar.
+\subitem + Evita la fragmentación externa.
+
+\item \textbf{Desventajas:}
+\subitem + El acceso directo no es efectivo.
+\subitem + Espacio requerido para los punteros de enlace.
+\subitem + Seguridad por la pérdida de punteros.
+\end{itemize}
+
+\subsubsection{No Contiguo - FAT (file allocation table)}
+Es una variante del método de \textbf{asignación enlazada}. La tabla contiene una entrada para cada bloque de disco, indexada por número de bloque.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \label{fig:fat}
+  \caption{Esquema de FAT.}
+  \centering
+  \hbox{\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{fat.jpg}}
+\end{wrapfigure}
+
+\subsubsection{No Contiguo - Indexado}
+Indexada a través de un bloque de índices que reúne a todos los apuntadores, con el objeto de ayudar el acceso director, análogo a un esquema de paginación.
+\begin{itemize}
+\item \textbf{Desventajas:}
+\subitem + Posible desperdicio de espacio en los bloques índices.
+\subitem + Tamaño del bloque índice.
+\subitem + Acceso a disco necesario para recuperar la dirección del bloque para cada nivel de indexación.
+\end{itemize}
 
 \end{document}
