@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.13)  19 SEP 2012 16:41
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.13)  22 SEP 2012 16:18
 entering extended mode
  %&-line parsing enabled.
-**CalcNum.tex
-(./CalcNum.tex
+**inteco.tex
+(./inteco.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -546,8 +546,8 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/ltxmisc/cancel.sty
 Package: cancel 2000/03/12 v2.1 Cancel math terms
-) (./CalcNum.aux)
-\openout1 = `CalcNum.aux'.
+) (./inteco.aux)
+\openout1 = `inteco.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
@@ -630,10 +630,10 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 LaTeX Info: Redefining \ref on input line 30.
 LaTeX Info: Redefining \pageref on input line 30.
- (./CalcNum.out)
-(./CalcNum.out)
+ (./inteco.out)
+(./inteco.out)
 \@outlinefile=\write3
-\openout3 = `CalcNum.out'.
+\openout3 = `inteco.out'.
 
 \AtBeginShipoutBox=\box34
 Package caption Info: Begin \AtBeginDocument code.
@@ -648,55 +648,37 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 185.
-
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 185.
- [2] [3] (./CalcNum.aux) ) 
-Here is how much of TeX's memory you used:
- 9324 strings out of 495061
- 128809 string characters out of 1182621
- 309806 words of memory out of 3000000
- 12328 multiletter control sequences out of 15000+50000
- 14490 words of font info for 56 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 38i,19n,40p,252b,1682s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsection.2.5} has been 
-referenced but does not exist, replaced by a fixed one
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
+ [1
 
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cmextra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmtt10.pfb>
-Output written on CalcNum.pdf (3 pages, 274297 bytes).
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./inteco.aux) ) 
+Here is how much of TeX's memory you used:
+ 8413 strings out of 495061
+ 119376 string characters out of 1182621
+ 208893 words of memory out of 3000000
+ 11443 multiletter control sequences out of 15000+50000
+ 12208 words of font info for 47 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 38i,6n,38p,723b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
+</
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on inteco.pdf (3 pages, 141363 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

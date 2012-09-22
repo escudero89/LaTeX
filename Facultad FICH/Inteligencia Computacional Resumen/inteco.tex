@@ -1,0 +1,114 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\thispagestyle{empty}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{parskip}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{enumerate}
+
+\usepackage{hyperref}
+
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{wrapfig}
+
+\usepackage{graphicx}
+\restylefloat{figure}
+
+\usepackage{cancel}
+
+\author{Cristian Escudero}
+\title{Resumen\\Inteligencia Computacional}
+\begin{document}
+\maketitle
+
+\section{Introducción (Unidad I)}
+\begin{quote}
+Breve revisión histórica a la inteligencia computacional. Áreas del conocimiento involucradas y su relación como parte de la inteligencia artificial. El cerebro humano y las limitaciones del cálculo computacional. El impacto y el amplio espectro de aplicaciones de la inteligencia computacional. Introducción conceptual a las tres técnicas fundamentales de la inteligencia computacional.
+\end{quote}
+
+\subsection{¿Por qué redes neuronales?}
+
+\subsection{Ventajas}
+Las \textbf{RNA} tienen muchas ventajas debido a que están basadas en la estructura del sistema nervioso, principalmente el cerebro.
+\begin{description}
+\item \textbf{Aprendizaje}: Las RNA tienen la habilidad de aprender mediante una etapa que se llama \textit{etapa de aprendizaje}. Esta consiste en proporcionar a la RNA datos como entrada a su vez que se le indica cuál es la salida (respuesta) esperada.
+\item \textbf{Auto-organización}: Una RNA crea su propia representación de la información en su interior, descargando al usuario de esto.
+\item \textbf{Tolerancia a fallos}: Debido a que una RNA almacena la información de forma redundante, ésta puede seguir respondiendo de manera aceptable aun si se daña parcialmente.
+\item \textbf{Flexibilidad}: Una RNA puede manejar cambios no importantes en la información de entrada, como señales con ruido u otros cambios en la entrada.
+\item \textbf{Tiempo real}: La estructura de una RNA es paralela, por lo cual si esto es implementado con computadoras o en dispositivos electrónicos especiales, se pueden obtener respuestas en tiempo real.
+\end{description}
+
+\subsection{Desventajas}
+
+\begin{itemize}
+\item Requieren gran cantidad de datos de entrenamiento diversos para operaciones en el mundo real.
+\item Requieren gran tiempo de procesamiento y de memoria.
+\end{itemize}
+
+\subsection{Aprendizaje}
+El proceso de aprendizaje en un RNA puede ser visto en el contexto de un problema de actualización de la arquitectura y los pesos neuronales en orden de hacer más eficiente a la red para realizar determinada tarea.
+
+Hay tres paradigmas de aprendizajes principales:
+\begin{description}
+\item \textbf{Supervisado (\textit{supervised}):} la red es provista de una respuesta correcta (\textit{output}) para cada entrada. Los pesos son determinados en base a permitir a la red producir salidas lo más cercanas a las respuestas correctas.
+\subitem \textbf{Aprendizaje reforzado (\textit{reinforcement learning)}:} es una variante del anterior, en el cual la red es provista de sólo una crítica acerca de lo correcto o no que es la salida de la red, no la respuesta correcta de por sí.
+\item \textbf{Sin supervisar (\textit{unsupervised}):} no requiere una respuesta correcta asociada con cada entrada en el conjunto de entrenamiento. Explora la estructura interna de la información, y organiza los patrones en categorías en base a las correlaciones entre ellos.
+\item \textbf{Híbrido (\textit{hybrid}):} una parte de los pesos son determinados a traves de un entrenamiento \textbf{\textit{supervisado}}, y el resto son obtenidos a través de un aprendizaje \textbf{\textit{sin supervisar}}.
+\end{description}
+
+\subsection{Reglas de Aprendizaje}
+\subsubsection{Corrección de Error}
+Es la que utiliza el \textbf{perceptrón}. Su principio básico es el de usar la señal de error ($y_{\text{deseado}}-y$) para modificar los pesos para gradualmente ir reduciendo el error. El aprendizaje sólo ocurre cuando se comete un error.
+
+\begin{quotation}
+\textit{Perceptron Convergence Theorem:} si los patrones se ubican en dos clases linealmente separables, el procedimiento de aprendizaje del perceptrón converge luego de un número finito de iteraciones, siempre y cuando se utilice una \textbf{función de activación} monótona.
+\end{quotation}
+
+\subsubsection{Boltzman}
+\subsubsection{Hebbiano}
+
+\subsubsection{Competitivo}
+Las unidades de salida compiten entre sí para ver cuál se activa. Como resultado, sólo una se activa en un cierto tiempo: \textbf{el ganador se lo lleva todo} (\textit{winner-take-all}). 
+
+Normalmente categorizan la información de entrada, agrupando automáticamente patrones similares basándose en las correlaciones entre ellos.
+
+\begin{quotation}
+\textit{Stability-Plasticity Dilemma}: un sistema de aprendizaje es \textit{estable} si ningún patrón dentro del conjunto de entrenamiento cambia de categoría luego de un número finitio de iteraciones. Esto puede lograrse forzando a la $\eta$ a decrecer gradualmente a cero. Pero esto causa otro problema conocido como \textit{plasticibilidad}, que es la habilidad de adaptarse a la nueva información. De ahí el dilema en el aprendizaje competitivo.
+\end{quotation}
+
+\section{Redes neuronales 1 (Unidad II)}
+\begin{quote}
+Bases estadísticas del reconocimiento de patrones: etapas, decisión bayesiana, funciones discriminantes. Aprendizaje, espacio de soluciones, mínimos locales y globales, capacidad de generalización y técnicas de validación cruzada. La inspiración biológica en redes neuronales: fisiología neuronal básica, redes de neuronas biológicas y escalas de organización estructural del cerebro. Modelos de neurona: la sinapsis, funciones de activación. Perceptrón simple: hiperplanos para la separación de clases, entrenamiento y limitaciones. Generalidades: características de las redes neuronales, clasificación de las arquitecturas neuronales, clasificación de los procesos de aprendizaje.
+\end{quote}
+
+\section{Redes neuronales 2 (Unidad III)}
+\begin{quote}
+Perceptrón multicapa: formulación matemática del algoritmo de retropropagación, velocidad de aprendizaje y término de momento, inicialización y criterios de finalización, definición de la topología y los parámetros de entrenamiento. Redes neuronales con funciones de base radial: arquitectura, fronteras de decisión, algoritmos de entrenamiento. Mapas auto-organizativos: arquitecturas, algoritmo de entrenamiento, mapas topológicos, cuantización vectorial con aprendizaje, comparación con otros métodos de agrupamiento. Redes neuronales dinámicas: redes de Hopfield, retropropagación a través del tiempo, redes neuronales con retardos en el tiempo.
+\end{quote}
+
+\section{Lógica borrosa 1 (Unidad IV)}
+\begin{quote}
+Lógica proposicional: sintaxis, semántica e inferencia. Lógica de primer orden: sintaxis, semántica, cuantificadores y conectores. Inferencia en la lógica de primer orden. Sistemas de producción con encadenamiento hacia delante. La borrosidad como multivalencia: incerteza versus aleatoriedad,  función de membresía. Comparación entre representaciones del conocimiento basadas en reglas. Geometría de los conjuntos borrosos. Definición e interpretación gráfica de los operadores borrosos. Caracterización de conjuntos borrosos. Entropía borrosa: definición, teorema de la entropía borrosa, teorema del subconjunto, teorema entropía-subconjunto.
+\end{quote}
+
+\section{Abreviaciones}
+\begin{itemize}
+\item \textbf{RNA}: Redes Neuronales Artificiales.
+\end{itemize}
+
+\section{Bibliografía}
+\begin{description}
+\item Artificial Neuronal Networks: A Tutorial.
+\item Wikipedia
+\end{description}
+
+\end{document}

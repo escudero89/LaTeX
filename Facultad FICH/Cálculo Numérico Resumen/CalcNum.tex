@@ -207,4 +207,21 @@ a_{31} \, x_1 + a_{32} \, x_2 + a_{33} \, x_3 &= b_3 &\Rightarrow &
 \subsection{SOR (Succesive Over-Relaxation)}
 \[x_i^{(k)} = (1-w)\, x_i^{(k-1)} + \frac{w}{a_{ii}} \left(b_i - \sum_{j=1}^{i-1} a_{ij} \, x_j^{(k-1)} - \sum_{j=i+1}^{n} a_{ij} \, x_j^{(k-1)} \right) \]
 
+\subsection{Gradiente Conjugado}
+Elige las direcciones de búsqueda ($\mathbf{v}^{(k)}$) durante el proceso iterativo de modo que los $\mathbf{r}^{(k)}$ sean mutuamente ortogonales.
+\begin{enumerate}
+\item Partimos de un $\mathbf{x}^{(0)}$ y usamos la \textbf{dirección de máximo descenso} $\mathbf{r}^{(0)} = \mathbf{b} - A \mathbf{x}^{0}$ como $\mathbf{v}^{(1)}$.
+\item Calculamos el paso de avance $t$ en la dirección $\mathbf{v}$ y la solución aproximada $\mathbf{x}^{(k)}$ (iniciamos con $k = 1$):
+\begin{align*}
+&t = \frac{<\mathbf{r}^{(k-1)}, \mathbf{r}^{(k-1)}>}{<\mathbf{v}^{(k)},A \mathbf{v}^{(k)}>}, 
+&\mathbf{x}^{(k)} = \mathbf{x}^{(k-1)}+t_{k}\mathbf{v}^{(k)}.&
+\end{align*}
+\item Si $\mathbf{x}^{(k)}$ es la solución de $A\mathbf{x}=\mathbf{b}$ terminamos. Sino calculamos: $\mathbf{r}^{(k)} = \mathbf{b} - t_k A \mathbf{v}^{(k)}$, actualizamos el vector de búsqueda: 
+\begin{align*}
+&\mathbf{v}^{(k+1)}=\mathbf{r}^{(k)}+s_k\mathbf{v}^{(k)},
+&s_k = \frac{<\mathbf{r}^{(k)}, \mathbf{r}^{(k)}>}{<\mathbf{r}^{(k-1)}, \mathbf{r}^{(k-1)}>},&
+\end{align*}
+y volvemos al paso \textit{2}.
+\end{enumerate}
+
 \end{document}
