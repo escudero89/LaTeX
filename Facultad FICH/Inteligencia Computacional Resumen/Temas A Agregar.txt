@@ -1,0 +1,31 @@
+# REVEER
+[·] Casos de problemas de sobre-aprendizaje.
+
+# SIN VER
+[·] Importancia de los métodos de error.
+[·] Simplificaciones al realizar Perceptrón Simple.
+[·] Deducción fórmula de actualización de pesos Perceptrón Simple activación lineal.
+[·] Problemas resueltos por X arquitectura de capas.
+[·] Término de momento: inclusión, explicación.
+[·] Gradiente de error instantáneo: qué es y qué rol juega.
+[·] Fronteras de decisión con perceptrones multicapa base radial.
+[·] Mínimos locales: qué son y cómo se evitan.
+[·] Etapa de extracción de características: qué es y dar ejemplos reales.
+[·] Algoritmo de entrenamiento de una red neuronal con función de base radial. Alternativas.
+[·] Algoritmo de entrenamiento para una red de Hopfield.
+[·] Método de entrenamiento por expansión de una red recurrente y retropropagación.
+[·] Análisis comparativo entre los 3 tipos de perceptrones.
+[·] Perceptrón multicapa: proceso de retropropagación de forma gráfica, ecuación general de adaptación para cualquier peso en una capa oculta.
+[·] k-medias: forma gráfica, como usarlo para entrenar una red radial.
+[·] Hopfield: describir arquitectura, inspiración biológica, particularidades.
+[·] Lógica: ¿qué es? ¿para qué sirve? Simántica y sintaxis asociada.
+[·] Probabilidad e incerteza: diferencias, ejemplos.
+[·] Operador suma disyuntiva: explicación gráfica, definición, ejemplo.
+[·] Clasificador estadístico: definición y representación gráfica.
+[·] Componentes de un sistema de producción con encadenamiento hacia adelante.
+[·] Entropía borrosa: definición y representación gráfica.
+[·] Demostración del teorema entropía-subconjunto borroso.
+
+# ANALIZADOS
+[!] Etapas de un mapa organizativo: criterios para fijar parámetros.
+[?] Proceso de Validación Cruzada. Problemas si no se hace.

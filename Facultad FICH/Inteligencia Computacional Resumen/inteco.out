@@ -1,15 +1,21 @@
-\BOOKMARK [1][-]{section.1}{Introducci\363n \(Unidad I\)}{}
-\BOOKMARK [2][-]{subsection.1.1}{\277Por qu\351 redes neuronales?}{section.1}
-\BOOKMARK [2][-]{subsection.1.2}{Ventajas}{section.1}
-\BOOKMARK [2][-]{subsection.1.3}{Desventajas}{section.1}
-\BOOKMARK [2][-]{subsection.1.4}{Aprendizaje}{section.1}
-\BOOKMARK [2][-]{subsection.1.5}{Reglas de Aprendizaje}{section.1}
-\BOOKMARK [3][-]{subsubsection.1.5.1}{Correcci\363n de Error}{subsection.1.5}
-\BOOKMARK [3][-]{subsubsection.1.5.2}{Boltzman}{subsection.1.5}
-\BOOKMARK [3][-]{subsubsection.1.5.3}{Hebbiano}{subsection.1.5}
-\BOOKMARK [3][-]{subsubsection.1.5.4}{Competitivo}{subsection.1.5}
-\BOOKMARK [1][-]{section.2}{Redes neuronales 1 \(Unidad II\)}{}
-\BOOKMARK [1][-]{section.3}{Redes neuronales 2 \(Unidad III\)}{}
-\BOOKMARK [1][-]{section.4}{L\363gica borrosa 1 \(Unidad IV\)}{}
-\BOOKMARK [1][-]{section.5}{Abreviaciones}{}
-\BOOKMARK [1][-]{section.6}{Bibliograf\355a}{}
+\BOOKMARK [1][-]{section.1}{\277Por qu\351 redes neuronales?}{}
+\BOOKMARK [2][-]{subsection.1.1}{Ventajas}{section.1}
+\BOOKMARK [2][-]{subsection.1.2}{Desventajas}{section.1}
+\BOOKMARK [2][-]{subsection.1.3}{Aprendizaje}{section.1}
+\BOOKMARK [2][-]{subsection.1.4}{Reglas de Aprendizaje}{section.1}
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Correcci\363n de Error}{subsection.1.4}
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Boltzmann}{subsection.1.4}
+\BOOKMARK [3][-]{subsubsection.1.4.3}{Hebbiano}{subsection.1.4}
+\BOOKMARK [3][-]{subsubsection.1.4.4}{Competitivo}{subsection.1.4}
+\BOOKMARK [2][-]{subsection.1.5}{Validaci\363n Cruzada}{section.1}
+\BOOKMARK [3][-]{subsubsection.1.5.1}{Contexto}{subsection.1.5}
+\BOOKMARK [3][-]{subsubsection.1.5.2}{Objetivos}{subsection.1.5}
+\BOOKMARK [3][-]{subsubsection.1.5.3}{Limitaciones y uso no adecuado}{subsection.1.5}
+\BOOKMARK [2][-]{subsection.1.6}{Aplicaciones de las RNA}{section.1}
+\BOOKMARK [1][-]{section.2}{Perceptr\363n Simple}{}
+\BOOKMARK [1][-]{section.3}{Perceptr\363n Multicapa}{}
+\BOOKMARK [1][-]{section.4}{Mapas Auto-Organizativos \(SOM\)}{}
+\BOOKMARK [2][-]{subsection.4.1}{Etapas de Entrenamiento}{section.4}
+\BOOKMARK [1][-]{section.5}{L\363gica Borrosa}{}
+\BOOKMARK [1][-]{section.6}{Abreviaciones}{}
+\BOOKMARK [1][-]{section.7}{Bibliograf\355a}{}
