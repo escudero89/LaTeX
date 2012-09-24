@@ -5,6 +5,7 @@
 [?] Deducción fórmula de actualización de pesos Perceptrón Simple activación lineal.
 [?] Simplificaciones al realizar Perceptrón Simple.
 [!] Gradiente de error instantáneo: qué es y qué rol juega.
+
 [!] Lógica: ¿qué es? Simántica y sintaxis asociada.
 [!] Componentes de un sistema de producción con encadenamiento hacia adelante.
 [?] Hopfield: describir arquitectura, inspiración biológica, particularidades.
