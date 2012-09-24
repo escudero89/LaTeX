@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.13)  22 SEP 2012 19:39
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.13)  24 SEP 2012 16:27
 entering extended mode
  %&-line parsing enabled.
 **inteco.tex
@@ -546,23 +546,70 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/ltxmisc/cancel.sty
 Package: cancel 2000/03/12 v2.1 Cancel math terms
+)
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count121
+\mult@box=\box33
+\multicol@leftmargin=\dimen133
+\c@unbalance=\count122
+\c@collectmore=\count123
+\doublecol@number=\count124
+\multicoltolerance=\count125
+\multicolpretolerance=\count126
+\full@width=\dimen134
+\page@free=\dimen135
+\premulticols=\dimen136
+\postmulticols=\dimen137
+\multicolsep=\skip46
+\multicolbaselineskip=\skip47
+\partial@page=\box34
+\last@line=\box35
+\mult@rightbox=\box36
+\mult@grightbox=\box37
+\mult@gfirstbox=\box38
+\mult@firstbox=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\c@columnbadness=\count127
+\c@finalcolumnbadness=\count128
+\last@try=\dimen138
+\multicolovershoot=\dimen139
+\multicolundershoot=\dimen140
+\mult@nat@firstbox=\box57
+\colbreak@box=\box58
 ) (./inteco.aux)
 \openout1 = `inteco.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -605,100 +652,141 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-\c@lstlisting=\count121
+\c@lstlisting=\count129
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count122
-\scratchdimen=\dimen133
-\scratchbox=\box33
-\nofMPsegments=\count123
-\nofMParguments=\count124
+\scratchcounter=\count130
+\scratchdimen=\dimen141
+\scratchbox=\box59
+\nofMPsegments=\count131
+\nofMParguments=\count132
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count125
-\MPscratchDim=\dimen134
-\MPnumerator=\count126
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen142
+\MPnumerator=\count134
 \everyMPtoPDFconversion=\toks31
 )
-Package hyperref Info: Link coloring OFF on input line 30.
+Package hyperref Info: Link coloring OFF on input line 32.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count127
+\c@section@level=\count135
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
  (./inteco.out)
 (./inteco.out)
 \@outlinefile=\write3
 \openout3 = `inteco.out'.
 
-\AtBeginShipoutBox=\box34
+\AtBeginShipoutBox=\box60
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 62.
-
-LaTeX Font Info:    No file OMScmtt.fd. on input line 62.
-
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textperiodcentered' on input line 62.
-
-[1
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 101.
-
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
- [3] [4] [5]
-<layers.png, id=124, 1505.625pt x 800.9925pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+ [3]
+<layers.png, id=150, 1505.625pt x 800.9925pt>
 File: layers.png Graphic file (type png)
- <use layers.png> [6 <./layers.png (PNG copy)>] [7] [8] (./inteco.aux)
+ <use layers.png>
+Underfull \hbox (badness 1975) in paragraph at lines 127--128
+[][]\OT1/cmr/m/n/10 Una de las ven-ta-jas de este
+ []
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- ) 
+Underfull \hbox (badness 1383) in paragraph at lines 127--128
+\OT1/cmr/bx/n/10 de fun-ciones\OT1/cmr/m/n/10 , de modo que
+ []
+
+[4 <./layers.png (PNG copy)>]
+Underfull \hbox (badness 1838) in paragraph at lines 131--132
+[]\OT1/cmr/m/n/10 La ar-qui-tec-tura del PM est^^Sa
+ []
+
+<radial.png, id=158, 660.4675pt x 541.02126pt>
+File: radial.png Graphic file (type png)
+ <use radial.png>
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 16
+1.
+
+[5 <./radial.png (PNG copy)>]
+Overfull \hbox (20.14995pt too wide) detected at line 176
+\OML/cmm/m/it/10 l \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C[]\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 n\OT1/cmr/m/n/10 )  \OMS/cmsy/m/n/10 ([])  jj\OT1/cmr/bx/n/10 x[] 
+\OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^V[]\OMS/cmsy/m/n/10 jj[] \OML/cmm/m/it/
+10 < \OMS/cmsy/m/n/10 jj\OT1/cmr/bx/n/10 x[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it
+/10 ^^V[]\OMS/cmsy/m/n/10 jj[] 8\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 6\OT1/cmr/m
+/n/10 = \OML/cmm/m/it/10 j
+ []
+
+[6] <hopfield.png, id=182, 366.168pt x 281.05pt>
+File: hopfield.png Graphic file (type png)
+ <use hopfield.png> [7 <./hopfield.png>] <elman_jordan.png, id=193, 581.17125pt
+ x 895.345pt>
+File: elman_jordan.png Graphic file (type png)
+
+<use elman_jordan.png> [8 <./elman_jordan.png>] [9]
+<encadenamiento.png, id=209, 828.09375pt x 439.6425pt>
+File: encadenamiento.png Graphic file (type png)
+
+<use encadenamiento.png>
+Overfull \hbox (109.88046pt too wide) in paragraph at lines 351--351
+ []\OT1/cmtt/m/n/10 if <cond 1><cond 2>...<cond n> then <acc 1><acc 2>...<acc n
+>[] 
+ []
+
+[10 <./encadenamiento.png (PNG copy)>] [11] (./inteco.aux) ) 
 Here is how much of TeX's memory you used:
- 8461 strings out of 495061
- 119959 string characters out of 1182621
- 210007 words of memory out of 3000000
- 11469 multiletter control sequences out of 15000+50000
- 12983 words of font info for 50 fonts, out of 3000000 for 9000
+ 8615 strings out of 495061
+ 122167 string characters out of 1182621
+ 215614 words of memory out of 3000000
+ 11583 multiletter control sequences out of 15000+50000
+ 14306 words of font info for 54 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,6n,38p,1086b,371s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-mti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on inteco.pdf (8 pages, 880864 bytes).
+ 38i,10n,38p,778b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmbx5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmbx7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
+y5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on inteco.pdf (11 pages, 1152898 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
- 174 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 307 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
 

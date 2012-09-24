@@ -7,15 +7,24 @@
 \BOOKMARK [3][-]{subsubsection.1.4.2}{Boltzmann}{subsection.1.4}
 \BOOKMARK [3][-]{subsubsection.1.4.3}{Hebbiano}{subsection.1.4}
 \BOOKMARK [3][-]{subsubsection.1.4.4}{Competitivo}{subsection.1.4}
-\BOOKMARK [2][-]{subsection.1.5}{Validaci\363n Cruzada}{section.1}
-\BOOKMARK [3][-]{subsubsection.1.5.1}{Contexto}{subsection.1.5}
-\BOOKMARK [3][-]{subsubsection.1.5.2}{Objetivos}{subsection.1.5}
-\BOOKMARK [3][-]{subsubsection.1.5.3}{Limitaciones y uso no adecuado}{subsection.1.5}
-\BOOKMARK [2][-]{subsection.1.6}{Aplicaciones de las RNA}{section.1}
 \BOOKMARK [1][-]{section.2}{Perceptr\363n Simple}{}
 \BOOKMARK [1][-]{section.3}{Perceptr\363n Multicapa}{}
-\BOOKMARK [1][-]{section.4}{Mapas Auto-Organizativos \(SOM\)}{}
-\BOOKMARK [2][-]{subsection.4.1}{Etapas de Entrenamiento}{section.4}
-\BOOKMARK [1][-]{section.5}{L\363gica Borrosa}{}
-\BOOKMARK [1][-]{section.6}{Abreviaciones}{}
-\BOOKMARK [1][-]{section.7}{Bibliograf\355a}{}
+\BOOKMARK [1][-]{section.4}{Red neuronal de Base Radial}{}
+\BOOKMARK [2][-]{subsection.4.1}{Adaptaci\363n de las RBF:k-means}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Algoritmo de adaptaci\363n batch k-means:}{subsection.4.1}
+\BOOKMARK [3][-]{subsubsection.4.1.2}{M\351todos de entrenamiento de pesos:}{subsection.4.1}
+\BOOKMARK [2][-]{subsection.4.2}{Comparaci\363n entre las RBF y los MLP}{section.4}
+\BOOKMARK [1][-]{section.5}{Red de Hopfield}{}
+\BOOKMARK [2][-]{subsection.5.1}{Caracter\355sticas}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Fases de Operaci\363n}{section.5}
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Fase de Almacenamiento}{subsection.5.2}
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Fase de Recuperaci\363n}{subsection.5.2}
+\BOOKMARK [2][-]{subsection.5.3}{Generalidades}{section.5}
+\BOOKMARK [2][-]{subsection.5.4}{Redes Din\341micas de Elman y Jordan}{section.5}
+\BOOKMARK [1][-]{section.6}{Redes Competitivas}{}
+\BOOKMARK [2][-]{subsection.6.1}{Mapas Auto-Organizativos \(SOM\)}{section.6}
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Fases del proceso adaptativo \(Haykin, p452\)}{subsection.6.1}
+\BOOKMARK [1][-]{section.7}{L\363gica}{}
+\BOOKMARK [2][-]{subsection.7.1}{Sistemas de producci\363n con encadenamiento hacia adelante}{section.7}
+\BOOKMARK [3][-]{subsubsection.7.1.1}{Componentes:}{subsection.7.1}
+\BOOKMARK [3][-]{subsubsection.7.1.2}{Fases:}{subsection.7.1}
