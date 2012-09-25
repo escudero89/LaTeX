@@ -1,0 +1,1011 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{parskip}
+
+\usepackage{tikz}
+
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+\usepackage{float}
+\restylefloat{figure}
+
+\author{Cristian Escudero}
+\title{APS - Resumen}
+
+\begin{document}
+\maketitle
+
+\section{Introducción}
+
+La \textbf{Guía del PMBOK\textregistered} \, identifica el subconjunto conocimientos, procesos, habilidades, herramientas y técnicas de la \textbf{Dirección de Proyectos} (DP) generalmente reconocido como \textbf{buenas prácticas}.
+
+Proporciona y promueve un vocabulario común en el ámbito de la profesión de la DP, para analizar, escribir y aplicar conceptos de la DP.
+
+\paragraph{Proyecto.} Es un esfuerzo \textbf{temporal}\footnote{Indica un \textbf{principio} y un \textbf{final} definidos. Este final se alcanza cuando: se logran los objetivos del proyecto; sus objetivos no pueden ser cumplidos; o cuando ya no existe la necesidad que dió origen al proyecto.} que se lleva a cabo para crear un producto, servicio o resultado único.
+
+Cada proyecto crea un producto, servicio o resultado \textbf{único}. Aunque puede haber elementos repetitivos en algunos \textbf{entregables} del proyecto, esta repetición \textbf{no altera} la unicidad fundamental del trabajo del proyecto.
+
+\paragraph{Dirección de Proyecto.} (DP) Aplicación de conocimiento, habilidades, herramientas, y técnicas a las actividades del proyecto para cumplir con los requisitos del mismo.
+
+Esto se logra mediante la aplicación e integración adecuada de los \textbf{42 procesos de la DP}, agrupados lógicamente en \textbf{5 Grupos de Procesos}: 
+
+\textbf{\textit{Inicio}} $\rightarrow$ Planificación $\rightarrow$ Ejecución $\rightarrow$ Monitoreo y Control $\rightarrow$ \textbf{\textit{Cierre}}.
+
+La DP es una tarea integradora que requiere que cada proceso del producto y del proyecto esté alineado y conectado de manera adecuada con los demás procesos, a fin de facilitar la coordinación. Las acciones tomadas durante un proceso afectan a ese proceso y a otros procesos relacionados.
+
+Los proyectos existen en el marco de referencia de una organización y no pueden operar como un sistema cerrado. Requieren datos de entrada procedentes de la
+organización y del exterior, y producen capacidades que vuelven a la organización. Manejar un proyecto típicamente incluye:
+\begin{itemize}
+\item Identificar requerimientos.
+\item Abordar las diversas necesidades, inquietudes y expectativas de los interesados según se planifica y efectúa el proyecto.
+\item Equilibrar las restricciones contrapuestas del proyecto, incluyendo:
+\begin{center}
+\tikz[pin distance=1cm]
+\draw (1,1) node[circle,fill=gray!10,
+pin=above:Alcance, pin=below:Presupuesto,
+pin=160:Calidad, pin=20:Riesgo,
+pin=-160:Recursos, pin=-20:Cronograma]{};
+\end{center}
+La relación entre estas restricciones es tal que si una \textbf{cambia}, al menos alguna otra se verá \textbf{afectada}. Cada proyecto específico influirá en las restricciones, siendo el DP el encargado de manejarlas.
+\end{itemize}
+
+Cambiar los requerimientos del proyecto puede crear riesgos adicionales. El \textbf{equipo de proyecto} (EP) debe ser capaz de manejar la situación y equilibrar las demandas para lograr cumplir el proyecto con éxito.
+
+En organizaciones maduras en DP, la DP existe en un contexto más amplio, siendo gobernada por \textbf{dirección de programa} y \textbf{dirección de portafolio}. Siendo así, \textit{proyectos}, \textit{programas} y \textit{portafolios} tienen diferentes enfoques.
+
+\paragraph{Portafolio.} Colección de proyectos o programas y otros trabajos que son agrupados para facilitar la dirección eficaz de los mismos para cumplir con los objetivos estratégicos del negocio. Los proyectos o programas de un portafolio no necesariamente deben estar relacionados.
+
+\paragraph{Programa.} Grupo de proyectos relacionados cuya gestión se realiza de manera coordinada para obtener beneficios y control, que no se obtendrían si se gestionaran en forma individual. Los programas pueden incluir elementos de trabajo relacionados que están fuera del alcance de los proyectos individuales en él. Un proyecto puede o no ser parte de un programa, pero un programa \textbf{siempre} tiene proyectos.
+
+\paragraph{Dirección de Programa.} Está definida como una dirección coordinada y centralizada de un programa para lograr los objetivos estratégicos y beneficios del mismo. Está enfocado en las interdependencias del proyecto y ayuda a determinar el enfoque óptimo para gestionarlas.
+
+\paragraph{Proyectos y Planificación Estratégica.} Los proyectos, dentro de los programas o portafolios, se usan como medio para cumplir objetivos relacionados con el contexto del \textbf{\textit{plan estratégico de la organización}}, y este se convierte en el principal factor que guía las inversiones en los proyectos.
+
+Las organizaciones gestionan los portafolios basándose en su plan estratégico, lo que puede dictar una jerarquía al portafolio, programa o proyectos implicados. Los componentes cuya contribución a los objetivos es mínima, pueden ser excluidos.
+
+Los proyectos \textbf{retroalimentan} los programas y portafolios mediante informes de estado y solicitudes de cambio que pueden ejercer un impacto sobre otros proyectos, programas o portafolios.
+
+\paragraph{Oficina de Dirección de Proyecto (PMO).} Es un cuerpo organizacional o entidad asociada con varias responsabilidades relacionadas a centralizar y coordinar la gestión de los proyectos bajo su dominio. Las responsabilidades de una PMO pueden ir desde proveer soporte a la DP a ser la responsable directa de la misma.
+
+La forma específica, función, y estructura de una PMO es dependiente de las necesidades de la organización que la soporta.
+
+Los DPs y las PMOs persiguen objetivos diferentes y, por lo tanto, responden a necesidades diferentes. Sin embargo, todos estos esfuerzos deben estar alineados con las necesidades estratégicas de la organización.
+
+\begin{quote}
+\textbf{Más allá del tamaño y la función de una PMO, lo importante es definir claramente el rol que ésta cumplirá dentro de la organización, y comunicarlo formal y oportunamente.}
+\end{quote}
+
+\paragraph{Dirección de Proyectos y Gestión de las Operaciones} Las operaciones son una función de la organización que se efectúa \textbf{permanentemente}, con actividades que generan un mismo producto o proveen un servicio repetitivo (ejemplos: \textit{operaciones de producción, fabricación o de contabilidad}). Poseen recursos asignados para hacer básicamente el mismo conjunto de tareas de acuerdo al estándar institucionalizado en el ciclo de vida del producto.
+
+Los proyectos requieren una DP mientras que las operaciones requieren operaciones de gestión de negocios o de operaciones. Los proyectos pueden entrecruzarse con operaciones en varios puntos durante el ciclo de vida del producto. En cada punto, se transfieren entregables y conocimientos.
+
+\paragraph{Rol del Gerente de Proyecto.} Es el recurso en el cual
+recae la responsabilidad de la administración del proyecto. Fundamentalmente, deberá aplicar todos sus conocimientos sobre la gestión de proyectos para cumplir los objetivos del proyecto (alcance, plazos y
+cronograma) que le fue encomendado. Es constantemente evaluado por los niveles directivos más altos de la organización a través de la medición del rendimiento en el proyecto, y el liderazgo y la influencia de éste
+sobre su equipo de trabajo. Básicamente, debe poseer las siguientes características:
+
+\begin{center}
+\tikz[pin distance=.5cm]
+\draw (1,1) node[circle,fill=gray!10,
+pin=left:Conocimiento, pin=below:Performance,
+pin=right:Control de Personal]{};
+\end{center}
+
+\begin{quote}
+\textbf{El gerente de proyectos está capacitado en la teoría de la administración de proyectos y tiene suficiente experiencia como para ser el responsable absoluto de todo lo bueno y lo malo que suceda en el proyecto.}
+\end{quote}
+
+\paragraph{Factores Ambientales de la Empresa.} Los factores ambientales de la empresa se refieren a elementos tangibles e intangibles, tanto internos como externos que rodean el éxito de un proyecto o influyen en él: \textit{valores, políticas, procesos, cultura, visión, creencias, étc}.
+
+\section{Ciclo de vida del Proyecto y su Organización}
+\paragraph{Ciclo de vida del proyecto (CVdP).} Es un conjunto de fases del mismo, generalmente secuenciales y en ocasiones superpuestas, cuyo nombre y número se determinan por:
+
+\begin{itemize}
+\item Necesidades de gestión y control de la organización u organizaciones que participan en el proyecto.
+\item La naturaleza propia del proyecto.
+\item Su área de aplicación.
+\end{itemize}
+
+El ciclo de vida proporciona el \textbf{marco de referencia} básico para dirigir el proyecto, independientemente del trabajo específico involucrado.
+
+\textbf{Todos} los proyectos pueden configurarse dentro de la siguiente estructura del ciclo de vida:
+\begin{itemize}
+\item Inicio del proyecto,
+\item Organización y preparación,
+\item Ejecución del trabajo, y
+\item Cierre del proyecto.
+\end{itemize}
+
+A medida que el proyecto avanza hacia la ejecución del trabajo, \textbf{crece} la demanda de costos y nivel de equipo de proyecto, a la vez que \textbf{decrece} rápidamente a medida que el proyecto llega a su cierre. 
+
+Asimismo, a medida que avanza el proyecto, el coste de hacer cambios en este \textbf{crece} exponencialmente, mientras que la influencia por parte de los interesados, los riesgos, y lo incierto, \textbf{decrece} a la misma velocidad.
+
+\paragraph{Relación entre el Producto y el CVdP.} Cuando el resultado de un proyecto está relacionado con un producto, existen muchas relaciones posibles entre ambos:
+
+\begin{itemize}
+\item El desarrollo de un nuevo producto podría ser un proyecto en sí mismo.
+\item Un producto existente puede verse beneficiado por un proyecto para agregarle nuevas funciones o características.
+\item Puede crearse un proyecto para desarrollar un nuevo modelo.
+\end{itemize}
+
+Puesto que un producto puede tener muchos proyectos asociados, es posible alcanzar una mayor eficiencia si todos los proyectos relacionados se dirigen colectivamente.
+
+\paragraph{Fases del proyecto.}
+Son divisiones dentro del mismo proyecto, donde es necesario ejercer un control adicional para gestionar eficazmente la conclusión de un entregable mayor. Constituyen un elemento del CVdP. \textbf{NO ES} un grupo de procesos de la DP. La estructuración en fases permite la división del proyecto en \textbf{subconjuntos lógicos} para facilitar su dirección,
+planificación y control.
+
+\paragraph{Interesados (Stakeholders).}
+Son personas u organizaciones, que participan activamente en el proyecto, o cuyos intereses pueden verse afectados positiva o negativamente por la ejecución o terminación del proyecto, como así también sobre los entregables y los miembros del equipo.
+
+Tienen diferentes niveles de responsabilidad y autoridad cuando participan en un proyecto y éstos pueden cambiar durante el CV del mismo.
+
+El EP debe \textbf{identificar} tanto a los interesados internos como externos, con objeto de determinar los requisitos del proyecto y las expectativas de todas las partes involucradas. Esta identificación es un proceso continuo y complicado. Identificar interesados y entender su grado de influencia en el proyecto puede ser crítico. Un fallo en ello puede extender la \textit{timeline} y elevar costos substancialmente.
+
+Una de las tareas más importantes del DP es administrar las \textbf{expectativas} de los interesados. Esto puede ser difícil porque estos pueden tener \textbf{distintos objetivos}.
+
+\paragraph{Influencias en la Organización en la DP.}
+La cultura, estilo y estructura de la organización influyen fuertemente en la forma en la que los proyectos son ejecutados. El grado de madurez de la DP de una organización, así como sus sistemas de DPs, también pueden influenciar el proyecto.
+
+\paragraph{Estructura de la Organización.}
+La estructura de la organización es un \textbf{factor ambiental} de la empresa que puede afectar la disponibilidad de recursos e influir en el modo de dirigir los proyectos. Las estructuras pueden ir desde:
+
+Funcional $\rightarrow$ Matricial (con variaciones) $\rightarrow$ Orientada a proyectos.
+
+\subsection{Activos de la Organización}
+Abarcan alguno o todos los activos relativos a procesos de alguna o todas las
+organizaciones participantes en el proyecto que pueden usarse para influir en el éxito del proyecto. Tenemos dos categorías:
+
+\textbf{Procesos y procedimientos:}
+\begin{itemize}
+\item Lineamientos, instrucciones de trabajo, criterios para la evaluación de propuestas y criterios.
+\item Lineamientos y criterios para adaptar el conjunto de procesos estándar de la organización para que satisfagan las necesidades específicas del proyecto.
+\item Plantillas.
+\item Procesos estándar de la organización.
+\item Requisitos de comunicación de la organización.
+\item Lineamientos o requisitos de cierre del proyecto.
+\item Procedimientos:
+\subitem $\rightarrow$ De control de cambios, riesgos, y financiero.
+\subitem $\rightarrow$ Para la gestión de problemas y defectos.
+\subitem $\rightarrow$ Para priorizar, aprobar y emitir autorizaciones de trabajo.
+\end{itemize}
+
+\textbf{Base corporativa de conocimiento:}
+\begin{itemize}
+\item Archivos del proyecto.
+\item Bases de datos para la medición de procesos, financieras, y/o sobre la gestión de problemas y defectos.
+\item Base del conocimiento de la gestión de configuración.
+\item Información histórica y bases de conocimiento de lecciones aprendidas.
+\end{itemize}
+
+\section{Procesos de la DP para un Proyecto}
+\paragraph{Proceso.} Conjunto de acciones y actividades interrelacionadas realizadas para obtener un producto, resultado o servicio predefinido. Está caracterizado por sus: \textit{entradas}, \textit{herramientas y técnicas}, y \textit{salidas}.
+
+Son ejecutados por el EP y se ubican dentro de una de dos categorías posibles:
+\begin{itemize}
+\item \textbf{Procesos de Dirección de Proyectos:} incluyen las herramientas y técnicas involucradas en la aplicación de las habilidades y capacidades que se describen en las \textit{Áreas de Conocimiento}. Se presentan como elementos
+diferenciados con interfaces bien definidas, sin embargo, en la práctica, se superponen e interactúan de diversas formas.
+\item \textbf{Procesos Orientados al Producto:} especifican y crean el producto del proyecto. Son definidos por el CVdP, y varían según el área de aplicación.
+\end{itemize}
+
+Los \textbf{activos} de los procesos de la organización proporcionan pautas y criterios para adaptar dichos procesos a las necesidades específicas del proyecto. Los \textbf{factores ambientales} de la empresa pueden restringir las opciones de la DP.
+
+\paragraph{Grupos de Procesos de la Dirección de Proyectos.}
+Agrupan los procesos de dirección de proyectos en cinco categorías:
+\begin{enumerate}
+\item \textbf{Grupo del Proceso de Iniciación.}
+
+Contiene aquellos procesos realizados para definir un nuevo proyecto o una
+nueva fase de un proyecto ya existente, mediante la obtención de la
+autorización para comenzar dicho proyecto o fase.
+
+\begin{itemize}
+\item Se define el \textbf{alcance inicial} y se comprometen los \textbf{recursos financieros iniciales}.
+\item Se identifican los \textbf{interesados internos} y \textbf{externos} que van a interactuar y ejercer alguna influencia sobre el resultado global del proyecto.
+\item Si aún no fue nombrado, se seleccionará el \textbf{director del proyecto}.
+\end{itemize}
+
+Esta información se plasma en el \textbf{acta de constitución del proyecto}\footnote{Es el proceso que consiste en desarrollar un documento que autoriza formalmente un proyecto o una fase, y en documentar los requisitos iniciales que satisfacen las necesidades y expectativas de los interesados. En proyectos de fases múltiples, este proceso se utiliza para validar o refinar las decisiones tomadas durante la repetición anterior del proceso Desarrollar el Acta de Constitución del Proyecto.} (o \textit{Project Charter})
+ y \textbf{registro de interesados}.
+
+Cuando el acta recibe aprobación, el proyecto se considera \textbf{autorizado oficialmente}.
+
+\item \textbf{Grupo del Proceso de Planificación.}
+
+Aquellos procesos requeridos para establecer el alcance del proyecto, refinar los objetivos y definir el curso de acción necesario para alcanzar los objetivos para cuyo logro se emprendió el proyecto.
+
+El plan para la DP y los documentos del proyecto desarrollados como salidas del grupo de procesos de planificación, explorarán todos los aspectos del alcance, tiempo, costos, calidad, comunicación, riesgos y adquisiciones.
+
+Las actualizaciones que surgen de los cambios aprobados durante el proyecto pueden tener un impacto considerable en partes del plan.
+
+El EP debe estimular la participación de todos los interesados pertinentes durante la planificación del proyecto y en el desarrollo del plan.
+
+\item \textbf{Grupo del Proceso de Ejecución.}
+
+Está compuesto por aquellos procesos realizados para completar el trabajo definido en el plan para la DP a fin de cumplir con las especificaciones del mismo.
+
+Durante la ejecución del proyecto, los resultados pueden requerir que se actualice la planificación y que se vuelva a establecer la línea base.
+
+Los procesos de este grupo son:
+\begin{itemize}
+\item Dirigir y Gestionar la ejecución del Proyecto.
+\item Realizar Aseguramiento de Calidad.
+\end{itemize}
+
+\item \textbf{Grupo del Proceso de Seguimiento y Control.}
+
+Está compuesto por aquellos procesos requeridos para supervisar, analizar y regular el progreso y el desempeño del proyecto, para identificar áreas en las que el plan requiera cambios y para iniciar los cambios correspondientes.
+
+\item \textbf{Grupo del Proceso de Cierre.}
+
+Está compuesto por aquellos procesos realizados para finalizar todas las actividades a fin de completar formalmente el proyecto, una fase del mismo u otras obligaciones contractuales. En el cierre del proyecto o fase, puede ocurrir lo siguiente:
+\begin{itemize}
+\item obtener la aceptación del cliente o del patrocinador,
+\item realizar una revisión tras el cierre del proyecto o la finalización de una fase,
+\item registrar los impactos de la adaptación a un proceso,
+\item documentar las lecciones aprendidas,
+\item aplicar actualizaciones apropiadas a los activos de los procesos de la organización,
+\item archivar todos los documentos relevantes del proyecto en el sistema de información para la dirección de proyectos para ser utilizados como datos históricos, y
+\item cerrar las adquisiciones.
+\end{itemize}
+\end{enumerate}
+
+\section{Gestión de la Integración de Proyeto}
+
+Incluye los procesos y actividades necesarios para identificar, combinar, unificar y coordinar los procesos diversos y las actividades de la DP, como pueden ser los siguientes:
+\begin{itemize}
+\item Desarrollar el \textbf{Acta de Constitución del Proyecto} (Project Charter).
+
+Se desarrolla el documento que autoriza formalmente la iniciación de un proyecto. En él se documentan los requisitos fundamentales de producto o servicio requerido, que satisfagan las necesidades y expectativas de los interesados.
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Statement of Work (SOW)}: descripción narrativa de los productos o servicios que debe entregar el proyecto. Incluye: \textit{necesidad del negocio}, \textit{descripción del producto}, \textit{plan estratégico}.
+\item \textbf{Caso de Negocio}: provee la información necesaria desde el punto de vista del negocio para determinar si el proyecto justifica la inversión. Desarrolla un análisis \textbf{costo-beneficio}.
+\item \textbf{Contrato}: se aplica a clientes externos.
+\item \textbf{Factores Ambientales de la Empresa}, que pueden afectar al proceso.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Juicio de Expertos}. Es la opinión de una persona o grupo de personas que utilizan su experiencia y conocimientos con el fin de proveer una respuesta apropiada a una consulta puntual.
+
+Es útil al principio del proyecto, pero deberá ser convalidado a medida que avanzamos en las estimaciones y modificado, actualizado y documentado en caso de ser necesario.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item Acta de Constitución del Proyecto (PC).
+\end{enumerate}
+\end{itemize}
+
+\item Desarrollar el \textbf{Plan para la Dirección del Proyecto} (PP).
+
+En él se documenta todo lo relacionado con la definición, planificación y coordinación de los planes de todas las áreas de conocimiento.
+
+Define cómo se llevará adelante cada aspecto del proyecto en cuanto a su ejecución, control y finalización. Su contenido varía de acuerdo a la naturaleza de los proyectos. Se desarrolla hasta el cierre del proyecto.
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Project Charter (PC)}.
+\item \textbf{Salidas de los Procesos de Planificación}.
+\item \textbf{Factores Ambientales de la Empresa}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Juicio de Expertos}.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Plan para la Dirección del Proyecto} (PP). Integrado por todos los planes de las diferentes áreas. Puede contener:
+\begin{itemize}
+\item Los resultados de la adaptación de los procesos.
+\item Cómo se ejecutará y controlará el trabajo.
+\item Cómo se cumplirán los objetivos del proyecto.
+\item El \textbf{plan de gestión de cambios} en el cual estará documentado cómo se controlarán los cambios.
+\item Las métricas de \textit{performance}.
+\item Las necesidades de comunicación entre los interesados.
+\item Las reuniones de revisión de estado, contenido y avance del trabajo del proyecto.
+\item Las \textbf{líneas base del proyecto}: Cronograma - Alcance - Costos.
+\end{itemize}
+\end{enumerate}
+\end{itemize}
+
+\item \textbf{Dirigir y Gestionar la Ejecución del Proyecto}.
+
+Consiste en ejecutar el trabajo definido en el \textbf{PP} para cumplir con los objetivos del mismo.
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Plan para la Dirección del Proyecto (PP)}.
+\item \textbf{Solicitudes de Cambio Aprobadas}: que amplían o reducen el alcance del proyecto.
+\item \textbf{Factores Ambientales de la Empresa}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Juicio de Expertos}.
+\item \textbf{Sistema de Información para la Dirección de Proyectos (PMIS)}: proporciona acceso a una herramienta de software para definir cronogramas, un sistema de gestión de la configuración, un sistema de recopilación y distribución de la información o interfaces de red a otros sistemas automáticos en línea.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Entregables}: Cualquier producto, resultado o capacidad de prestar un servicio único y verificable que deba producirse para terminar un proceso, una fase o un proyecto.
+\item \textbf{Información sobre el Desempeño del Trabajo}.
+\item \textbf{Solicitud de Cambio}.
+\item \textbf{Actualizaciones al PP.}
+\item \textbf{Actualizaciones a los Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\item \textbf{Monitorear y Controlar el Trabajo del Proyecto}.
+
+Es el proceso que consiste en monitorear, analizar y regular el avance a fin de cumplir con los objetivos de desempeño definidos en el \textbf{PP}. 
+
+Se realiza a lo largo del proyecto.
+
+Consiste en recopilar, medir y distribuir la información relativa al desempeño, y en evaluar las mediciones y las tendencias que van a permitir efectuar mejoras al proceso.
+
+Proporciona al equipo de DP conocimientos sobre la salud del proyecto y permite identificar las áreas susceptibles de requerir una atención especial.	
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{PP}.
+\item \textbf{Informes de Desempeño}. Deben ser preparados por el EP, detallando actividades, logros, hitos, incidentes identificados y problemas.
+\item \textbf{Factores Ambientales de la Empresa}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Juicio de Expertos}.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Solicitudes de Cambio}.
+\item \textbf{Actualizaciones al PP}.
+\item \textbf{Actualizaciones a los Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\item Realizar el \textbf{Control Integrado de Cambios.}
+
+Consiste en revisar todas las solicitudes de cambios, aprobar los mismos y gestionar los cambios a los entregables, a los activos de los procesos de la organización, a los documentos del proyecto y al plan para la dirección del proyecto.
+
+Interviene desde el \textbf{inicio} del proyecto hasta su \textbf{finalización}.
+
+Los entregables se mantienen actualizados por medio de una gestión rigurosa y continua de los cambios, ya sea rechazándolos o aprobándolos, de manera tal que se asegure que sólo los cambios aprobados se incorporen a una línea base revisada.
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{PP}.
+\item \textbf{Información sobre el Desempeño del Trabajo}.
+\item \textbf{Solicitudes de Cambio}.
+\item \textbf{Factores Ambientales de la Empresa}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Juicio de Expertos}: se puede solicitar a los interesados que aporten su experiencia y que formen parte del comité de control de cambios.
+\item \textbf{Reuniones de Control de Cambios}: Un comité de control de cambios es responsable de reunirse y revisar la solicitudes de cambio, y de aprobar o rechazar dichas solicitudes.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+
+Si una solicitud de cambio se considera viable pero fuera del alcance del proyecto, su aprobación requiere un cambio en la \textbf{línea base}. Si la solicitud de cambio no se considera viable, ésta se rechazará y posiblemente se remita nuevamente al solicitante para más información.
+
+Las \textbf{salidas} serán \textbf{actualizaciones} de:
+\begin{enumerate}
+\item El \textbf{Estado de las Solicitudes de Cambio}.
+\item El \textbf{PP}.
+\item Los \textbf{Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\item \textbf{Cerrar el Proyecto o la Fase.}	
+
+Al cierre del proyecto, el DP revisará toda la información anterior de los cierres de las fases previas para asegurarse de que todo el trabajo del proyecto está completo y de que el proyecto ha alcanzado sus objetivos.
+
+Se debe revisar el PP para cerciorarse de su culminación (alcance completo) antes de considerar que el proyecto está cerrado.
+
+También incluye procedimientos de análisis y documentación de las razones de las acciones emprendidas en caso de que un proyecto se de por terminado antes de su culminación.
+
+Se llevan a cabo las acciones o actividades para:
+\begin{itemize}
+\item Satisfacer los criterios de terminación o salida de la fase o del proyecto.
+\item Transferir los productos, servicios o resultados del proyecto a la siguiente fase o a la producción y/u operaciones.
+\item Recopilar los registros del proyecto o fase, auditar el éxito o fracaso del proyecto, reunir las lecciones aprendidas y archivar la información del proyecto para su uso futuro por parte de la organización.
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{PP}.
+\item \textbf{Entregables Aceptados}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Juicio de Expertos}.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Transferencia del Producto, Servicio o Resultado Final.}
+\item \textbf{Actualizaciones a los Activos de los Procesos de la Organización.}
+\end{enumerate}
+\end{itemize}
+
+\end{itemize}
+Incluye las actividades de consolidación y articulación, cruciales para completar proyectos, gestionar las expectativas de los interesados y cumplir con los requerimientos.
+
+El DP es el integrador de todo el trabajo realizado en el proyecto; mientras que el EP es quien ejecuta las tareas del proyecto. 
+
+No existe una única forma de administrar proyectos.
+
+\section{Gestión del Alcance del Proyecto}
+Su objetivo principal es definir y controlar \textbf{qué se incluye} y \textbf{qué no se incluye} en el proyecto. El término \textbf{alcance} puede referirse a:
+\begin{itemize}
+\item \textbf{Alcance del producto}: Las características y funciones que definen un producto, servicio o resultado. El \textbf{grado de cumplimiento} del producto se mide con relación con los requisitos del producto.
+\item \textbf{Alcance del proyecto}: El trabajo que debe realizarse para entregar un producto, servicio o resultado con las características y funciones especificadas. El \textbf{grado de cumplimiento} del proyecto se mide con relación al plan para la DP.
+\end{itemize}
+La \textbf{Declaración del Alcance del Proyecto} detallada y aprobada, y su \textbf{Estructura de Descomposición del Trabajo} (EDT) asociada junto con el \textbf{diccionario de la EDT}, constituyen la \textbf{línea base} del alcance del proyecto.
+
+\subsection{Procesos de la Gestión de Alcance del Proyecto:}
+
+\subsubsection{Recopilar requisitos}
+Es el proceso que consiste en definir y documentar las necesidades de los interesados a fin de cumplir con los objetivos del proyecto.
+
+Los requisitos incluyen las necesidades, deseos y expectativas cuantificadas y documentadas del patrocinador, del cliente y de otros interesados.
+
+Deben recabarse, analizarse y registrarse con un nivel de detalle suficiente, que permita medirlos una vez que se inicia el proyecto. Recopilar Requisitos significa definir y gestionar las expectativas del cliente.
+
+Los requisitos constituyen la base de la EDT. La planificación del costo, del cronograma y de la calidad se efectúa en función de ellos.
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Acta de Constitución del Proyecto}: se usa para proporcionar los requisitos de alto nivel del proyecto, así como una descripción de alto nivel del producto del proyecto, de modo que puedan establecerse los requisitos detallados del producto.
+\item \textbf{Registro de Interesados}: se usa para identificar a los interesados que pueden proporcionar información acerca de los requisitos detallados del proyecto y del producto.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Entrevistas}: es una manera formal o informal de obtener información acerca de los interesados, a través de un diálogo directo con ellos.
+\item \textbf{Grupos de Opinión}: reúnen a los interesados y expertos en la materia, preseleccionados para conocer acerca de sus expectativas y actitudes con respecto a un producto, servicio o resultado propuesto.
+\item \textbf{Talleres Facilitados}: son sesiones en donde se reúne a los interesados inter-funcionales clave para definir los requisitos del producto. Estos talleres se consideran una técnica primordial para definir rápidamente los requisitos de funcionalidad compartida y conciliar las diferencias entre los interesados.
+\item \textbf{Técnicas Grupales de Creatividad}: algunas de las técnicas grupales de creatividad que pueden usarse son:
+\begin{itemize}
+\item \textbf{Tormenta de ideas}.
+\item \textbf{Técnicas de grupo nominal}: mejora la tormenta de ideas mediante un proceso de votación.
+\item \textbf{La técnica Delphi}: Un grupo seleccionado de expertos contesta de manera anónima cuestionarios y proporciona retroalimentación respecto de las respuestas de cada ronda de recopilación de requisitos.
+\item \textbf{Mapa conceptual/mental}. Las ideas que surgen durante las sesiones de tormentas de ideas individuales se consolidan en un esquema único para reflejar los puntos en común y las diferencias de entendimiento, y generar nuevas ideas.
+\item \textbf{Diagrama de afinidad}. Esta técnica permite clasificar en grupos un gran número de ideas para su revisión y análisis.
+\end{itemize}
+\item \textbf{Técnicas Grupales de Toma de Decisiones}: Es un proceso de evaluación de múltiples alternativas con relación a un resultado esperado, en forma de acuerdo para acciones futuras. Estas técnicas pueden usarse para generar, clasificar y dar prioridades a los requisitos del producto.
+\item \textbf{Cuestionarios y Encuestas}: conjuntos de preguntas escritas, elaboradas para acumular información rápidamente, proveniente de un amplio número de encuestados.
+\item \textbf{Observaciones}: proporcionan una manera directa de ver a las personas en su ambiente, y el modo en que realizan sus trabajos o tareas y ejecutan los procesos. También puede hacerla un “observador participante”, quien lleva a cabo un proceso o procedimiento para experimentar cómo se hace y descubrir requisitos ocultos.
+\item \textbf{Prototipos}: es un método para obtener una retroalimentación rápida respecto de los requisitos, proporcionando un modelo operativo del producto esperado antes de construirlo realmente.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Documentación de Requisitos}.
+\item \textbf{Plan de Gestión de Requisitos}: documenta la manera en que se
+analizarán, documentarán y gestionarán los requisitos a lo largo del
+proyecto.
+\item \textbf{Matriz de Rastreabilidad de Requisitos}: es una tabla que vincula los requisitos con su origen y los monitorea a lo largo del ciclo de vida del proyecto.
+\end{enumerate}
+\end{itemize}
+
+\subsubsection{Definir el Alcance}
+Es el proceso que consiste en desarrollar una descripción detallada del proyecto y del producto.
+
+Durante el proceso de planificación, el alcance del proyecto se define y se describe de manera más específica conforme se va recabando mayor información acerca del proyecto.
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{PC}.
+\item \textbf{Documentación de Requisitos}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Juicio de Expertos}.
+\item \textbf{Análisis del Producto}.
+\item \textbf{Identificación de Alternativas}.
+\item \textbf{Talleres Facilitados}.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Declaración del Alcance del Proyecto}: describe de manera detallada los entregables del proyecto y el trabajo necesario para crear esos entregables.
+\item \textbf{Actualizaciones a los Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\subsubsection{Crear la Estructura de Descomposición del Trabajo (EDT)} 
+Es el proceso que consiste en subdividir los entregables del proyecto y el trabajo del proyecto en componentes más pequeños y más fáciles de manejar.
+
+La EDT es una descomposición jerárquica, basada en los entregables del trabajo que debe ejecutar el EP para lograr los objetivos del proyecto y crear los entregables requeridos, con cada nivel descendente de la EDT representando una definición cada vez más detallada del trabajo del proyecto.
+
+La EDT organiza y define el alcance total del proyecto y representa el trabajo especificado en la declaración del alcance del proyecto aprobada y vigente.
+
+Entre sus características tenemos:
+\begin{itemize}
+\item Utiliza un sistema de numeración decimal.
+\item Muestra las relaciones "\textit{contenido en}".
+\item No muestra necesariamente otras dependencias.
+\item No muestra duraciones.
+\item Tiene uno de dos formatos:
+\begin{itemize}
+\item \textbf{Outline} (formato indentado).
+\item \textbf{Gráfico} (árbol de tareas tipo Gráfico de Organización).       
+\end{itemize}
+\end{itemize}
+
+El trabajo planificado está contenido en el nivel más bajo de los componentes de la EDT, denominados \textbf{paquetes de trabajo}. Un paquete de trabajo puede ser programado, monitoreado, controlado, y su costo puede ser estimado.
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Declaración del Alcance del Proyecto}.
+\item \textbf{Documentación de Requisitos}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Descomposición}: es la subdivisión de los entregables del proyecto en componentes más pequeños y más manejables, hasta que el trabajo y los entregables queden definidos al nivel de \textbf{paquetes de trabajo}.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{EDT}.
+\item \textbf{Diccionario de la EDT}: es un documento cuya función es respaldar la EDT. Proporciona una descripción más detallada de los componentes de la EDT.
+\item \textbf{Línea Base del Alcance}: es un componente del PP. Incluye, además de los dos items anteriores, la \textbf{declaración del alcance del proyecto}.
+\item \textbf{Actualizaciones a los Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\subsubsection{Verificar el Alcance}
+Consiste en formalizar la aceptación de los entregables del proyecto que se han completado.
+
+Incluye revisar los entregables con el cliente o el patrocinador para asegurarse de que se han completado satisfactoriamente y para obtener de ellos su aceptación
+formal.
+
+\begin{center}
+\textit{Verificación del Alcance $\iff$ Control de Calidad.}
+\end{center}
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{PP}.
+\item \textbf{Documentación de Requisitos}.
+\item \textbf{Matriz de Rastreabilidad de Requisitos}.
+\item \textbf{Entregables Validados}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Inspección}: incluye actividades tales como medir, examinar y verificar para determinar si el trabajo y los entregables cumplen con los requisitos y los criterios de aceptación del producto.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Entregables Aceptados}: Los entregables que cumplen con los criterios de aceptación son formalmente firmados y aprobados por el cliente o el patrocinador.
+\item \textbf{Solicitudes de Cambio}: Los entregables completados que no han sido aceptados formalmente se documentan junto con las razones por las cuales no fueron aceptados. Esos entregables pueden necesitar una solicitud de cambio para la reparación de defectos.
+\item \textbf{Actualizaciones a los Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\subsubsection{Controlar el Alcance}
+
+Es el proceso por el que se monitorea el estado del alcance del proyecto y del producto, y se gestionan cambios a la línea base del alcance.
+
+Asegura que todos los cambios solicitados o las acciones preventivas o correctivas recomendadas se procesen a través del proceso de \textbf{Realizar el Control Integrado de Cambios}.
+
+También se utiliza para gestionar los cambios reales cuando suceden y se integra a los otros procesos de control.
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{PP}.
+\item \textbf{Información sobre el Desempeño del Trabajo}.
+\item \textbf{Documentación de Requisitos}.
+\item \textbf{Matriz de Rastreabilidad de Requisitos}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Análisis de Variación}: se utilizan para evaluar la magnitud
+de la variación respecto de la línea base original del alcance.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Mediciones del Desempeño del Trabajo}.
+\item \textbf{Actualizaciones a los Activos de los Procesos de la Organización}.
+\item \textbf{Solicitudes de Cambio}.
+\item \textbf{Actualizaciones al PP}.
+\item \textbf{Actualizaciones a los Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\section{Gestión del Tiempo de Proyecto}
+Provee los procesos requeridos para administrar el tiempo de finalización del proyecto.
+
+Incluye los siguientes procesos:
+\begin{itemize}
+\item \textbf{Definir las actividades}. 
+Consiste en la identificación de las tareas necesarias para producir el producto, servicio, o resultado del proyecto.
+
+\begin{itemize}
+\item \textbf{Objetivos:}
+\begin{enumerate}
+\item En este proceso se identifican, principalmente, las tareas necesarias para
+completar el producto del proyecto.
+\item Los paquetes de trabajo pueden ser desgranados en unidades menores, denominadas \textbf{actividades}\footnote{Las actividades representan el esfuerzo necesario para completar un paquete de trabajo. Cada paquete de trabajo dentro de la EDT se descompone en las actividades necesarias para producir los entregables del paquete de mismo.}.
+\end{enumerate}
+
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Línea Base del Alcance}.
+\item \textbf{Factores Ambientales de la Empresa}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Descomposición}: consiste en subdividir los paquetes de trabajo del proyecto en actividades.
+\item \textbf{Planificación Gradual}.
+\item \textbf{Plantillas}.
+\item \textbf{Juicio de Expertos}.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Lista de Actividades}.
+\item \textbf{Atributos de las actividades}.
+\item \textbf{Lista de Hitos}.
+\end{enumerate}
+\end{itemize}
+
+\item \textbf{Establecer la secuencia de las actividades}. Se trata de definir las dependencias entre las tareas.
+
+\begin{itemize}
+\item \textbf{Objetivos:}
+\begin{enumerate}
+\item Identificar y documentar las relaciones lógicas entre las actividades del proyecto. \textit{¿Todas las actividades tienen relaciones con otras actividades?}
+\end{enumerate}
+
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Lista de Actividades}.
+\item \textbf{Atributos de la Actividad}.
+\item \textbf{Lista de Hitos}.
+\textbf{Declaración del Alcance del Proyecto}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Método de Diagramación por Precedencia (PDM)}: es utilizado en
+el método de la ruta crítica (CPM) para crear un diagrama de red del
+cronograma del proyecto.
+\begin{itemize}
+\item Nodos $\rightarrow$ Actividades.
+\item Flechas $\rightarrow$ Relaciones Lógicas.
+\item Relaciones posibles entre dos procesos:
+\subitem + Terminar para Empezar (FS).
+\subitem + Empezar para Terminar (SF).
+\subitem + Empezar para Empezar (SS).
+\subitem + Terminar para Terminar (FF).
+\end{itemize}
+\item \textbf{Determinación del tipo de precedencia:}
+\begin{itemize}
+\item \textbf{Dependencias forzosas}.
+Son dependencias \textbf{duras} y \textbf{no evitables}, dictadas por la naturaleza del trabajo o la disponibilidad.
+\subitem - Ejemplo: Secuencia Código $\rightarrow$ Test.
+\subitem - Ejemplo: Secuencia Diseño $\rightarrow$ Código.
+
+\item \textbf{Discrecionales}.
+Dependencias \textbf{lógicas}. Reflejan a menudo algún criterio de
+prioridades. Son dictadas por el EP, de acuerdo a su experiencia y conocimiento sobre el producto del proyecto o la metodología empleada.
+\subitem - Ejemplo: Codificar un componente antes que otro.
+
+\item \textbf{Externas}.
+Están establecidas por actividades fuera del alcance del proyecto. No
+pueden ser manejadas por el EP.
+\subitem - Ejemplo: Resultado de otro proyecto, producto externo, compras.
+\end{itemize}
+\item \textbf{Aplicación de Adelantos y Retrasos}: El EP determina las dependencias que pueden necesitar un adelanto o un retraso para definir con exactitud la relación lógica.
+\item \textbf{Plantillas de diagramas de red}.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Diagramas de red del proyecto}.
+\item \textbf{Actualización de la documentación del proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\item \textbf{Estimar los recursos para las actividades}. Aquí se analizan y definen las cantidades necesarias de materiales y personas necesarias para cumplimentar las tareas del proyecto.
+
+\begin{itemize}
+\item \textbf{Objetivos:}
+\begin{enumerate}
+\item Estimar el tipo y las cantidades de materiales, personas, equipos o suministros requeridos para ejecutar cada actividad.
+\end{enumerate}
+
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Lista de Actividades}.
+\item \textbf{Atributos de la Actividad}.
+\item \textbf{Calendarios de Recursos}.
+\item \textbf{Factores Ambientales de la Empresa}.
+\item \textbf{Activos de los Procesos de la Organización}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Juicio de Expertos}.
+\item \textbf{Análisis de Alternativas}.
+\item \textbf{Datos de Estimación Publicados}: Muchas empresas publican periódicamente los índices de producción actualizados y los costos unitarios de los recursos para una gran variedad de industrias, materiales y equipos, en diferentes países y en diferentes ubicaciones geográficas dentro de esos países.
+\item \textbf{Estimación Ascendente}: el trabajo dentro de una actividad se descompone a un nivel mayor de detalle. Se estiman las necesidades de recursos y se suman.
+\item \textbf{Software de Gestión de Proyectos}.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Requisitos de Recursos de la Actividad}: identifica los tipos y la
+cantidad de recursos necesarios para cada actividad de un paquete de trabajo.
+\item \textbf{EDT}.
+\item \textbf{Actualizaciones a los Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\item \textbf{Estimar la duración de las actividades}. 
+
+Se trata de establecer la cantidad de tiempo necesario para ejecutar las tareas con los recursos asignados. Requiere que se estime la cantidad de esfuerzo de trabajo requerido y la cantidad de recursos para completar la actividad; esto permite determinar la cantidad de períodos de trabajo -\textit{duración de la actividad}- necesarios para completar la actividad.
+
+\begin{itemize}
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Lista de Actividades}.
+\item \textbf{Atributos de la Actividad}.
+\item \textbf{Requisitos de Recursos de la Actividad}.
+\item \textbf{Calendarios de Recursos}: puede abarcar el tipo de recursos humanos, su disponibilidad y su capacidad. 
+\item \textbf{Declaración del Alcance del Proyecto}.
+\item \textbf{Factores Ambientales de la Empresa}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Juicio de Expertos}.
+\item \textbf{Estimación Análoga}\footnote{Cuando se trata de estimar duraciones, esta técnica utiliza la duración real de proyectos similares anteriores como base para estimar la duración del proyecto actual. Es un método de estimación del valor bruto, que a veces se ajusta en función de diferencias conocidas en cuanto a la complejidad del proyecto.} utiliza parámetros de un proyecto anterior similar como base para estimar los mismos parámetros o medidas para un proyecto futuro.
+\subitem + \textbf{Ventajas}: menos costosa; más rápida.
+\subitem + \textbf{Desventajas}: poco precisa; depende de la similitud de la información histórica disponible.
+
+\item \textbf{Estimación Paramétrica}: utiliza una relación estadística entre los datos históricos y otras variables para calcular una estimación de parámetros de una actividad tales como costo, presupuesto y duración.
+\subitem + \textbf{Duración}: cuantitativamente multiplicando la cantidad de trabajo por realizar por la cantidad de horas de trabajo por unidad de trabajo.
+\subitem + Con esta técnica pueden lograrse niveles más altos de exactitud, dependiendo de la sofisticación y de los datos que utilice el modelo.
+\subitem + Puede aplicarse a todo un proyecto o a partes del mismo, en conjunto con otros métodos de estimación.
+
+En general se parte de la hipótesis que:
+\begin{itemize}
+\item Esfuerzo = $f$(\textit{Complejidad}).
+\item Complejidad = $f$(\textit{Tamaño}).
+\item Por lo tanto, Esfuerzo = $f$(\textit{Tamaño}).
+\end{itemize}
+Por lo tanto si tengo el \textbf{Tamaño} tengo el \textbf{Esfuerzo}.
+
+\item \textbf{Estimación de Tres Valores}: se intenta mejorar la precisión de la estimación, ya que este procedimiento considera la incertidumbre y el riesgo que están implícitos en cualquier estimación. Este método se extrajo del \textbf{PERT} (\textit{Program Evaluation and Review Technique}) y consta de las siguientes variables:
+\begin{itemize}
+\item \textbf{Optimista}: la duración que se le asigna a la actividad se basa en el planteo de la mejor situación posible: $\frac{O + 4M + P}{6}$.
+\item \textbf{Más probable}: la duración de la actividad esta planteada desde el punto de vista más realista posible, con una asignación de recursos factible. Este método multiplica el valor más probable por cuatro: $\frac{P - O}{6}$.
+\item \textbf{Pesimista}: la duración que se le asigna a la actividad se basa en el planteo de la peor situación posible: $\left(\frac{P-O}{6}\right)^2$.
+\end{itemize}
+
+\item \textbf{Análisis de Reserva}: Los estimados de la duración pueden incluir reservas de tiempo para contingencias (denominadas a veces \textit{colchones}) en el cronograma global del proyecto, para tener en cuenta la incertidumbre del cronograma. Estas pueden ser un porcentaje de la duración estimada de la actividad, una cantidad fija de periodos de trabajo, o puede calcularse utilizando métodos de análisis cuantitativos. A medida que se dispone de información más precisa sobre el proyecto, la reserva para contingencias puede usarse, reducirse o eliminarse. Debe identificarse claramente esta contingencia en la documentación del cronograma.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Estimados de la Duración de la Actividad}: son valoraciones cuantitativas de la cantidad probable de periodos de trabajo que se necesitarán para completar una actividad. 
+\item \textbf{Actualizaciones a los Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\item \textbf{Desarrollar el cronograma}. En este proceso se trabaja en la evaluación de las actividades, las secuencias y los recursos asignados que, junto a las restricciones del calendario, conformarán el cronograma del proyecto.
+
+\begin{itemize}
+\item \textbf{Objetivos:}
+\begin{enumerate}
+\item Analizar el orden de las actividades, su duración, los requisitos de recursos y las restricciones para crear el cronograma del proyecto.
+\end{enumerate}
+
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{Atributos de las actividades}.
+\item \textbf{Diagramas de red}.
+\item \textbf{Requisitos de recursos para las actividades}.
+\item \textbf{Calendario de los recursos}.
+\item \textbf{Estimación de la duración de las actividades}.
+\item \textbf{Enunciado del alcance del proyecto}.
+\item \textbf{Factores ambientales de la empresa}.
+\item \textbf{Activos y procesos organizacionales}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Análisis de la Red del Cronograma}: genera el cronograma del proyecto.
+\item \textbf{Método del Camino Critico} (CC): calcula las fechas tempranas y tardías de comienzo y finalización de las actividades del cronograma.
+
+Este procedimiento no tiene en cuenta las limitaciones de recursos. El resultado de la aplicación del método no determina necesariamente las fechas definitivas del cronograma, sino que muestra los períodos en los cuales las actividades podrían ser ejecutadas.
+
+Características del CC:
+\begin{itemize}
+\item Determina cuáles son las tareas que necesitan mayor atención del DP.
+\item Determina el plazo más corto en el cual se puede terminar el proyecto.
+\item Es el camino más largo del diagrama de red.
+\item Puede cambiar a medida que avanza el proyecto.
+\item Puede haber múltiples CC en una misma red.
+\end{itemize}
+
+Las \textbf{holguras} en un diagrama de red es la cantidad de tiempo que se puede \textbf{retrasar} una actividad \textbf{sin afectar} el proyecto.
+
+\begin{itemize}
+\item Las tareas del CC tienen holgura \textbf{cero}.
+\item La \textbf{holgura negativa} indica que hay retraso.
+\item Cálculo de la holgura = $LS-ES$ ó $LF-EF$.
+\item Existen dos tipos de holgura, ambas indican \textit{la cantidad de tiempo que una tarea puede demorarse sin retrasar la}:
+\subitem + \textbf{Holgura libre}: (...) \textit{fecha temprana de su sucesora}.
+\subitem + \textbf{Holgura total}: (...) \textit{fecha de finalización del proyecto}.
+\end{itemize}
+
+\item \textbf{Método de la Cadena Crítica} (CaC): técnica de análisis de la red del cronograma que permite modificar el cronograma del proyecto para adaptarlo a los recursos limitados.
+\begin{itemize}
+\item Agrega \textbf{colchones de duración}\footnote{Actividades del cronograma que no requieren trabajo y que se utilizan para manejar la incertidumbre}.
+\item Un \textbf{colchón} que se coloca al final de la CaC se conoce como \textbf{colchón del proyecto} y protege la fecha de finalización objetivo contra cualquier retraso a lo largo de la CaC.
+\item Se colocan colchones adicionales, que protegen la CaC contra retrasos a lo largo de las cadenas de alimentación.
+\end{itemize}
+
+\item \textbf{Análisis de escenarios- ¿Que sucedería si...?}
+\begin{itemize}
+\item Este análisis intenta responder a la pregunta \textit{“¿qué sucedería si...?”}, seguida de una serie de escenarios hipotéticos. Cada uno de estos escenarios modifica una o más variables del cronograma, de manera de ver qué sucede con el cronograma bajo ciertas situaciones.
+\item Esta forma de análisis suele llevarse a cabo utilizando un sistema de simulación. El método de análisis \textit{Monte Carlo} es la herramienta más común para simular estas situaciones.
+\end{itemize}
+
+\item \textbf{Aplicación de adelantos y retrasos}: son refinamientos que se aplican durante el análisis de la red para desarrollar un cronograma viable.
+
+\item \textbf{Compresión del Cronograma}: apunta a reducir el cronograma del proyecto sin cambiar su alcance.
+
+\item \textbf{Compresión del Cronograma}:
+\begin{itemize}
+\item \textbf{Intensificación (crashing)}: mediante esta técnica se intenta
+determinar la mejor relación entre el acortamiento de la duración de una actividad y el costo de esa reducción. Aquí se busca agregar recursos a una actividad para que ésta se ejecute en menos tiempo. En contrapartida, el agregado de recursos redundará en un mayor costo de ejecución de la actividad.
+\begin{center} \textit{Crashing} = mayor costo. \end{center}
+\item \textbf{Ejecución rápida (fast tracking)}: mediante esta técnica se busca ejecutar en forma paralela ciertas actividades que normalmente se ejecutarían de manera secuencial. Una técnica de compresión del cronograma en la cual las fases o actividades que normalmente se realizarían en formasecuencial, se realizan en  paralelo.
+\begin{center} \textit{Fast tracking} = mayor riesgo. \end{center}
+\end{itemize}
+
+\item \textbf{Herramientas Automatizadas de Planificación}: aceleran el proceso de planificación.
+
+Puede utilizarse conjuntamente con otro software de gestión de proyectos, así como con métodos manuales.
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Cronograma del Proyecto}. Existen diversos tipos:
+\begin{itemize}
+\item \textbf{Diagrama de barras (Gantt)}: cada barra representa una actividad y muestra tanto su fecha de inicio y de fin como su duración. Los diagramas de barras son de fácil lectura y frecuentemente utilizados para mostrar el avance del proyecto.
+\item \textbf{Diagrama de hitos}: presenta la fecha de ocurrencia de los hitos más significativos del cronograma. Es una herramienta útil para mostrar el estado del proyecto a la gerencia y a los clientes.
+\item \textbf{Diagramas de red}: Se utiliza para mostrar el CC y cómo están lógicamente relacionadas las tareas del cronograma.
+\end{itemize}
+\item \textbf{Línea base del Cronograma}.
+\item \textbf{Datos del Cronograma}.
+\item \textbf{Actualizaciones a los Documentos del Proyecto}.
+\end{enumerate}
+\end{itemize}
+
+\item \textbf{Controlar el cronograma}. Mediante este proceso se controla el avance del proyecto, se actualiza su estado y se gestionan los cambios en la \textbf{línea base}.
+
+\begin{itemize}
+\item \textbf{Objetivos:}
+\begin{enumerate}
+\item Determinar el estado actual del cronograma del proyecto.
+\item Influir en los factores que generan cambios en el cronograma.
+\item Determinar que el cronograma del proyecto ha cambiado.
+\item Gestionar los cambios reales conforme suceden.
+\end{enumerate}
+
+\item \textbf{Entradas:}
+\begin{enumerate}
+\item \textbf{PP}.
+\item \textbf{Cronograma del proyecto}.
+\item \textbf{Información sobre rendimiento}: es la información relacionada con el avance del proyecto, que incluye el detalle de las actividades que han sido comenzadas, las que están en ejecución y las que han sido completadas.
+\item \textbf{Activos y procesos organizacionales}.
+\end{enumerate}
+
+\item \textbf{Herramientas y Técnicas:}
+\begin{enumerate}
+\item \textbf{Revisiones del Desempeño}.
+\subitem Determinar las acciones correctivas en caso de desvíos significativos.
+\item \textbf{Análisis de variación}.
+\item \textbf{Software de gestión de proyectos}.
+\item \textbf{Nivelación de recursos}.
+\item \textbf{Análisis de escenarios}: \textit{¿Qué sucedería si...?}
+\item \textbf{Ajuste de adelantos y retrasos}: se realiza para reencausar el proyecto, con el fin de alinear el cronograma nuevamente con la línea base
+planeada.
+\item \textbf{Compresión del cronograma}.
+\item \textbf{Herramientas para el desarrollo de cronogramas}
+\end{enumerate}
+
+\item \textbf{Salidas:}
+\begin{enumerate}
+\item \textbf{Mediciones del Desempeño del Trabajo}: Los valores calculados de la variación del cronograma (SV) y del índice de desempeño del cronograma (SPI) para los componentes de la EDT, en particular los paquetes de trabajo se documentan y comunican a los interesados.
+\item \textbf{Actualizaciones a los Activos de los Procesos de la Organización}.
+\item \textbf{Solicitudes de Cambio}.
+\item \textbf{Actualización de los planes del proyecto}.
+\end{enumerate}
+\end{itemize}
+\end{itemize}
+
+\section{Glosario}
+\begin{itemize}
+\item \textbf{CC}: Método del Camino Crítico, ó Camino Crítico, según contexto.
+\item \textbf{CaC}: Método de la Cadena Crítica, ó Cadena Crítica, según contexto.
+\item \textbf{CV}: Ciclo de Vida.
+\item \textbf{CVdP}: Ciclo de Vida del Proyecto.
+\item \textbf{DP}: Dirección de Proyecto, ó Director de Proyecto, dado el contexto.
+\item \textbf{EP}: Equipo de Proyecto.
+\item \textbf{EDT}: Estructura de Descomposición del Trabajo, también llamada \textit{Work Breakdown Structure} (WBS).
+\item \textbf{LS / ES - LF / EF}: Late/Early Start - Late/Early Finish.
+\item \textbf{PC}: Project Charter, ó Acta de Constitución del Proyecto.
+\item \textbf{PM}: Project Manager, ó Director de Proyecto.
+\item \textbf{PMIS}: Sistema de Información para la Dirección de Proyectos.
+\item \textbf{PMO}: Project Management Office (Oficina de Dirección de Proyecto).
+\item \textbf{PP}: Project Plan, ó Plan para la Dirección del Proyecto.
+\item \textbf{SOW}: Statement of Work.
+\end{itemize}
+
+Las $s$ al final de una sigla es porque está en plural. Ejemplo: DPs $\rightarrow$ Dirección de Proyectos (o Director de Proyectos).
+
+\newpage
+\section{Licencia}
+Este documento fue escrito en \LaTeX, y editado en \textbf{Texmaker}.
+
+Basado en el libro \textbf{A Guide To The Project Managment Body Of Knowledge (PMBOK\textregistered GUIDE) [Fourth Edition]}.
+\null
+\vfill
+\begin{center}
+\href{http://creativecommons.org/licenses/by-sa/3.0/}{
+\includegraphics{CC.png}}
+
+Este obra está bajo una licencia \href{http://creativecommons.org/licenses/by-sa/3.0/}{\textbf{Creative Commons Atribución-CompartirIgual 3.0 Unported.}}
+\end{center}
+\end{document}
