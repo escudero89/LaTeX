@@ -59,15 +59,14 @@ Lógica proposicional: sintaxis, semántica e inferencia. Lógica de primer orde
 \subsection{Ventajas}
 Las \textbf{RNA} tienen muchas ventajas debido a que están basadas en la estructura del sistema nervioso, principalmente el cerebro.
 \begin{description}
-\item \textbf{Aprendizaje}: Las RNA tienen la habilidad de aprender mediante una etapa que se llama \textit{etapa de aprendizaje}. Esta consiste en proporcionar a la RNA datos como entrada a su vez que se le indica cuál es la salida (respuesta) esperada.
-\item \textbf{Auto-organización}: Una RNA crea su propia representación de la información en su interior, descargando al usuario de esto.
+\item \textbf{Aprendizaje}: Las RNA tienen la habilidad de aprender mediante una etapa llamada \textit{etapa de aprendizaje}. Esta consiste en proporcionar a la RNA de datos como entrada a su vez que se le indica cuál es la salida (respuesta) esperada.
+\item \textbf{Auto-organización}: Una RNA crea su propia representación de la información en su interior, liberando al usuario de esto.
 \item \textbf{Tolerancia a fallos}: Debido a que una RNA almacena la información de forma redundante, ésta puede seguir respondiendo de manera aceptable aun si se daña parcialmente.
 \item \textbf{Flexibilidad}: Una RNA puede manejar cambios no importantes en la información de entrada, como señales con ruido u otros cambios en la entrada.
 \item \textbf{Tiempo real}: La estructura de una RNA es paralela, por lo cual si esto es implementado con computadoras o en dispositivos electrónicos especiales, se pueden obtener respuestas en tiempo real.
 \end{description}
 
 \subsection{Desventajas}
-
 \begin{itemize}
 \item Requieren gran cantidad de datos de entrenamiento diversos para operaciones en el mundo real.
 \item Requieren gran tiempo de procesamiento y de memoria.
@@ -86,7 +85,7 @@ Hay tres paradigmas de aprendizajes principales:
 
 \subsection{Reglas de Aprendizaje}
 \subsubsection{Corrección de Error}
-Es la que utiliza el \textbf{perceptrón}. Su principio básico es el de usar la señal de error ($y_{\text{deseado}}-y$) para modificar los pesos para gradualmente ir reduciendo el error. El aprendizaje sólo ocurre cuando se comete un error.
+Es la que utiliza el \textbf{perceptrón}. Su principio básico es el de usar la \textit{señal de error} ($y_{\text{deseado}}-y$) para modificar los pesos para gradualmente ir reduciendo el error. El aprendizaje sólo ocurre cuando se comete un error.
 
 \begin{quotation}
 \textit{Perceptron Convergence Theorem:} si los patrones se ubican en dos clases linealmente separables, el procedimiento de aprendizaje del perceptrón converge luego de un número finito de iteraciones, siempre y cuando se utilice una \textbf{función de activación} monótona.
@@ -113,13 +112,17 @@ Normalmente categorizan la información de entrada, agrupando automáticamente p
 
 \subsection{Validación Cruzada}
 
-La validación cruzada o cross-validation es una técnica utilizada para evaluar los resultados de un análisis estadístico y garantizar que son independientes de la partición entre datos de entrenamiento y prueba. Consiste en repetir y calcular la media aritmética obtenida de las medidas de evaluación sobre diferentes particiones. Se utiliza en entornos donde el objetivo principal es la predicción y se quiere estimar cómo de preciso es un modelo que se llevará a cabo a la práctica. Es una técnica muy utilizada en proyectos de inteligencia artificial para validar modelos generados.
+Es una técnica utilizada para evaluar los resultados de un análisis estadístico y garantizar que son independientes de la partición entre datos de entrenamiento y prueba. Consiste en repetir y calcular la media aritmética obtenida de las medidas de evaluación sobre diferentes particiones. Se utiliza en entornos donde el objetivo principal es la predicción y se quiere estimar cómo de preciso es un modelo que se llevará a cabo a la práctica.
 
 \subsubsection{Contexto}
-La validación cruzada proviene de la mejora del método de retención o holdout method. Este consiste en dividir en dos conjuntos complementarios los datos de muestra, realizar el análisis de un subconjunto (denominado datos de entrenamiento o training set), y validar el análisis en el otro subconjunto (denominado datos de prueba o test set), de forma que la función de aproximación sólo se ajusta con el conjunto de datos de entrenamiento y a partir de aquí calcula los valores de salida para el conjunto de datos de prueba (valores que no ha analizado antes). La ventaja de este método es que es muy rápido a la hora de computar. Sin embargo, este método no es demasiado preciso debido a la variación del resultados obtenidos para diferentes datos de entrenamiento. La evaluación puede depender en gran medida de cómo es la división entre datos de entrenamiento y de prueba, y por lo tanto puede ser significativamente diferente en función de cómo se realice esta división. Debido a estas carencias aparece el concepto de validación cruzada.
+La validación cruzada proviene de la mejora del \textit{holdout method}:
+\begin{quote}
+Consiste en dividir en dos conjuntos complementarios los datos de muestra, realizar el análisis de un subconjunto (denominado \textbf{datos de entrenamiento}), y validar el análisis en el otro subconjunto (denominado \textbf{datos de prueba}), de forma que la función de aproximación sólo se ajusta con el conjunto de datos de entrenamiento y a partir de aquí calcula los valores de salida para el conjunto de datos de prueba (valores que no ha analizado antes).
+\end{quote}
+La ventaja de este método es que es muy rápido a la hora de computar. Sin embargo, no es demasiado preciso debido a la variación del resultados obtenidos para diferentes datos de entrenamiento. La evaluación puede depender en gran medida de cómo es la división entre datos de entrenamiento y de prueba, y por lo tanto puede ser significativamente diferente en función de cómo se realice esta división. Debido a estas carencias aparece el concepto de validación cruzada.
 
 \subsubsection{Objetivos}
-Suponemos que tenemos un modelo con uno o más parámetros de ajuste desconocidos y unos datos de entrenamiento que queremos analizar. El proceso de ajuste optimiza los parámetros del modelo para que éste se ajuste a los datos de entrenamiento tan bien como pueda. Si cogemos una muestra independiente como dato de prueba (validación), del mismo grupo que los datos de entrenamiento, normalmente el modelo no se ajustará a los datos de prueba igual de bien que a los datos de entrenamiento. Esto se denomina sobreajuste y acostumbra a pasar cuando el tamaño de los datos de entrenamiento es pequeño o cuando el número de parámetros del modelo es grande. La validación cruzada es una manera de predecir el ajuste de un modelo a un hipotético conjunto de datos de prueba cuando no disponemos del conjunto explícito de datos de prueba.
+Suponemos que tenemos un modelo con uno o más parámetros de ajuste desconocidos y unos datos de entrenamiento que queremos analizar. El proceso de ajuste optimiza los parámetros del modelo para que éste se ajuste a los datos de entrenamiento tan bien como pueda. Si cogemos una muestra independiente como dato de prueba (\textit{validación}), del mismo grupo que los datos de entrenamiento, normalmente el modelo no se ajustará a los datos de prueba igual de bien que a los datos de entrenamiento. Esto se denomina \textbf{sobreajuste} y acostumbra a pasar cuando el tamaño de los datos de entrenamiento es pequeño o cuando el número de parámetros del modelo es grande. La validación cruzada es una manera de predecir el ajuste de un modelo a un hipotético conjunto de datos de prueba cuando no disponemos del conjunto explícito de datos de prueba.
 
 \subsubsection{Limitaciones y uso no adecuado}
 La validación cruzada sólo produce resultados significativos si el conjunto de validación y prueba de conjunto se han extraído de la misma población. En muchas aplicaciones de modelado predictivo, la estructura del sistema que está siendo estudiado evoluciona con el tiempo. Esto puede introducir diferencias sistemáticas entre los conjuntos de entrenamiento y validación. Por ejemplo, si un modelo para predecir el valor de las acciones está entrenado con los datos de un período de cinco años determinado, no es realista para tratar el siguiente período de cinco años como predictor de la misma población.
@@ -129,19 +132,16 @@ Otro ejemplo, supongamos que se desarrolla un modelo para predecir el riesgo de 
 Si se lleva a cabo correctamente, y si el conjunto de validación y de conjunto de entrenamiento son de la misma población, la validación cruzada es casi imparcial. Sin embargo, hay muchas maneras en que la validación cruzada puede ser mal utilizada. Si se abusa y posteriormente se lleva a cabo un estudio real de validación, es probable que los errores de predicción en la validación real sean mucho peores de lo esperado sobre la base de los resultados de la validación cruzada.
 
 Estas son algunas formas en que la validación cruzada puede ser mal utilizada:
-
-* Mediante el uso de la validación cruzada para evaluar varios modelos, y sólo indicando los resultados para el modelo con los mejores resultados.
-
-* Al realizar un análisis inicial para identificar las características más informativas utilizando el conjunto de datos completo, si la selección de característica o el ajuste del modelo lo requiere por el propio procedimiento de modelado, esto debe repetirse en cada conjunto de entrenamiento. Si se utiliza la validación cruzada para decidir qué características se van a utilizar, se deberá realizar un proceso interno de validación cruzada para llevar a cabo la selección de características en cada conjunto de entrenamiento.
-
-* Al permitir que algunos de los datos de entrenamiento esté también incluido en el conjunto de prueba, esto puede suceder debido a "hermanamiento" en el conjunto de datos, con lo que varias muestras exactamente idénticas o casi idénticas pueden estar presentes en el conjunto de datos.
+\begin{itemize}
+\item Mediante el uso de la validación cruzada para evaluar varios modelos, y sólo indicando los resultados para el modelo con los mejores resultados.
+\item Al realizar un análisis inicial para identificar las características más informativas utilizando el conjunto de datos completo, si la selección de característica o el ajuste del modelo lo requiere por el propio procedimiento de modelado, esto debe repetirse en cada conjunto de entrenamiento. Si se utiliza la validación cruzada para decidir qué características se van a utilizar, se deberá realizar un proceso interno de validación cruzada para llevar a cabo la selección de características en cada conjunto de entrenamiento.
+\item Al permitir que algunos de los datos de entrenamiento esté también incluido en el conjunto de prueba, esto puede suceder debido a "hermanamiento" en el conjunto de datos, con lo que varias muestras exactamente idénticas o casi idénticas pueden estar presentes en el conjunto de datos.
+\end{itemize}
 
 \subsection{Aplicaciones de las RNA}
 Las características de las \textbf{RNA} las hacen bastante apropiadas para aplicaciones en las que no se dispone a priori de un modelo identificable que pueda ser programado, pero se dispone de un conjunto básico de ejemplos de entrada (previamente clasificados o no). Asimismo, son altamente robustas tanto al ruido como a la disfunción de elementos concretos y son fácilmente paralelizables.
 
-Esto incluye problemas de clasificación y reconocimiento de patrones de voz, imágenes, señales, etc. Asimismo se han utilizado para encontrar patrones de fraude económico, hacer predicciones en el mercado financiero, hacer predicciones de tiempo atmosférico, etc.
-
-También se pueden utilizar cuando no existen modelos matemáticos precisos o algoritmos con complejidad razonable.
+También se pueden utilizar cuando no existen modelos matemáticos precisos o algoritmos con complejidad razonable. 
 
 \begin{wrapfigure}{r}{0.3\textwidth}
   \label{fig:clasificador}
@@ -171,7 +171,7 @@ También se pueden utilizar cuando no existen modelos matemáticos precisos o al
 
 \section{Perceptrón Multicapa}
 
-La arquitectura del \textbf{Perceptrón Multicapa} (o PM) surge por corregir las limitaciones que las redes iniciales, \textit{Adaline} y \textit{Perceptron} tenían, sobre todo en cuanto a separabilidad de funciones no lineales.
+La arquitectura del \textbf{Perceptrón Multicapa} (o PM) surge por corregir las limitaciones que las redes iniciales, \textit{Adaline} y \textit{Perceptrón} tenían, sobre todo en cuanto a separabilidad de funciones no lineales.
 
 \begin{wrapfigure}{r}{0.65\textwidth}
   \label{fig:layers}
@@ -187,7 +187,7 @@ Por otra, el PM es de relativo fácil uso y aplicación, dado que es una red sin
 La arquitectura del PM está basado en una red \textit{feed-fordward} o con conexiones hacia delante, en la que se disponen de 3 tipos de capas:
 \begin{itemize}
 \item La capa de \textbf{entrada}, en la que las neuronas actúan como buffer y no se disponen de pesos ni umbrales.
-\item Las capas \textbf{ocultas}
+\item Las capas \textbf{ocultas}.
 \item La capa de \textbf{salida}, que actúa como un buffer de salida.
 \end{itemize}
 
@@ -196,11 +196,10 @@ Todas las neuronas de la red (excepto las de la entrada, en general) llevan asoc
 El entrenamiento de este tipo de redes, es decir, su aprendizaje, se realiza utilizando el \textbf{algoritmo de retropropagación}.
 
 \subsection{Término de momento}
-Si $\eta$ es chico, más chicos son los cambios en los pesos sinápticos, pero más lento es el aprendizaje. Si $\eta$ es grande, resulta en grandes cambios en los pesos sinápticos, pero puede provocar \textit{inestabilidad} (oscilaciones). Para solventar los problemas, agregamos una \textit{constante de momento}:
+Si $\eta$ es chico, más pequeños son los cambios en los pesos sinápticos, pero más lento es el aprendizaje. Si $\eta$ es grande, resulta en grandes cambios en los pesos sinápticos, pero puede provocar \textit{inestabilidad} (oscilaciones). Para solventar los problemas, agregamos una \textit{constante de momento}:
 \[\Delta w_{ji}(n)=\alpha \Delta w_{ji}(n-1)+\eta \delta_j(n)y_i(n).\]
 
-La inclusión del términomomento influye de la siguiente forma:
-
+La inclusión del término momento influye de la siguiente forma:
 \begin{itemize}
 \item Cuando $\partial \mathcal{E} (t) / \partial w_{ji}(t)$ tiene el mismo signo en sucesivas iteraciones: $\Delta w_{ji}(n)$ crece en magnitud y los $w_{ji}(n)$ se ajustan por un gran valor. El \textbf{momento} acelera la convergencia del método en direcciones largas de descenso.
 \item Si $\partial \mathcal{E} (t) / \partial w_{ji}(t)$ tiene diferente signo en sucesivas iteraciones: el $\Delta w_{ji}(n)$ disminuye en magnitud y los $w_{ji}(n)$ se ajustan por un pequeño valor. El \textbf{momento} tiene un efecto \textit{estabilizante} en regiones oscilantes y ayuda a evitar a que se quede en un mínimo local.
@@ -245,7 +244,7 @@ Es un método NO supervisado, cuyo objetivos son:
 \end{enumerate}
 
 \subsubsection{Métodos de entrenamiento de pesos:}
-\paragraph{Pseudo-inversa del vector $\phi(\mathbf{x}_l)$:} La solucion viene dada por la expresión: $W = G^{+} S$ (con $^+$ representando la pseudo-inversa, dada por $G^+=(G^T G)^{-1}G^T$), dónde $W$ es la matriz de orden $(n+1)\cdot r$ que posee los $n$ pesos y los umbrales en la última fila. La matriz G posee todas las funciones de activacion para cada uno de los patrones de entrada, es de orden $(n+1)\cdot N$, siendo $g_{in} = \phi_i(n)$ y $\phi_i$ la funcion de activacion de la neurona oculta $i$ para el patron de entrada $X(n)$. $S$ es la matriz de salidas deseadas de la red, de orden $N\cdot r$.
+\paragraph{Pseudo-inversa del vector $\phi(\mathbf{x}_l)$:} La solucion viene dada por la expresión: $W = G^{+} S$ (con $^+$ representando la pseudo-inversa, dada por $G^+=(G^T G)^{-1}G^T$), dónde $W$ es la matriz de orden $(n+1)\cdot r$ que posee los $n$ pesos y los umbrales en la última fila. La matriz G posee todas las funciones de activación para cada uno de los patrones de entrada, es de orden $(n+1)\cdot N$, siendo $g_{in} = \phi_i(n)$ y $\phi_i$ la función de activación de la neurona oculta $i$ para el patron de entrada $X(n)$. $S$ es la matriz de salidas deseadas de la red, de orden $N\cdot r$.
 
 \paragraph{LMS:}
 \begin{align*}
@@ -347,7 +346,7 @@ La diferencia principal entre los dos tipos de arquitectura está en la informac
 
 En las redes \textbf{Jordan}, sin embargo, existe una doble recurrencia. Por una parte se realimentan las salidas del instante anterior ponderadas con un parámetro fijo $\mu$, y además, cada neurona de contexto recibe una copia de su estado anterior. El parámetro $\mu$ determina el horizonte de la memoria de la red, es decir, determina la ventana de tiempo que recuerda la red los datos de salida.
 
-El aprendizaje de estos dos tipos de redes se basa en el algoritmo de retropropagación, dado que a la hora de entrenar se desacoplan los bucles. De este modo, inicialmente se calculan las salidas y se hallan los datos para pasar a las neuronas de contexto. En el siguiente instante, se consideran estos datos como entradas a la red, y se aplica de nuevo el algoritmo, y así sucesivamente.
+El aprendizaje de estos dos tipos de redes se basa en el \textit{algoritmo de retropropagación}, dado que a la hora de entrenar se desacoplan los bucles. De este modo, inicialmente se calculan las salidas y se hallan los datos para pasar a las neuronas de contexto. En el siguiente instante, se consideran estos datos como entradas a la red, y se aplica de nuevo el algoritmo, y así sucesivamente.
 
 \section{Redes Competitivas}
 
@@ -355,7 +354,7 @@ Las \textbf{redes competitivas} son muy utilizadas en la resolución de problema
 
 En general, no suelen tener arquitecturas muy complejas, y en muchas ocasiones constan únicamente de dos capas: la \textbf{capa de entrada} y la llamada \textbf{capa de competición}, que todas ellas disponen.
 
-En las \textit{capas de competición} las neuronas se conectan entre ellas en lo que se llama ''\textit{modelo de interacción lateral}''. Es decir, cada neurona de la capa competitiva se conecta con el resto, pero de diferente manera. Si la neurona se activa, intentará potenciar la activación de las neuronas de alrededor, incluyéndose a sí misma, y generará señales de deshabilitación a las neuronas que quedan lejos. El resultado del proceso es que sólo una neurona de entre todas queda activa, con su valor máximo. Es por ello por lo que se denomina a esta capa \textbf{competitiva}: las neuronas compiten entre ellas por la activación, y aquella que disponga de una señal más alta, porque sus pesos sean mayores, será la ganadora.
+En las \textit{capas de competición} las neuronas se conectan entre ellas en lo que se llama "\textit{modelo de interacción lateral}". Es decir, cada neurona de la capa competitiva se conecta con el resto, pero de diferente manera. Si la neurona se activa, intentará potenciar la activación de las neuronas de alrededor, incluyéndose a sí misma, y generará señales de deshabilitación a las neuronas que quedan lejos. El resultado del proceso es que sólo una neurona de entre todas queda activa, con su valor máximo. Es por ello por lo que se denomina a esta capa \textbf{competitiva}: las neuronas compiten entre ellas por la activación, y aquella que disponga de una señal más alta, porque sus pesos sean mayores, será la ganadora.
 
 \subsection{Mapas Auto-Organizativos (SOM)}
 
@@ -428,7 +427,7 @@ if <cond 1><cond 2>...<cond n> then <acc 1><acc 2>...<acc n>
 \subitem \underline{\textit{Estrategias}}:
 \subitem + No duplicación.
 \subitem + Novedad.
-\subitem + Específicidad.
+\subitem + Especificidad.
 \subitem + Prioridad de operación.
 \item \textbf{Aplicación:} Se aplica el \textbf{consecuente} de la regla seleccionada. Se agregan a la MT los hechos que componen el \textbf{consecuente} o se ejecutan las acciones.
 \end{enumerate}

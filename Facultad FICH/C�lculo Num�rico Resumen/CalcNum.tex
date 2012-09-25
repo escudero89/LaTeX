@@ -1,0 +1,227 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\thispagestyle{empty}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{parskip}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{enumerate}
+
+\usepackage{hyperref}
+
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{wrapfig}
+
+\usepackage{graphicx}
+\restylefloat{figure}
+
+\usepackage{cancel}
+
+\author{Cristian Escudero}
+\title{Resumen Cálculo Numérico \\ \small{basado en el resumen de Fernando Nellmeldín}}
+\begin{document}
+\maketitle
+
+\lstset { 
+  language=Octave,
+  basicstyle=\footnotesize,
+  numbers=left,
+  numberstyle=\tiny\color{cyan},
+  stepnumber=1,
+  numbersep=8pt,
+  backgroundcolor=\color{white},
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  frame=lines,                   % adds a frame around the code
+  rulecolor=\color{cyan},
+  tabsize=4,                      
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{gray},       % comment style
+  stringstyle=\color{magenta},         % string literal style
+}
+
+\section{Métodos Directos}
+
+\subsection{Eliminación de Gauss}
+Los elementos de la matriz $A^{(k+1)}$ se calculan:
+\begin{align*}
+  a_{ij}^{(k+1)} = \left\{ 
+  \begin{array}{l l}
+    a_{ij}^{(k)} & \quad \text{si $i\leq k$},\\
+    a_{ij}^{(k)}-\left(\frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}a_{kj}^{(k)}\right) & \quad \text{si $i \geq k+1$, y $j \geq k+1$},\\
+    0 &\quad \text{si $i \geq k+1$, y $j \leq k$}.
+  \end{array} \right.
+\end{align*}
+
+Si tenemos \textbf{pivoteo parcial}, trabajamos con el \textbf{vector de permutación}:
+\begin{lstlisting}
+# Se resuelve en n - 1 pasos
+for i = 1 : n - 1
+	if (parcial)
+		# Ponemos la fila con maximo valor
+	    [tr, p] = max(abs(Ab(idx(i:n), i)));
+	    p = p + i - 1;
+    
+		if (idx(i) != idx(p))	        
+			temp = idx(p);
+			idx(p) = idx(i);
+			idx(i) = temp;
+	    end
+	end
+	# ... sigue el metodo...
+end
+\end{lstlisting}
+
+Y trabajamos usando el \texttt{idx(i)} en vez de \texttt{i} para los subíndices.
+
+\small{\underline{Nota}: Si encontramos una columna de ceros, el método no determina una solución \textbf{única}.}
+
+\subsection{Factorización LU}
+
+\begin{align*}
+A = \begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn} 
+\end{bmatrix} =
+\begin{bmatrix}
+l_{11} & 0 & \cdots & 0 \\
+l_{21} & l_{22} & \ddots & \vdots \\
+\vdots & \vdots & \ddots & 0 \\
+l_{n1} & l_{n2} & \cdots & l_{nn}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+u_{11} & u_{12} & \cdots & u_{1n} \\
+0 & u_{22} & \cdots & u_{2n} \\
+\vdots & \ddots & \ddots & \vdots \\
+0 & \cdots & 0 & u_{nn} 
+\end{bmatrix} = LU
+\end{align*}
+
+Ejemplo 3x3:
+\begin{align*}
+A=\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} 
+\end{bmatrix} &=
+\begin{bmatrix}
+l_{11} & 0 & 0 \\
+l_{21} & l_{22} & 0 \\
+l_{31} & l_{32} & l_{33} 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+u_{11} & u_{12} & u_{13} \\
+0 & u_{22} & u_{23} \\
+0 & 0 & u_{33} 
+\end{bmatrix} =LU \\ &=
+\begin{bmatrix}
+l_{11} \, u_{11} & l_{11} \, u_{12} & l_{11} \, u_{13} \\
+l_{21} \, u_{11} & l_{21} \, u_{12} + l_{22} \, u_{22} & l_{21} \, u_{13} + l_{22} \, u_{23}\\
+l_{31} \, u_{11} 
+& l_{31} \, u_{12} + l_{32} \, u_{22}
+& l_{31} \, u_{13} + l_{32} \, u_{23} + l_{33} \, u_{33}
+\end{bmatrix}
+\end{align*}
+
+\subsubsection{Factorización de Cholesky}
+\textit{Nota:} En $a_{ij}^{upper}$: $min(i,j)-1 = i-1$; y en $a_{ij}^{lower}$: $min(i,j)-1 = j-1$.
+
+\begin{align*}
+& a_{ij} = \sum_{k=1}^{min(i,j)} l_{ik} \, u_{kj} ,& \\
+& a_{ij}^{upper} = \sum_{k=1}^{i-1} l_{ik} \, u_{kj} + l_{ii} \, u_{ij}
+&\; \Rightarrow \; u_{ij} = \frac{1}{l_{ii}}\left[ a_{ij} - \sum_{k=1}^{i-1} l_{ik} \, u_{kj} \right]& \\
+& a_{ij}^{lower} = \sum_{k=1}^{j-1} l_{ik} \, u_{kj} + u_{jj} \, l_{ij}
+&\; \Rightarrow \; l_{ij} = \frac{1}{u_{jj}}\left[ a_{ij} - \sum_{k=1}^{j-1} l_{ik} \, u_{kj} \right]& 
+\end{align*}
+
+\begin{align*}
+&\text{Factorización de \textbf{Doolittle} ($l_{ii}=1$)}
+& u_{ij} = a_{ij} - \sum_{k=1}^{i-1} l_{ik} \, u_{kj}& \\
+&\text{Factorización de \textbf{Crout} ($u_{ii}=1$)}
+& l_{ij} = a_{ij} - \sum_{k=1}^{j-1} l_{ik} \, u_{kj} & 
+\end{align*}
+
+\section{Métodos Iterativos}
+Quiero llevar el SEAL a una forma iterativa ($\mathbf{x}=T\mathbf{x}+C$) para poder resolverla:
+\begin{align*}
+A\mathbf{x} = \mathbf{b} \\
+A = D - L - U \\
+(D - L - U) \mathbf{x} = \mathbf{b} 
+\end{align*}
+
+\begin{align*}
+\text{\textbf{\underline{Jacobi}:}} \\
+D&\mathbf{x} - (L + U)\mathbf{x} = \mathbf{b} \\
+D&\mathbf{x} = (L + U)\mathbf{x} + \mathbf{b} \\
+&\mathbf{x} = D^{-1}(L + U)\mathbf{x} + D^{-1}\mathbf{b} \\
+&\mathbf{x} = T\mathbf{x} + C \\
+\text{\textbf{\underline{Gauss-Seidel}:}} \\
+(D-L)&\mathbf{x} - U\mathbf{x} = \mathbf{b} \\
+(D-L)&\mathbf{x} = U\mathbf{x} + \mathbf{b} \\
+&\mathbf{x} = (D-L)^{-1}U\mathbf{x} + (D-L)^{-1}\mathbf{b} \\
+&\mathbf{x} = T\mathbf{x} + C \\
+\text{\textbf{\underline{SOR}:}} \\
+(D - wL) &\mathbf{x} = [(1-w)D + wU] \mathbf{x} + w \mathbf{b} \\
+&\mathbf{x} = (D - wL)^{-1}[(1-w)D + wU] \mathbf{x} + (D - wL)^{-1}w \mathbf{b} \\
+&\mathbf{x} = T\mathbf{x} + C 
+\end{align*}
+
+\paragraph{Nociones básicas de convergencia:}
+\begin{itemize}
+\item Si $||T||<1 \;\; \forall ||\cdot|| \Rightarrow$ convergen todos.
+\item Si $A$ es e.d.d $\Rightarrow$ converge Jacobi y Gauss-Seidel.
+\item Si $A$ es d.p \& $0<w<2 \Rightarrow$ SOR converge.
+\item $\rho (T) < 1 \iff T\mathbf{x} + C$ converge. 
+\end{itemize}
+
+\subsection{Jacobi}
+
+Despejamos $x_i$ del SEAL:
+\begin{align*}
+a_{11} \, x_1 + a_{12} \, x_2 + a_{13} \, x_3 &= b_1 &\Rightarrow &
+&& x_1 = \frac{1}{a_{11}} \left[b_1 - (a_{12} \, x_2 + a_{13}\,x_3)\right]\\
+a_{21} \, x_1 + a_{22} \, x_2 + a_{23} \, x_3 &= b_2 &\Rightarrow &
+&& x_2 = \frac{1}{a_{22}} \left[b_2 - (a_{21} \, x_1 + a_{23}\,x_3)\right]\\
+a_{31} \, x_1 + a_{32} \, x_2 + a_{33} \, x_3 &= b_3 &\Rightarrow &
+&& x_3 = \frac{1}{a_{33}} \left[b_3 - (a_{31} \, x_1 + a_{32}\,x_2)\right]\\
+\end{align*}
+\[x_i^{(k)} = \frac{1}{a_{ii}} \left(b_i - \sum_{\substack{j=1 \\\ i \neq j}}^{n} a_{ij} \, x_j^{(k-1)} \right) \]
+
+\subsection{Gauss-Seidel}
+\[x_i^{(k)} = \frac{1}{a_{ii}} \left(b_i - \sum_{j=1}^{i-1} a_{ij} \, x_j^{(k-1)} - \sum_{j=i+1}^{n} a_{ij} \, x_j^{(k-1)} \right) \]
+
+\subsection{SOR (Succesive Over-Relaxation)}
+\[x_i^{(k)} = (1-w)\, x_i^{(k-1)} + \frac{w}{a_{ii}} \left(b_i - \sum_{j=1}^{i-1} a_{ij} \, x_j^{(k-1)} - \sum_{j=i+1}^{n} a_{ij} \, x_j^{(k-1)} \right) \]
+
+\subsection{Gradiente Conjugado}
+Elige las direcciones de búsqueda ($\mathbf{v}^{(k)}$) durante el proceso iterativo de modo que los $\mathbf{r}^{(k)}$ sean mutuamente ortogonales.
+\begin{enumerate}
+\item Partimos de un $\mathbf{x}^{(0)}$ y usamos la \textbf{dirección de máximo descenso} $\mathbf{r}^{(0)} = \mathbf{b} - A \mathbf{x}^{0}$ como $\mathbf{v}^{(1)}$.
+\item Calculamos el paso de avance $t$ en la dirección $\mathbf{v}$ y la solución aproximada $\mathbf{x}^{(k)}$ (iniciamos con $k = 1$):
+\begin{align*}
+&t = \frac{<\mathbf{r}^{(k-1)}, \mathbf{r}^{(k-1)}>}{<\mathbf{v}^{(k)},A \mathbf{v}^{(k)}>}, 
+&\mathbf{x}^{(k)} = \mathbf{x}^{(k-1)}+t_{k}\mathbf{v}^{(k)}.&
+\end{align*}
+\item Si $\mathbf{x}^{(k)}$ es la solución de $A\mathbf{x}=\mathbf{b}$ terminamos. Sino calculamos: $\mathbf{r}^{(k)} = \mathbf{b} - t_k A \mathbf{v}^{(k)}$, actualizamos el vector de búsqueda: 
+\begin{align*}
+&\mathbf{v}^{(k+1)}=\mathbf{r}^{(k)}+s_k\mathbf{v}^{(k)},
+&s_k = \frac{<\mathbf{r}^{(k)}, \mathbf{r}^{(k)}>}{<\mathbf{r}^{(k-1)}, \mathbf{r}^{(k-1)}>},&
+\end{align*}
+y volvemos al paso \textit{2}.
+\end{enumerate}
+
+\end{document}
