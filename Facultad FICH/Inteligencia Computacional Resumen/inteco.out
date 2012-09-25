@@ -12,8 +12,9 @@
 \BOOKMARK [3][-]{subsubsection.1.5.2}{Objetivos}{subsection.1.5}
 \BOOKMARK [3][-]{subsubsection.1.5.3}{Limitaciones y uso no adecuado}{subsection.1.5}
 \BOOKMARK [2][-]{subsection.1.6}{Aplicaciones de las RNA}{section.1}
-\BOOKMARK [1][-]{section.2}{Perceptr\363n Simple}{}
+\BOOKMARK [1][-]{section.2}{Bases estad\355sticas de reconocimiento de patrones}{}
 \BOOKMARK [1][-]{section.3}{Perceptr\363n Multicapa}{}
+\BOOKMARK [2][-]{subsection.3.1}{T\351rmino de momento}{section.3}
 \BOOKMARK [1][-]{section.4}{Red neuronal de Base Radial}{}
 \BOOKMARK [2][-]{subsection.4.1}{Adaptaci\363n de las RBF:k-means}{section.4}
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Algoritmo de adaptaci\363n batch k-means:}{subsection.4.1}

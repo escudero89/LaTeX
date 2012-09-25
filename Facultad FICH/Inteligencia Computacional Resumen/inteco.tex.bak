@@ -30,7 +30,6 @@
 \author{Cristian Escudero}
 \title{Resumen\\Inteligencia Computacional}
 \begin{document}
-\maketitle
 
 \section*{Introducción (Unidad I)}
 \begin{quote}
@@ -53,6 +52,7 @@ Lógica proposicional: sintaxis, semántica e inferencia. Lógica de primer orde
 \end{quote}
 
 \pagebreak
+\maketitle
 
 \section{¿Por qué redes neuronales?}
 
@@ -143,7 +143,31 @@ Esto incluye problemas de clasificación y reconocimiento de patrones de voz, im
 
 También se pueden utilizar cuando no existen modelos matemáticos precisos o algoritmos con complejidad razonable.
 
-\section{Perceptrón Simple}
+\begin{wrapfigure}{r}{0.3\textwidth}
+  \label{fig:clasificador}
+  \caption{\textit{Clasificador estadístico}: representación gráfica.}
+  \centering
+  \hbox{\includegraphics[width=0.3\textwidth-\fboxrule-\fboxrule]{clasificador.png}}  
+\end{wrapfigure}	
+
+\section{Bases estadísticas de reconocimiento de patrones}
+
+\begin{description}
+\item \textbf{Patrón.} Objeto de interés que es identificable del resto.
+\item \textbf{Objetivo del RP:} Crear sistemas informáticos que imiten la percepción y razonamiento humano.
+\item \textbf{Paradigma de trabajo funcional:}
+\begin{enumerate}
+\item \textit{Adquisición y preproceso de datos:} vector numérico que representa al patrón natural.
+\item \textit{Extracción de características:} información \textit{relevante} para la clasificación. Dado un conjunto de patrones $n$-dimensionales, se busca un nuevo conjunto de representaciones $p$-dimensionales (con $p<n$). Tiene como propiedades deseables:
+\begin{multicols}{3}
+\subitem + Unicidad.
+\subitem + Precisión.
+\subitem + Continuidad.
+\end{multicols}
+\item \textit{Clasificación:} decisión sobre la clase.
+\end{enumerate}
+\item \textbf{Clasificador estadístico:} máquina formada por $c$ discriminantes: $g_i : E \rightarrow \mathbb{R}, \; 1 \leq i \leq c$, tal que dado un patrón $\mathbf{x} \in E$, se le asigna una clase $w_i$ si $g_i(\mathbf{x}) >g_j(\mathbf{x}) \forall j \neq i$.
+\end{description}
 
 \section{Perceptrón Multicapa}
 
@@ -170,6 +194,17 @@ La arquitectura del PM está basado en una red \textit{feed-fordward} o con cone
 Todas las neuronas de la red (excepto las de la entrada, en general) llevan asociado un \textit{umbral}. Además, cada neurona de una capa tiene conexiones con todas las de la capa anterior, aunque puede suceder que en ciertos casos no sea así, y que el peso de una conexión sea 0, es decir, que no exista.
 
 El entrenamiento de este tipo de redes, es decir, su aprendizaje, se realiza utilizando el \textbf{algoritmo de retropropagación}.
+
+\subsection{Término de momento}
+Si $\eta$ es chico, más chicos son los cambios en los pesos sinápticos, pero más lento es el aprendizaje. Si $\eta$ es grande, resulta en grandes cambios en los pesos sinápticos, pero puede provocar \textit{inestabilidad} (oscilaciones). Para solventar los problemas, agregamos una \textit{constante de momento}:
+\[\Delta w_{ji}(n)=\alpha \Delta w_{ji}(n-1)+\eta \delta_j(n)y_i(n).\]
+
+La inclusión del términomomento influye de la siguiente forma:
+
+\begin{itemize}
+\item Cuando $\partial \mathcal{E} (t) / \partial w_{ji}(t)$ tiene el mismo signo en sucesivas iteraciones: $\Delta w_{ji}(n)$ crece en magnitud y los $w_{ji}(n)$ se ajustan por un gran valor. El \textbf{momento} acelera la convergencia del método en direcciones largas de descenso.
+\item Si $\partial \mathcal{E} (t) / \partial w_{ji}(t)$ tiene diferente signo en sucesivas iteraciones: el $\Delta w_{ji}(n)$ disminuye en magnitud y los $w_{ji}(n)$ se ajustan por un pequeño valor. El \textbf{momento} tiene un efecto \textit{estabilizante} en regiones oscilantes y ayuda a evitar a que se quede en un mínimo local.
+\end{itemize}
 
 \section{Red neuronal de Base Radial}
 
@@ -226,6 +261,7 @@ w_{kj}(n+1) &= w_{kj}(n) -\eta \left(\sum_i w_{ki}(n) \phi_i(n) - d_k(n) \right)
 \end{align*}
 
 \subsection{Comparación entre las RBF y los MLP}
+
 \begin{itemize}
 \item Ambos son redes no-lineales de propagación hacia delante en capas.
 \item Ambos son aproximadores universales.
