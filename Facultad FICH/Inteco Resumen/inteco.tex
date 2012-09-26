@@ -26,6 +26,9 @@
 \usepackage{cancel}
 
 \usepackage{multicol}
+\setlength{\columnsep}{22pt}
+
+\usepackage{colortbl}
 
 \author{Cristian Escudero}
 \title{Resumen\\Inteligencia Computacional}
@@ -56,8 +59,10 @@ Lógica proposicional: sintaxis, semántica e inferencia. Lógica de primer orde
 
 \section{¿Por qué redes neuronales?}
 
+El cerebro humano tiene una serie de características deseables no presentes en los sistemas expertos. Se espera que dispositivos bioinspirados en las redes neuronales poseeran algunas de estas características.
+
 \subsection{Ventajas}
-Las \textbf{RNA} tienen muchas ventajas debido a que están basadas en la estructura del sistema nervioso, principalmente el cerebro.
+Las \textbf{RNA} tienen muchas ventajas por ser bio-inspirados.
 \begin{description}
 \item \textbf{Aprendizaje}: Las RNA tienen la habilidad de aprender mediante una etapa llamada \textit{etapa de aprendizaje}. Esta consiste en proporcionar a la RNA de datos como entrada a su vez que se le indica cuál es la salida (respuesta) esperada.
 \item \textbf{Auto-organización}: Una RNA crea su propia representación de la información en su interior, liberando al usuario de esto.
@@ -115,11 +120,11 @@ Normalmente categorizan la información de entrada, agrupando automáticamente p
 Es una técnica utilizada para evaluar los resultados de un análisis estadístico y garantizar que son independientes de la partición entre datos de entrenamiento y prueba. Consiste en repetir y calcular la media aritmética obtenida de las medidas de evaluación sobre diferentes particiones. Se utiliza en entornos donde el objetivo principal es la predicción y se quiere estimar cómo de preciso es un modelo que se llevará a cabo a la práctica.
 
 \subsubsection{Contexto}
-La validación cruzada proviene de la mejora del \textit{holdout method}:
+La validación cruzada proviene de la mejora del \textit{holdout method}.
 \begin{quote}
-Consiste en dividir en dos conjuntos complementarios los datos de muestra, realizar el análisis de un subconjunto (denominado \textbf{datos de entrenamiento}), y validar el análisis en el otro subconjunto (denominado \textbf{datos de prueba}), de forma que la función de aproximación sólo se ajusta con el conjunto de datos de entrenamiento y a partir de aquí calcula los valores de salida para el conjunto de datos de prueba (valores que no ha analizado antes).
+\textbf{Holdout Method:} Consiste en dividir en dos conjuntos complementarios los datos de muestra, realizar el análisis de un subconjunto (denominado \textbf{datos de entrenamiento}), y validar el análisis en el otro subconjunto (denominado \textbf{datos de prueba}), de forma que la función de aproximación sólo se ajusta con el conjunto de datos de entrenamiento y a partir de aquí calcula los valores de salida para el conjunto de datos de prueba (valores que no ha analizado antes).
 \end{quote}
-La ventaja de este método es que es muy rápido a la hora de computar. Sin embargo, no es demasiado preciso debido a la variación del resultados obtenidos para diferentes datos de entrenamiento. La evaluación puede depender en gran medida de cómo es la división entre datos de entrenamiento y de prueba, y por lo tanto puede ser significativamente diferente en función de cómo se realice esta división. Debido a estas carencias aparece el concepto de validación cruzada.
+La ventaja del método \textit{holdout} es que es muy rápido a la hora de computar. Sin embargo, no es demasiado preciso debido a la variación del resultados obtenidos para diferentes datos de entrenamiento. La evaluación puede depender en gran medida de cómo es la división entre datos de entrenamiento y de prueba, y por lo tanto puede ser significativamente diferente en función de cómo se realice esta división. Debido a estas carencias aparece el concepto de validación cruzada.
 
 \subsubsection{Objetivos}
 Suponemos que tenemos un modelo con uno o más parámetros de ajuste desconocidos y unos datos de entrenamiento que queremos analizar. El proceso de ajuste optimiza los parámetros del modelo para que éste se ajuste a los datos de entrenamiento tan bien como pueda. Si cogemos una muestra independiente como dato de prueba (\textit{validación}), del mismo grupo que los datos de entrenamiento, normalmente el modelo no se ajustará a los datos de prueba igual de bien que a los datos de entrenamiento. Esto se denomina \textbf{sobreajuste} y acostumbra a pasar cuando el tamaño de los datos de entrenamiento es pequeño o cuando el número de parámetros del modelo es grande. La validación cruzada es una manera de predecir el ajuste de un modelo a un hipotético conjunto de datos de prueba cuando no disponemos del conjunto explícito de datos de prueba.
@@ -131,7 +136,7 @@ Otro ejemplo, supongamos que se desarrolla un modelo para predecir el riesgo de 
 
 Si se lleva a cabo correctamente, y si el conjunto de validación y de conjunto de entrenamiento son de la misma población, la validación cruzada es casi imparcial. Sin embargo, hay muchas maneras en que la validación cruzada puede ser mal utilizada. Si se abusa y posteriormente se lleva a cabo un estudio real de validación, es probable que los errores de predicción en la validación real sean mucho peores de lo esperado sobre la base de los resultados de la validación cruzada.
 
-Estas son algunas formas en que la validación cruzada puede ser mal utilizada:
+Estas son algunas formas en que la validación cruzada puede ser \textbf{mal utilizada}:
 \begin{itemize}
 \item Mediante el uso de la validación cruzada para evaluar varios modelos, y sólo indicando los resultados para el modelo con los mejores resultados.
 \item Al realizar un análisis inicial para identificar las características más informativas utilizando el conjunto de datos completo, si la selección de característica o el ajuste del modelo lo requiere por el propio procedimiento de modelado, esto debe repetirse en cada conjunto de entrenamiento. Si se utiliza la validación cruzada para decidir qué características se van a utilizar, se deberá realizar un proceso interno de validación cruzada para llevar a cabo la selección de características en cada conjunto de entrenamiento.
@@ -166,14 +171,18 @@ También se pueden utilizar cuando no existen modelos matemáticos precisos o al
 \end{multicols}
 \item \textit{Clasificación:} decisión sobre la clase.
 \end{enumerate}
-\item \textbf{Clasificador estadístico:} máquina formada por $c$ discriminantes: $g_i : E \rightarrow \mathbb{R}, \; 1 \leq i \leq c$, tal que dado un patrón $\mathbf{x} \in E$, se le asigna una clase $w_i$ si $g_i(\mathbf{x}) >g_j(\mathbf{x}) \forall j \neq i$.
+\item \textbf{Clasificador estadístico:} máquina formada por $c$ funciones discriminantes: $g_i : E \rightarrow \mathbb{R}, \; 1 \leq i \leq c$, tal que dado un patrón $\mathbf{x} \in E$, se le asigna una clase $w_i$ si $g_i(\mathbf{x}) >g_j(\mathbf{x}) \forall j \neq i$.
+\item \textbf{Regla de clasificación de Bayes:} asignar a $\mathbf{x}$ la clase con mayor probabilidad a posteriori.
+\[ w = \text{arg máx}_{w_i:1\leq i \leq c} \; P(w_i|\mathbf{x}).\]
+\item \textbf{Clasificador de Bayes:} utilizada las \textbf{probabilidades a posteriori} como funciones discriminantes. Es de mínimo error basado en FD monótonas crecientes f(·).
+\[g_i(\mathbf{x}) = P(w_i|\mathbf{x}) = \frac{P(\mathbf{x}|w_i)P(w_i)}{P(\mathbf{x)}}.\]
 \end{description}
 
 \section{Perceptrón Multicapa}
 
 La arquitectura del \textbf{Perceptrón Multicapa} (o PM) surge por corregir las limitaciones que las redes iniciales, \textit{Adaline} y \textit{Perceptrón} tenían, sobre todo en cuanto a separabilidad de funciones no lineales.
 
-\begin{wrapfigure}{r}{0.65\textwidth}
+\begin{wrapfigure}[17]{r}{0.65\textwidth}
   \label{fig:layers}
   \caption{Interpretación geométrica del rol de las neuronas ocultas en un espacio de dos entradas.}
   \centering
@@ -195,6 +204,10 @@ Todas las neuronas de la red (excepto las de la entrada, en general) llevan asoc
 
 El entrenamiento de este tipo de redes, es decir, su aprendizaje, se realiza utilizando el \textbf{algoritmo de retropropagación}.
 
+\begin{quote}
+\textbf{Aplicaciones:} Clasificación de patrones, \textit{clustering}, aproximación de funciones, predicción/pronóstico, control de sistemas.
+\end{quote}
+
 \subsection{Término de momento}
 Si $\eta$ es chico, más pequeños son los cambios en los pesos sinápticos, pero más lento es el aprendizaje. Si $\eta$ es grande, resulta en grandes cambios en los pesos sinápticos, pero puede provocar \textit{inestabilidad} (oscilaciones). Para solventar los problemas, agregamos una \textit{constante de momento}:
 \[\Delta w_{ji}(n)=\alpha \Delta w_{ji}(n-1)+\eta \delta_j(n)y_i(n).\]
@@ -207,22 +220,27 @@ La inclusión del término momento influye de la siguiente forma:
 
 \section{Red neuronal de Base Radial}
 
-Modelo matemático:
-\begin{align*}
-&y_k (\mathbf{x}_l) = \sum_{j=1}^M w_{kj} \phi_j (\mathbf{x}_l), 
-&&\text{con} \quad \phi_j (\mathbf{x}_l) = e^{-\frac{-||\mathbf{x}_l - \mathbf{\mu}_j||^2}{2 \sigma_j^2}}
-\end{align*}
-dónde $\mathbf{x}$ es el vector de entrada, $\mathbf{\mu}$ es el centroide, y $\sigma$ el factor suavizante o ancho.
+Básicamente, en la \textbf{primera capa} (\textit{no-supervisada}) selecciona las regiones interesantes, y con la \textbf{segunda capa} (\textit{supervisada}) les asigna alguna clase a esas regiones. La ventaja es que la arquitectura es bastante sencilla, pero sólo sirve para ciertos casos.
 
-\textit{Nota:} Los valores de $\sigma$ son encontrados una vez que ha terminado el \textit{clustering}. Como suelen ser medidos en base al \textit{spread} de cada nodo, normalmente se calculan como la distancia promedio de los patrones con cada centroide:
-\[\sigma_j^2 = \frac{1}{M_j} \sum ||\mathbf{x} - \mathbf{w}_j||^2\]
+La función de activación en la primera capa es una \textit{gaussiana}: da una activación grande cuando el patrón $\mathbf{x}_l$ se encuentra en cierto rango. La segunda capa toma todas las salidas de la primera capa y las pondera.
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}[15]{l}{0.5\textwidth}
   \label{fig:radial}
   \caption{Arquitectura de una red neuronal de Base Radial.}
   \centering
   \hbox{\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{radial.png}}  
 \end{wrapfigure}	
+
+\underline{Modelo matemático:}
+\begin{align*}
+&y_k (\mathbf{x}_l) = \sum_{j=1}^M w_{kj} \phi_j (\mathbf{x}_l), 
+\\ &\text{con} \quad \phi_j (\mathbf{x}_l) = \text{exp}\left({-\frac{-||\mathbf{x}_l - \mathbf{\mu}_j||^2}{2 \sigma_j^2}}\right)
+\end{align*}
+
+dónde $\mathbf{x}$ es el vector de entrada, $\mathbf{\mu}$ es el centroide, y $\sigma$ el factor suavizante o ancho.
+
+\textit{Nota:} Los valores de $\sigma$ son encontrados una vez que ha terminado el \textit{clustering}. Como suelen ser medidos en base al \textit{spread} de cada nodo, normalmente se calculan como la distancia promedio de los patrones con cada centroide:
+\[\sigma_j^2 = \frac{1}{M_j} \sum ||\mathbf{x} - \mathbf{w}_j||^2.\]
 
 \subsection{Adaptación de las RBF:\textit{k-means}}
 Es un método NO supervisado, cuyo objetivos son:
@@ -243,6 +261,8 @@ Es un método NO supervisado, cuyo objetivos son:
 \item Volver a 2 hasta que no se realicen reasignaciones.
 \end{enumerate}
 
+El \textit{algoritmo de clustering} trata de agrupar todos los valores de acuerdo a alguna medida de próximidad.
+
 \subsubsection{Métodos de entrenamiento de pesos:}
 \paragraph{Pseudo-inversa del vector $\phi(\mathbf{x}_l)$:} La solucion viene dada por la expresión: $W = G^{+} S$ (con $^+$ representando la pseudo-inversa, dada por $G^+=(G^T G)^{-1}G^T$), dónde $W$ es la matriz de orden $(n+1)\cdot r$ que posee los $n$ pesos y los umbrales en la última fila. La matriz G posee todas las funciones de activación para cada uno de los patrones de entrada, es de orden $(n+1)\cdot N$, siendo $g_{in} = \phi_i(n)$ y $\phi_i$ la función de activación de la neurona oculta $i$ para el patron de entrada $X(n)$. $S$ es la matriz de salidas deseadas de la red, de orden $N\cdot r$.
 
@@ -260,42 +280,59 @@ w_{kj}(n+1) &= w_{kj}(n) -\eta \left(\sum_i w_{ki}(n) \phi_i(n) - d_k(n) \right)
 \end{align*}
 
 \subsection{Comparación entre las RBF y los MLP}
+Para más diferencias, ver \textbf{Tabla \ref{tab:comparativo}}.
 
+\begin{multicols}{2}
 \begin{itemize}
 \item Ambos son redes no-lineales de propagación hacia delante en capas.
 \item Ambos son aproximadores universales.
 \item Ambos pueden resolver el mismo tipo de problema.
-\item Un RBF tiene sólo una capa oculta, mientras que el MLP puede tener una o más.
 \item Las neuronas en las capas ocultas sirven a propósitos distintos en cada tipo de red.
-\item En un RBF, la capa oculta es no lineal, mientras que la capa de salida es linear. En un MLP usado como clasificador de patrones, todas las capas son no lineales.
-\item RBF usa la norma euclídea como argumento de la función de activación, mientras que el MLP usa el producto punto.
+\item RBF usa la \textbf{norma euclídea} como argumento de la función de activación, mientras que el MLP usa el \textbf{producto punto}.
 \item El RBF tiene representaciones locales sumadas, el MLP tiene representaciones distribuídas combinadas.
 \item El RBF converge de forma más simple (\textit{lineal}), tiene un entrenamiento más rápido, arquitectura más simple, y una combinación de diferentes paradigmas de aprendizaje.
 \end{itemize}
+\end{multicols}
 
-\section{Red de Hopfield}
+\section{Procesamiento temporal usando \textit{feedforward networks}}
 
-La red de \textit{Hopfield} consiste en un grupo de neuronas y su correspondiente conjunto de unidades de retraso, formando un \textit{multiple-loop feedback system}. El número de búcles de retropropagación es igual al número de neuronas. Básicamente, la salida de cada neurona es retroalimentada, con un cierto desfasaje de una unidad, al resto de las neuronas de la red.
+El \textit{tiempo} constituye un ingrediente esencial en el proceso de aprendizaje. Puede ser \textit{continuo} o \textit{discreto} (el que usamos normalmente). Es a través de la incorporación del tiempo dentro de la operación de una red neuronal que se es posible seguir variaciones estadísticas en procesos \textbf{no estacionarios} tales como señales \textit{de voz, de radar, fluctuaciones de mercado}, étc.
 
-\subsection{Características}
+Para ello, tomamos una red "\textit{estática}" (el MLP por ejemplo), y le imbuímos propiedades dinámicas: le otorgamos \textbf{memoria}.
 
-Este tipo de red se \textbf{engloba} dentro de las redes totalmente recurrentes y se caracteriza porque cada una de las neuronas de la red tiene conexión con todas las demás.
+La \textit{memoria} puede ser dividida en "\textit{corto-plazo}" y "\textit{largo-plazo}", dependiendo del tiempo de retención. La segunda se utiliza cuando tenemos un aprendizaje supervisado, y todos los datos a mano. Si la tarea cambia con el tiempo, debemos utilizar memoria a corto-plazo. Una simple manera de lograr esto es a través del uso de \textit{time-delays} (los $z^{-1}$), que pueden ser implementados a nivel sináptico dentro de la red (o en la capa de entrada).
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+El uso de \textit{time-delays} está neurobiológicamente motivado, ya que es bien sabido que existen desfasajes en el cerebro, y que estos juegan un papel fundamental en el procesamiento de la información.
+
+
+\subsection{Red de Hopfield}
+
+\begin{wrapfigure}[14]{l}{0.45\textwidth}
   \label{fig:hopfield}
   \caption{Arquitectura de una red de Hopfield.}
   \centering
-  \hbox{\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{hopfield.png}}  
+  \hbox{\includegraphics[width=0.45\textwidth-\fboxrule-\fboxrule]{hopfield.png}}  
 \end{wrapfigure}	
+
+La red de \textit{Hopfield} consiste en un grupo de neuronas y su correspondiente conjunto de unidades de retraso, formando un \textit{multiple-loop feedback system}. El número de búcles de retropropagación es igual al número de neuronas. Básicamente, la salida de cada neurona es retroalimentada, con un cierto desfasaje de una unidad, al resto de las neuronas de la red.
+
+\subsubsection{Características}
+
+Este tipo de red se \textbf{engloba} dentro de las redes totalmente recurrentes y se caracteriza porque cada una de las neuronas de la red tiene conexión con todas las demás.
 
 El funcionamiento de la red es el de una \textbf{memoria asociativa}, permitiendo el almacenamiento y recuperación de patrones incluso cuando estos están incompletos. Los patrones que procesa son estáticos, aunque su procesamiento es temporal, es decir, la red requiere de un cierto tiempo de evolución hasta ofrecer la salida.
 
 La filosofía de la red \textit{Hopfield} es diferente al de resto de redes. Su arquitectura carece de entradas o salidas en forma de neuronas. En el caso de estas redes, se habla del estado de la red. Es decir, se inicializan las neuronas a un cierto valor y la red evoluciona hacia un estado estable, que corresponderá con la salida asociada a la entrada.
 
-Este tipo de arquitectura se utiliza mucho para optimización y reconstrucción de patrones a partir de datos incompletos.
+\begin{quote}
+\textbf{Aplicaciones:} Este tipo de arquitectura se utiliza mucho para optimización y reconstrucción de patrones a partir de datos incompletos (\textit{memoria accedida por contenido}).
+\end{quote}
 
-\subsection{Fases de Operación}
-\subsubsection{Fase de Almacenamiento}
+\subsubsection{Fases de Operación}
+
+\begin{multicols}{2}
+
+\paragraph{1) Fase de Almacenamiento}
 Se determinan los valores que tendrán los pesos para almacenar un conjunto de patrones.
 \begin{enumerate}
 \item Conjunto de patrones que se desea almacenar: \{$\mathbf{x}(k)=(x_1(k), x_2(k), ..., x_n(k)$\}$_{k=1,...,p}$.
@@ -303,7 +340,7 @@ Se determinan los valores que tendrán los pesos para almacenar un conjunto de p
 \[w_{ji}=\frac{1}{N}\sum_{k=1}^p x_{j}(k) x_{i}(k)\]
 \end{enumerate}
 
-\subsubsection{Fase de Recuperación}
+\paragraph{2) Fase de Recuperación}
 Mecanismo para recuperar la información almacenada a partir de
 información incompleta.
 \begin{enumerate}
@@ -313,7 +350,10 @@ información incompleta.
 \item Volver a 2 hasta no observar cambios en $y_{j^*}$.
 \end{enumerate}
 
-\subsection{Generalidades}
+\end{multicols}
+
+
+\subsubsection{Generalidades}
 \begin{multicols}{2}
 \begin{itemize}
 \item Cada neurona tiene un disparo probabilístico.
@@ -322,7 +362,7 @@ información incompleta.
 \item Puede utilizarse como memoria asociativa.
 \item Cada patron es un "valle" de energía.
 \item Se busca el valle iterativamente a partir de ciertas condiciones iniciales.
-\item El proceso de \textbf{entrenamiento} es NO iterativo.
+\item El proceso de \textbf{entrenamiento} es NO iterativo (lo hace una sóla vez).
 \item El proceso de \textbf{recuperación} si ES iterativo (dinámico).
 \item La capacidad de almacenamiento con un 1\% de error está limitada a: 
 \[p_{max} = \frac{N}{2 ln(N)}.\]
@@ -340,7 +380,7 @@ Las redes \textbf{Elman} y \textbf{Jordan} son redes parcialmente recurrentes, e
   \hbox{\includegraphics[width=0.45\textwidth-\fboxrule-\fboxrule]{elman_jordan.png}}  
 \end{wrapfigure}	
 
-Tanto en la red \textbf{Elman} como en la \textbf{Jordan}, la arquitectura básica de la red es básicamente una red \textit{feed-fordward}, y, en concreto, un PM, dado que las activaciones de todas las neuronas son saturantes. Sin embargo, de todas las entradas de las que se dispone en la capa de entrada algunas son utilizadas para recoger la información de la que disponían otras neuronas en el instante anterior. Estas neuronas se denominan \textbf{entradas de contexto}, dado que hacer referencia al estado anterior de la red.
+Tanto en la red \textbf{Elman} como en la \textbf{Jordan}, la arquitectura básica de la red es básicamente una red \textit{feed-fordward}, y, en concreto, un MLP, dado que las activaciones de todas las neuronas son saturantes. Sin embargo, de todas las entradas de las que se dispone en la capa de entrada algunas son utilizadas para recoger la información de la que disponían otras neuronas en el instante anterior. Estas neuronas se denominan \textbf{entradas de contexto}, dado que hacer referencia al estado anterior de la red.
 
 La diferencia principal entre los dos tipos de arquitectura está en la información que se transmite a las entradas de contexto. En las redes \textbf{Elman}, se realimentan las salidas de las neuronas de la última capa oculta, de modo que, en cierto sentido, la red dispone de información acerca de la entrada del instante anterior.
 
@@ -354,21 +394,25 @@ Las \textbf{redes competitivas} son muy utilizadas en la resolución de problema
 
 En general, no suelen tener arquitecturas muy complejas, y en muchas ocasiones constan únicamente de dos capas: la \textbf{capa de entrada} y la llamada \textbf{capa de competición}, que todas ellas disponen.
 
-En las \textit{capas de competición} las neuronas se conectan entre ellas en lo que se llama "\textit{modelo de interacción lateral}". Es decir, cada neurona de la capa competitiva se conecta con el resto, pero de diferente manera. Si la neurona se activa, intentará potenciar la activación de las neuronas de alrededor, incluyéndose a sí misma, y generará señales de deshabilitación a las neuronas que quedan lejos. El resultado del proceso es que sólo una neurona de entre todas queda activa, con su valor máximo. Es por ello por lo que se denomina a esta capa \textbf{competitiva}: las neuronas compiten entre ellas por la activación, y aquella que disponga de una señal más alta, porque sus pesos sean mayores, será la ganadora.
+En las \textit{capas de competición} las neuronas se conectan entre ellas en lo que se llama "\textit{modelo de interacción lateral}". Es decir, cada neurona de la capa competitiva se conecta con el resto, pero de diferente manera. Si la neurona se activa, intentará potenciar la activación de las neuronas de alrededor, incluyéndose a sí misma, y generará señales de deshabilitación a las neuronas que quedan lejos. El resultado del proceso es que sólo una neurona de entre todas queda activa, con su valor máximo. Es por ello por lo que se denomina a esta capa \textbf{competitiva}: las neuronas compiten entre ellas por la activación, y aquella que disponga de una señal más alta, porque sus pesos sean mayores, será la ganadora (\textit{winner takes all}).
 
 \subsection{Mapas Auto-Organizativos (SOM)}
 
-Este tipo de red está basada en el aprendizaje \textit{competitivo}; las neuronas de salida de la red compiten entre ellas para ver cual será activada, dando como resultado que una sóla neurona, o neurona por grupo, es activada a la vez (\textit{winner takes all}).
+Los SOM presentan la propiedad de \textit{preservación topológica}: El cerebro humano está organizado en varios lugares de modo tal que diferentes entradas sensoriales (\textit{táctil, visual, acústica}) son mapeadas en diferentes áreas de la corteza cerebral ordenadas topológicamente.
 
-Los SOM, además, como su nombre indica, se organizan sólos, es decir, como parte del aprendizaje, al activarse una neurona correspondiente a un ejemplo, la neurona evoluciona en el espacio, moviéndose hacia el punto del hiperespacio de entrada en el que está el ejemplo.
+Los SOM, como su nombre indica, se organizan sólos, es decir, como parte del aprendizaje, al activarse una neurona correspondiente a un ejemplo, la neurona evoluciona en el espacio, moviéndose hacia el punto del hiperespacio de entrada en el que está el ejemplo.
 
 Este movimiento, sin embargo, no sólo afecta a la neurona activa, sino a las de su vecindario, es decir, las neuronas de alrededor, que son desplazadas ligeramente con esta, como si de una malla se tratara.
 
 De este modo, las neuronas se irán desplazando por el espacio de entrada, hasta quedar agrupadas formando una malla en aquellas zonas del espacio de entrada a las que correspondan las entradas introducidas.
 
-Por lo tanto, estos mapas nos permiten detectar relaciones entre los ejemplos y características comunes. También se utilizan para compresión y optimización de datos.
+\begin{quote}
+\textbf{Aplicaciones:} Los SOM nos permiten detectar relaciones entre los ejemplos y características comunes. También se utilizan para compresión y optimización de datos.
+\end{quote}
 
 \subsubsection{Fases del proceso adaptativo (\textit{Haykin}, p452)}
+
+\begin{multicols}{2}
 \paragraph{Ordenamiento.} Ocurre el ordenamiento topológico de los pesos. Dura cerca de 1000 iteraciones, y a veces más.
 \begin{itemize}
 \item La $\eta$ debe comenzar con un valor cercano a 0.1; y luego decrecer gradualmente, pero permanecer por arriba de 0.01.
@@ -380,6 +424,42 @@ Por lo tanto, estos mapas nos permiten detectar relaciones entre los ejemplos y 
 \item La $\eta$ debe mantenerse a un pequeño valor, del orden de 0.01. No debe reducirse nunca a cero, porque puede llevar a un estado \textit{metaestable}.
 \item La función vecindad $h_{j,i}(n)$ debería incluir sólo las neuronas más cercanas, e incluso solamente a la neurona ganadora $i$.
 \end{itemize}
+\end{multicols}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{  p{2cm} | p{4cm} | p{4cm} | p{4cm}  }
+\hline 
+\begin{center} \textbf{Tipo} \end{center} & 
+\begin{center} \textbf{MLP} \end{center} & 
+\begin{center} \textbf{RBFN} \end{center}& 
+\begin{center} \textbf{SOM} \end{center} \\
+\rowcolor[gray]{.95} 
+\textit{Regla de Aprendizaje}&
+Corrección de Error &
+Corrección de Error \textit{y} Competitivo &
+Competitivo \\ 
+\textit{Arquitectura}&
+Tiene $p$ capas ocultas &
+Una capa oculta &
+Neuronas dispuestas en una malla \\ \rowcolor[gray]{.95} 
+\textit{Función de activación} &
+No lineales &
+No lineal y lineal (\textit{gaussiana}) &
+No lineales y distancia dependientes \\ 
+\textit{Salida} &
+Depende de la activación de todas las neuronas &
+Depende de la activación de las neuronas cercanas al patrón de entrada &
+Depende de la activación de las neuronas cercanas al patrón de entrada en el mapa topológico \\ \rowcolor[gray]{.95} 
+\textit{Clasificación de regiones} &
+Separadas por curvas (\textit{sigmoidea}) ó polígonos (\textit{signo}) &
+Por clústeres &
+No clasifica regiones, las ordena por ubicación espacial 
+\\ \hline
+\end{tabular}
+\caption{Tabla comparativa entre perceptrones multicapa, redes de funciones de base radial, y mapas auto-organizativos.}
+\label{tab:comparativo}
+\end{table}
 
 \section{Lógica}
 Las \textbf{lógicas} son \textbf{lenguajes formales} para representar información y o conocimiento de una forma que sea \textbf{tratable por computadoras}.
@@ -411,6 +491,8 @@ Cada inferencia es la aplicación de \textit{Modus Ponens}:
 
 \subsubsection{Componentes:}
 \begin{description}
+\item \textbf{Máquina de Inferencia (MI):} es el sistema experto de por sí.
+\item \textbf{Base de Conocimiento (BC):} representa el estado del conocimiento del sistema, y está formado por el MT y el MP.
 \item \textbf{Memoria de Trabajo (MT):} Contiene un conjunto de literales positivas que no contienen variables (ej: \textit{perro tiene pelo}).
 \item \textbf{Memoria de Producciones (MP):} está constituidas por reglas del tipo:
 \begin{verbatim}
