@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.13)  25 SEP 2012 22:35
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.13)  25 SEP 2012 23:45
 entering extended mode
  %&-line parsing enabled.
 **inteco.tex
@@ -725,7 +725,7 @@ Underfull \hbox (badness 6542) in paragraph at lines 153--153
 []\OT1/cmr/bx/n/9 Figure 1: |\OT1/cmr/m/it/9 Clasi-fi-cador es-
  []
 
-<clasificador.png, id=175, 531.9875pt x 274.02374pt>
+<clasificador.png, id=179, 531.9875pt x 274.02374pt>
 File: clasificador.png Graphic file (type png)
  <use clasificador.png>
 
@@ -788,7 +788,7 @@ Package wrapfig Warning: Stationary wrapfigure forced to float on input line 18
 Package wrapfig Warning: Collision between wrapping environments on input line 
 185.
 
-<layers.png, id=176, 1505.625pt x 800.9925pt>
+<layers.png, id=180, 1505.625pt x 800.9925pt>
 File: layers.png Graphic file (type png)
  <use layers.png>
 
@@ -816,14 +816,14 @@ s, \OT1/cmr/m/it/10 clus-ter-ing\OT1/cmr/m/n/10 , aprox-i-maci^^Son de fun-cion
 es, predicci^^Son/pron^^Sostico,
  []
 
-<radial.png, id=190, 660.4675pt x 541.02126pt>
+<radial.png, id=194, 660.4675pt x 541.02126pt>
 File: radial.png Graphic file (type png)
  <use radial.png> [6 <./layers.png (PNG copy)>] [7 <./radial.png (PNG copy)>]
 Underfull \hbox (badness 5802) in paragraph at lines 292--293
 []\OT1/cmr/m/n/10 El RBF tiene rep-re-senta-ciones lo-cales
  []
 
-<hopfield.png, id=210, 366.168pt x 281.05pt>
+<hopfield.png, id=214, 366.168pt x 281.05pt>
 File: hopfield.png Graphic file (type png)
  <use hopfield.png> [8]
 Overfull \hbox (4.1895pt too wide) in paragraph at lines 338--339
@@ -834,7 +834,7 @@ t/10 k\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; :::; x[]\OT1/cmr/m/n/10 (\OML/cmm/m/i
 t/10 k\OT1/cmr/m/n/10 )$\OMS/cmsy/m/n/10 g$[]$\OT1/cmr/m/n/10 . 
  []
 
-<elman_jordan.png, id=218, 581.17125pt x 895.345pt>
+<elman_jordan.png, id=222, 581.17125pt x 895.345pt>
 File: elman_jordan.png Graphic file (type png)
  <use elman_jordan.png>
 [9 <./hopfield.png>] [10 <./elman_jordan.png>]
@@ -878,19 +878,19 @@ Underfull \hbox (badness 2932) in paragraph at lines 455--455
 os
  []
 
-[11] <encadenamiento.png, id=244, 828.09375pt x 439.6425pt>
+[11] <encadenamiento.png, id=248, 828.09375pt x 439.6425pt>
 File: encadenamiento.png Graphic file (type png)
 
 <use encadenamiento.png> [12 <./encadenamiento.png (PNG copy)>] [13]
 (./inteco.aux) ) 
 Here is how much of TeX's memory you used:
- 8735 strings out of 495061
- 123718 string characters out of 1182621
+ 8737 strings out of 495061
+ 123748 string characters out of 1182621
  221707 words of memory out of 3000000
- 11683 multiletter control sequences out of 15000+50000
+ 11684 multiletter control sequences out of 15000+50000
  14665 words of font info for 55 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,12n,38p,890b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,12n,38p,890b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10
 .pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
 share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-
@@ -910,9 +910,9 @@ e/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/typ
 e1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
 sfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symb
 ols/msbm10.pfb>
-Output written on inteco.pdf (13 pages, 1189573 bytes).
+Output written on inteco.pdf (13 pages, 1190142 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 79 named destinations out of 1000 (max. 500000)
- 311 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
+ 319 words of extra memory for PDF output out of 10000 (max. 10000000)
 

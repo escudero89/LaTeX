@@ -467,6 +467,9 @@ Las \textbf{lógicas} son \textbf{lenguajes formales} para representar informaci
 \item \textbf{Sintaxis:} define cómo deben ser las oraciones en el lenguaje.
 \item \textbf{Semántica:} define el significado de las oraciones (por ejemplo: define la veracidad de una oración)
 \end{description}
+
+\subsection{Lógica Proposicional}
+
 La validez de los hechos o proposiciones puede probarse mediante \textbf{tablas de verdad} o a través de \textbf{Reglas de Inferencia}, las cuales se basan en la propiedad de \textbf{monotonicidad}.
 
 \paragraph{Deducción o Inferencia.}
@@ -477,12 +480,14 @@ Supongamos que una \textbf{Base de Conocimiento (BC)} justifica un conjunto de a
 \[\text{Si }BC1 \: \models a \Rightarrow (BC1 \wedge BC2)\: \models a\]
 \end{quote}
 
+El problema de la \textbf{lógica proposicional} es que se requiere de un gran número de proposiciones para expresar problemas. De allí que aparece la \textbf{Lógica de predicados de 1er orden}.
+
 \subsection{Sistemas de producción con encadenamiento hacia adelante}
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{wrapfigure}[10]{r}{0.35\textwidth}
   \label{fig:encadenamiento}
   \caption{Componentes de un Sistema de producción con encadenamiento hacia delante. M.I: \textit{Máquina de inferencia}; M.P: \textit{Memoria de producción}; M.T: \textit{Memoria de trabajo}.}
   \centering
-  \hbox{\includegraphics[width=0.4\textwidth-\fboxrule-\fboxrule]{encadenamiento.png}}  
+  \hbox{\includegraphics[width=0.35\textwidth-\fboxrule-\fboxrule]{encadenamiento.png}}  
 \end{wrapfigure}
 Se comienza desde las sentencias atómicas (hechos) de la memoria de trabajo y se infiere añadiendo las sentencias atómicas nuevas hasta que no se puedan realizar más inferencias o hasta que el objetivo haya sido agregado.
 
