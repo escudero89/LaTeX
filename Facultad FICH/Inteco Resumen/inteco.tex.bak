@@ -208,6 +208,8 @@ El entrenamiento de este tipo de redes, es decir, su aprendizaje, se realiza uti
 \textbf{Aplicaciones:} Clasificación de patrones, \textit{clustering}, aproximación de funciones, predicción/pronóstico, control de sistemas.
 \end{quote}
 
+\textit{Observación:} Para la mayoría de los problemas, una sola capa es suficiente. Dos capas ocultas son requeridas para modelar información con discontinuidades. Usar dos capas ocultas raramente mejora el modelo, y puede introducir riesgos de convergencia en mínimos locales. No hay razones teóricas para usar más de dos capas ocultas.
+
 \subsection{Término de momento}
 Si $\eta$ es chico, más pequeños son los cambios en los pesos sinápticos, pero más lento es el aprendizaje. Si $\eta$ es grande, resulta en grandes cambios en los pesos sinápticos, pero puede provocar \textit{inestabilidad} (oscilaciones). Para solventar los problemas, agregamos una \textit{constante de momento}:
 \[\Delta w_{ji}(n)=\alpha \Delta w_{ji}(n-1)+\eta \delta_j(n)y_i(n).\]
@@ -425,6 +427,26 @@ De este modo, las neuronas se irán desplazando por el espacio de entrada, hasta
 \item La función vecindad $h_{j,i}(n)$ debería incluir sólo las neuronas más cercanas, e incluso solamente a la neurona ganadora $i$.
 \end{itemize}
 \end{multicols}
+
+\subsection{Learning Vector Quantifization (LVQ)}
+El SOM es una técnica de \textit{clustering}, que puede ser usada para proveer información sobre la naturaleza de los datos. Podemos transformar esta red sin supervisión en una LVQNN supervisada. Esta arquitectura será como el SOM, pero sin la estrúctura topológica. Cada neurona de salida va representar entonces una categoría conocida.
+
+El LVQ se puede ver como un SOM lineal (mide distancias), sin entorno (sólo se activa la neurona ganadora) y de aprendizaje supervisado.
+
+\subsubsection{Algoritmo de aprendizaje básico}
+\begin{itemize}
+\item Tomamos $\mathbf{m}_i$ vectores prototipo. Puede haber uno o más vectores prototipo por clase, usualmente se usa más de uno.
+\item Sea $c = \text{arg min}(||\mathbf{x} - \mathbf{m}_i||)$ la distancia definida entre el vector de entrada $\mathbf{x}$ y el más cercano $\mathbf{m}_i$, denotado por $\mathbf{m}_c$. Cuando clasificamos, $\mathbf{x}$ es usualmente tomado para que pertenezca a la clase más cercana a su vector prototipo, pero el $\mathbf{m}_c$ también es usado en la fase de aprendizaje.
+\item Ahora el aprendizaje procede de la siguiente manera (modificando sólo el $\mathbf{m}_c(t)$ más cercano a la entrada $\mathbf{x}(t)$ en la iteración $t$):
+\begin{align*}
+\mathbf{m}_c(t+1) = \mathbf{m}_c(t) + \alpha(t)[\mathbf{x}(t) - \mathbf{m}_c(t)], \text{si $\mathbf{x}$ y $\mathbf{m}_c$ pertencen a la misma clase} \\
+\mathbf{m}_c(t+1) = \mathbf{m}_c(t) - \alpha(t)[\mathbf{x}(t) - \mathbf{m}_c(t)], \text{si $\mathbf{x}$ y $\mathbf{m}_c$ pertencen a distintas clases} 
+\end{align*}
+\item El $0<\alpha(t)<1$ es el \textit{coeficiente de aprendizaje}. Puede ser una constante o decrecer con el tiempo. Por ejemplo, en el LVQ1 se toma un $\alpha$ incialmente menor a 0.1 y decrece linealmente con el tiempo. El hecho de que sea  $<1$ hace que la importancia relativa de los primeros patrones sea \textbf{menor} que la de los últimos: es por ello que lo hacemos decrecer en el tiempo para que afecte por igual a todos los patrones.
+\item Para conseguir un $\alpha_c$ óptimo para cada centroide, se debe cumplir que:
+\[\alpha_c (n) = [1 - s(n)\: \alpha_c(n)] \; \alpha_c(n-1)\]
+\item La iteración se detiene generalmente cuando ha pasado un número máximo de iteraciones, cuando $\alpha$ alcanza un valor mínimo, ó cuando la tasa mínima de error de entrenamiento es alcanzada.
+\end{itemize}
 
 \begin{table}[h]
 \centering
