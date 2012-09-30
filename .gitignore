@@ -1,0 +1,21 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# IDE's stuff
+*.layout
+
+# Latex Stuff
+*.log
+*.aux
+*.out
+*.gz
