@@ -23,6 +23,8 @@
 \usepackage{graphicx}
 \restylefloat{figure}
 
+\usepackage{multicol}
+
 \usepackage{cancel}
 
 \author{Cristian Escudero}
@@ -49,8 +51,6 @@
   commentstyle=\color{gray},       % comment style
   stringstyle=\color{magenta},         % string literal style
 }
-
-\textbf{@TODO: Agregar criterio de convergencias a todos.}
 
 \section{Métodos Directos}
 
@@ -186,9 +186,22 @@ D&\mathbf{x} = (L + U)\mathbf{x} + \mathbf{b} \\
 \begin{itemize}
 \item Si $||T||<1 \;\; \forall ||\cdot|| \Rightarrow$ convergen todos.
 \item Si $A$ es e.d.d $\Rightarrow$ converge Jacobi y Gauss-Seidel.
-\item Si $A$ es d.p \& $0<w<2 \Rightarrow$ SOR converge.
-\item $\rho (T) < 1 \iff T\mathbf{x} + C$ converge. 
+\item Si $A$ es d.p $\wedge\; 0<w<2 \Rightarrow$ SOR converge.
+\item $\rho (T) < 1 \iff \mathbf{x}^{(k)}=T\mathbf{x}^{(k-1)} + C$ converge. 
+\item ¿$a_{ij} \leq 0 \quad \forall i\neq j \; \wedge \; a_{ii}>0 \quad \forall i$? por \textbf{Teorema 7.22}, tenemos que:
+\begin{enumerate}[a.]
+\item $0 \leq \rho(T_g) < \rho(T_j)<1$. Si \textit{converge}, G.S. converge más rápido.
+\item $1 < \rho(T_j) < \rho (T_g)$. Si \textit{diverge}, G.S. diverge más rápido.
+\item $\rho(T_j) = \rho(T_g) = 1$. No convergen.
+\end{enumerate}
 \end{itemize}
+
+\paragraph{Cotas de error:}
+Por \textbf{Corolario 7.20}, tenemos las siguientes \textbf{cotas de error}:
+\begin{enumerate}
+\item $||\mathbf{x} - \mathbf{x}^{(k)}|| \leq ||T||^{k} ||\mathbf{x}^{(0)}-\mathbf{x}||$;
+\item $||\mathbf{x} - \mathbf{x}^{(k)}|| \leq \frac{||T||^{k}}{1-||T||} ||\mathbf{x}^{(1)}-\mathbf{x}^{(0)}||$.
+\end{enumerate}
 
 \subsection{Jacobi}
 
@@ -254,14 +267,14 @@ Hay varias formas de decidir cuando detener el proceso iterativo:
 
 El \textit{método de la Bisección} procede buscando una raíz propuesta en la mitad del intervalo $(a,b)$, repitiendo iterativamente el proceso.
 
-Es un método lento, de convergencia \textit{lineal}, pero \textbf{siempre} \textit{converge}. Es \textit{robusto} (siempre encuentra solución), por lo que por esa razón es usado para iniciar otros métodos más eficientes.
-
 \begin{wrapfigure}[10]{r}{0.3\textwidth}
   \label{fig:bisection}
   \caption{\textit{Método de la Bisección}, representación gráfica.}
   \centering
   \hbox{\includegraphics[width=0.3\textwidth-\fboxrule-\fboxrule]{img/bisection.png}}  
 \end{wrapfigure}	
+
+Es un método lento, de convergencia \textit{lineal}, pero \textbf{siempre} \textit{converge}. Es \textit{robusto} (siempre encuentra solución), por lo que por esa razón es usado para iniciar otros métodos más eficientes.
 
 Sea $f(x)$ \textbf{contínua} en $[a,b]$ y $f(a)\cdot f(b)<0$. Entonces, por el \textbf{teorema del valor medio}, $\exists \; a<p<b \; / \; f(p) = 0$.
 
@@ -276,13 +289,26 @@ Supongamos $a_1=a$, $b_1=b$, $i=1$.
 \item Incrementamos $i$, y volvemos al paso \textit{1}.
 \end{enumerate}
 
+\setlength{\columnsep}{2cm}
+\begin{multicols}{2}
 \subsubsection{Criterios de corte}
 Siendo una tolerancia $\mathcal{E}>0$:
 \begin{itemize}
 \item \textbf{Error absoluto:} $|p_i - p_{i-1}| \leq \mathcal{E}$.
-\item \textbf{Error relativo:} $\frac{|p_i - p_{i-1}|}{|p_i|} \leq \mathcal{E}$. Es independiente de las unidades y del significado físico de estas.
+\item \textbf{Error relativo:} $\frac{|p_i - p_{i-1}|}{|p_i|} \leq \mathcal{E}$. 
+
+Es independiente de las unidades y del significado físico de estas.
 \item \textbf{Error en la aproximación:} $|f(p)| \leq \mathcal{E}$.
 \end{itemize}
+\vfill
+\subsubsection{Cota de error}
+Del \textbf{Teorema 2.1}, supongamos que $f \in C[a,b] \wedge f(a)\cdot f(b)<0$, entonces el método genera una sucesión $\{p_n\}_{n=1}^\infty$ que aproxima a un cero de $p$ de $f$, tal que:
+\[|p_n - p| \leq \frac{b-a}{2^n}, \text{ con } n \geq 1.\]
+Otra cota de error fácilmente calculable (p72), es:
+\[|p_n-p| < \frac{1}{2}|a_n - b_n|.\]
+\end{multicols}
+
+\pagebreak
 
 \subsection{Iteración de Punto Fijo}
 
@@ -296,21 +322,187 @@ Siendo una tolerancia $\mathcal{E}>0$:
 	\includegraphics[width=0.3\textwidth-\fboxrule-\fboxrule]{img/puntofijo3.png} }
 \end{figure}
 
+\setlength{\columnsep}{2cm}
+\begin{multicols}{2}
 \subsubsection{Algoritmo}
 \begin{enumerate}
 \item Se escoge una aproximación inicial $p_0$.
-\item Se genera la sucesión $\{p_n\}_{n=1}^\infty$, con $p_n = g(p_{n-1})$.
+\item Se genera la sucesión $\{p_n\}_{n=1}^\infty$, \\con $p_n = g(p_{n-1})$.
 \item Si la sucesión converge en $p$ y si $g$ es continua, entonces:
 \[p=\lim_{n\rightarrow \infty} p_n = \lim_{n\rightarrow \infty} g(p_{n-1})=g(\lim_{n\rightarrow \infty} p_{n-1})=g(p),\]
 y obtenemos una solución con $p=g(p)$.
 \end{enumerate}
+\vfill 
+
+\subsubsection{Cotas de error}
+Están dadas por el \textbf{Corolario 2.4}. Las cotas de error que supone utilizar $p_n$ para aproximar $p$ están dadas por:
+\[|p_n - p| \leq k^n \max \{p_0 -a, b - p_0\},\]
+y por:
+\[|p_n - p| \leq \frac{k^n}{1-k} |p_1 - p_0|, \quad \forall n\geq 1.\]
+\end{multicols}
+\setlength{\columnsep}{10pt}
 
 \subsection{Método de Newton-Raphson}
+
 Sea $f \in C^2 [a,b]$, el método construye una sucesión $\{p_n\}$ con la siguiente fórmula de recurrencia:
 \[p_n = p_{n-1} - \frac{f(p_{n-1})}{f(p_{n-1})},\quad n\geq 1.\]
 
 \textbf{Convergencia:} está dada por el \textbf{teorema $2.5$}.
 
-\section{Interpolación y aproximación de funciones}
+\subsubsection{Cota de error (diapositiva):}
+\[e_{n+1}=|p_{n+1}-p| \approx e_n^2\frac{f''(p)}{2f'(p)} = C e_n^2.\]
+
+\textit{Nota:} Ver además \textbf{Teorema 2.8}. De el concluímos que otra cota de error es (cumplidas las hipótesis):
+\[|p_{n+1}-p| < \frac{M}{2}|p_n - p|^2.\]
+
+\subsubsection{M.N.R. con raíces múltiples (p84):}
+\[g(x)=x-\frac{f(x) f'(x)}{[f'(x)]^2 -f(x) f''(x)}.\]
+
+\begin{figure}[h!]
+  \label{fig:newton}
+  \caption{Método de Newton-Raphson (\textit{izquierda}), método de la Secante (\textit{derecha}).}
+  \centering
+  \hbox{
+  \includegraphics[width=0.45\textwidth-\fboxrule-\fboxrule]{img/newton.png}
+  \hspace{0.04\textwidth-\fboxrule-\fboxrule}
+   \includegraphics[width=0.45\textwidth-\fboxrule-\fboxrule]{img/secant.png}
+    }
+\end{figure}	
+
+\subsection{Método de la Secante}
+
+Para solventar el problema del \textit{método de Newton} de desconocer la derivada de la función, se utiliza este método.
+
+La fórmula de recurrencia, basada en la definición de derivada, está dada por:
+\[p_{n+1} = p_{n} - \frac{p_{n}-p_{n-1}}{f(p_{n})-f(p_{n-1})}f(p_{n}) .\]
+
+La \textbf{convergencia} es \textit{superlineal}: $e_{n+1}=C \; e_n^{1.618...}$.
+
+Requiere además dos estimaciones iniciales $p_0$ y $p_1$.
+
+\subsection{Método de la Falsa Posición}
+
+Similar al \textit{método de la secante}, pero en cada iteración toma -para trazar la secante- los dos últimos puntos que acotan la raíz buscada (como el \textit{método bisección}).
+
+Para determinar el punto que uso, evalúo: 
+\[f(p_n)\cdot f(p_{n-1}) < 0,\]
+Si es \textbf{verdadero}, uso $p_{n-2}$, sino $p_{n-1}$, para seleccionar el intervalo con ${p_n}$.
+
+\pagebreak
+\section*{CheatSheet}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item \textbf{Operaciones en Matriz:}
+\begin{itemize}
+\item $(E_i) \leftrightarrow E_j$.
+\item $(\lambda E_i)  \rightarrow E_i$.
+\item $(E_i + \lambda E_j) \rightarrow E_i$.
+\end{itemize}
+%
+\item \textbf{Afirmaciones equivalentes (6.16):}
+\begin{itemize}
+\item $A\mathbf{x}=\mathbf{0} \iff \mathbf{x}=\mathbf{0}$.
+\item $A\mathbf{x}=\mathbf{b} \text{ tiene solución única}$.
+\item $\exists A^{-1} (A \text{ es no \textit{singular}})$.
+\item $\det A \neq 0$.
+\item Se puede \textit{gaussear}.
+\end{itemize}
+%
+\item \textbf{Factorización LU}: \\
+$\exists$ si \textit{gausseamos} sin intercambio de renglones.
+%
+\item \textbf{Resolver LU:} 
+\[A\mathbf{x}=\mathbf{b} \rightarrow A=LU \rightarrow LU\mathbf{x}=\mathbf{b} \]
+\[ \rightarrow U\mathbf{x}=\mathbf{y}\rightarrow L\mathbf{y}=\mathbf{b}\]
+%
+\item \textbf{Eliminación de Gauss:}
+\begin{align*}
+  a_{ij}^{(k+1)} = \left\{ 
+  \begin{array}{l l}
+    a_{ij}^{(k)} & \text{si $i\leq k$},\\
+    0 & \text{si $i \geq k+1$, $j \leq k$},\\
+  \end{array} 
+  \right.
+\end{align*}
+En otro caso, $a_{ij}^{(k)}-\left(\frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}a_{kj}^{(k)}\right)$.
+\item \textbf{Estrategias de pivoteo:}
+\begin{itemize}
+\item \textbf{Simple}: buscar $a^{(k)}_{pk}\neq 0$.
+\item \textbf{Parcial}: buscar $a^{(k)}_{pk}$ con máximo \texttt{abs}.
+\item \textbf{Parcial Escalado}: buscar el pivote más grande en relación con su fila.
+\end{itemize}
+%
+\item \textbf{Estrictamente Diagonal Dominante:}
+\[|a_{ii}|>\sum_{j=1, \, i\neq j}^n |a_{ij}|, \quad \forall i \in [1,n].\]
+%
+\item \textbf{Definida Positiva:} Si es simétrica, y:
+\[\mathbf{x}^T A \mathbf{x} > 0 \quad \forall \mathbf{x} \neq \mathbf{0}.\]
+%
+\item \textbf{Sea $A$ e.d.d:}
+\begin{itemize}
+\item Es \textbf{no singular}.
+\item Tiene solución \textbf{única}.
+\item No se necesitan intercambio de renglones (tiene factorización $LU$).
+\end{itemize}
+%
+\columnbreak
+\vfill
+\item \textbf{Sea $A$ definida positiva:}
+\begin{itemize}
+\item A es \textbf{no singular.}
+\item $a_{ii} >0 \quad \forall i$.
+\item $(a_{ij})^2 < a_{ii} a_{jj} \quad \forall i \neq j$.
+\item $\smash{\displaystyle\max_{1\leq i,j \leq n}} |a_{ij}| \leq \smash{\displaystyle\max_{1\leq i \leq n}} |a_{ii}|$.
+\\
+\item $\lambda_{i}>0 \quad \forall i$.
+\item Podemos \textit{gaussear} sin intercambio de renglones (tiene factorización $LU$) y los pivotes son positivos.
+\item Y, ¿es simétrica? $\iff \det(A_k) >0 \; \forall k$.
+\item Y, ¿$A$ es matriz $\mathbb{R}$? $\Rightarrow$ tiene factorización \textbf{única} $A = CC^T$, y $A=LDL^T$ con $L_{ii} =1$ y $D_{ii}>0$.
+\end{itemize}
+%
+\item \textbf{Norma vectorial:}
+\begin{itemize}
+\item $||\mathbf{x}||>0$.
+\item $||\mathbf{x}||=0 \iff \mathbf{x}=\mathbf{0}$.
+\item $||\alpha \mathbf{x}|| = |\alpha | \cdot ||\mathbf{x}||$.
+\item $||\mathbf{x}+\mathbf{y}|| \leq ||\mathbf{x}||+||\mathbf{y}||$. 
+\\
+\item \textbf{Euclídea}: $||\mathbf{x}||_2 = \left(\sum x_i^2\right)^{1/2}$.
+\item \textbf{Infinito}: $||\mathbf{x}||_\infty = \max \{|x_i|\}$.
+\item \textbf{L1}: $||\mathbf{x}||_1 = \sum |x_i|$.
+\end{itemize}
+%
+\item \textbf{Norma matricial:}
+\begin{itemize}
+\item Ídem \textit{norma vectorial} pero con matrices.
+\item $||A||=\max ||A \mathbf{x}||$ con $||\mathbf{x}||=1$.
+\item $||A \mathbf{z}|| \leq ||A||\cdot||\mathbf{z}||$.
+\item $||AB||\leq ||A||\cdot ||B||$.
+\item ¿$A$ es matriz \textbf{cuadrada}? \\$\Rightarrow ||A||_\infty = \max \left\lbrace\sum |a_{ij}|\right\rbrace$.
+\end{itemize}
+%
+\item \textbf{Eigenvalue ($\lambda$):} $(A-\lambda I) = 0$.
+%
+\item \textbf{Radio espectral:} $\rho(A) = \max|\lambda_i|$.
+%
+\item \textbf{Número de Condición:}
+\begin{itemize}
+\item $\kappa (A)= ||A|| \cdot ||A^{-1}|| = \frac{\lambda_{\max}}{\lambda_{\min}}$.
+\item Si $\kappa \approx 1 \Rightarrow$ \textbf{bien} condicionada.
+\item Si $\kappa >> 1 \Rightarrow$ \textbf{mal} condicionada.
+\end{itemize}
+%
+\item \textbf{Afirmaciones equivalentes (7.17):}
+\begin{itemize}
+\item $A$ es una matriz \textbf{convergente}.
+\item $\lim_{n\rightarrow \infty} ||A^{(n)}||=0 \quad \forall ||\cdot||$.
+\item $\lim_{n\rightarrow \infty} A^{(n)} \mathbf{x}=\mathbf{0} \quad \forall \mathbf{x}$.
+\item $\rho(A) < 1$.
+\end{itemize}
+%
+\end{enumerate}
+
+\end{multicols}
 
 \end{document}
