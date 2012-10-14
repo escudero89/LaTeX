@@ -52,8 +52,6 @@
   stringstyle=\color{magenta},         % string literal style
 }
 
-\textbf{@TODO: Agregar criterio de convergencias, cotas de error.}
-
 \section{Métodos Directos}
 
 \subsection{Eliminación de Gauss}
@@ -310,6 +308,8 @@ Otra cota de error fácilmente calculable (p72), es:
 \[|p_n-p| < \frac{1}{2}|a_n - b_n|.\]
 \end{multicols}
 
+\pagebreak
+
 \subsection{Iteración de Punto Fijo}
 
 \begin{figure}[h!]
@@ -344,18 +344,6 @@ y por:
 
 \subsection{Método de Newton-Raphson}
 
-\begin{wrapfigure}[25]{r}{0.45\textwidth}
-  \label{fig:newton}
-  \caption{Método de Newton-Raphson (\textit{arriba}), método de la Secante (\textit{abajo}).}
-  \centering
-  \hbox{
-  \includegraphics[width=0.45\textwidth-\fboxrule-\fboxrule]{img/newton.png}
-  }
-  \hbox{
-  \includegraphics[width=0.45\textwidth-\fboxrule-\fboxrule]{img/secant.png}
-  }
-\end{wrapfigure}	
-
 Sea $f \in C^2 [a,b]$, el método construye una sucesión $\{p_n\}$ con la siguiente fórmula de recurrencia:
 \[p_n = p_{n-1} - \frac{f(p_{n-1})}{f(p_{n-1})},\quad n\geq 1.\]
 
@@ -370,7 +358,19 @@ Sea $f \in C^2 [a,b]$, el método construye una sucesión $\{p_n\}$ con la sigui
 \subsubsection{M.N.R. con raíces múltiples (p84):}
 \[g(x)=x-\frac{f(x) f'(x)}{[f'(x)]^2 -f(x) f''(x)}.\]
 
+\begin{figure}[h!]
+  \label{fig:newton}
+  \caption{Método de Newton-Raphson (\textit{izquierda}), método de la Secante (\textit{derecha}).}
+  \centering
+  \hbox{
+  \includegraphics[width=0.45\textwidth-\fboxrule-\fboxrule]{img/newton.png}
+  \hspace{0.04\textwidth-\fboxrule-\fboxrule}
+   \includegraphics[width=0.45\textwidth-\fboxrule-\fboxrule]{img/secant.png}
+    }
+\end{figure}	
+
 \subsection{Método de la Secante}
+
 Para solventar el problema del \textit{método de Newton} de desconocer la derivada de la función, se utiliza este método.
 
 La fórmula de recurrencia, basada en la definición de derivada, está dada por:
