@@ -120,6 +120,11 @@ Actualmente todas las \textit{arquitecturas de red} se describen utilizando un \
 \begin{description}
 \item \textbf{Servicio.} Conjunto de primitivas (\textbf{operaciones}) que una capa proporciona a la capa que está sobre ella. Esta define que operaciones puede realizar la capa en beneficio de sus usuarios, pero no dice nada respecto a su implementación. Se relacionan con las interacciones entre capas.
 \item \textbf{Protocolo.} Conjunto de reglas que rigen el formato y significado de los paquetes que intercambian las entidades iguales en una capa. Se relacionan con los paquetes enviados entre entidades iguales de máquinas diferentes.
+
+Normalmente todo protocolo requiere el envío de algunos mensajes especiales o información de control adicional a la que se transmite. Generalmente esto se hace añadiendo una \textbf{cabecera} (\textit{a veces también una \textbf{cola}}) al paquete a transmitir.
+
+La información de control reduce el caudal útil: supone un \textbf{overhead} (\textit{ejemplo}: si tengo un overhead del $20\%$, y tengo que transmitir $100$ \textit{bytes}, en realidad transmito $120$ \textit{bytes}). Como cada capa añade su propia información de control, también añade entonces más \textit{overhead}.
+
 \item \textbf{Interfaz.} Define que operaciones y servicios primitivos pone la capa más baja a disposición de la capa superior inmediata. Si están bien definidas, simplifican el reemplazo de la implementación de una capa por otra implementación totalmente diferente, siempre que se mantengan exactamente los mismos servicios ofrecidos a la capa superior en ambas implementaciones.
 \end{description}
 
@@ -148,10 +153,20 @@ Las capas pueden ofrecer estos dos tipos de servicios a las capas que están sob
 \item \textbf{Orientado a Conexión.} Se concibió en base al sistema telefónico: el usuario del servicio primero establece una conexión, la utiliza, y luego la abandona.
 
 \textit{Características:} Se respeta el orden de los paquetes. Se mantiene la misma ruta o camino para todos los paquetes. Si el canal se corta la comunicación se interrumpe.
+
+\textit{Ejemplos:} red telefónica conmutada, ATM, frame relay.
 \item \textbf{No Orientado a Conexión.} Se concibió en base al sistema postal: cada mensaje lleva completa la dirección de destino y cada uno se enruta a través del sistema, independientemente de los demás.
 
 \textit{Características:} No se respeta el orden de los paquetes. La ruta puede variar para cada paquete. La red es más robusta ya que si una ruta queda inservible, pueden usarse otras. Si la comunicación  no es posible los datos se pierden.
+
+\textit{Ejemplos:} IP, ethernet.
 \end{description}
+
+\subsubsection{Quality of Service (QoS)}
+
+Consiste en fijar unos valores limites para un conjunto de parámetros (\textit{ancho de banda, latencia, disponibilidad, étc}), asegurando así que la red no se va a congestionar. Se puede ver como una especie de ``\textit{contrato}'' cliente-proveedor.
+
+En un servicio \textbf{confiable} el receptor confirma la recepción de cada mensaje para que el emisor este seguro de que llegó. Como consecuencia de esto hay sobrecargas y retardos que con frecuencia son valiosos pero a veces indeseables. Es por ello que dependiendo de la aplicación, se opta por un servicio \textit{confiable} o no, aunque a veces no está disponible el primero.
 
 \subsection{Modelo OSI}
 
@@ -226,5 +241,68 @@ El que vamos a utilizar. Sus capas son:
 \subitem + Subcapa MAC (\textit{Media Access Control}).
 \item \textbf{Física.}
 \end{itemize}
+
+\section{Transmisión de Datos}
+
+\subsection{Conceptos Básicos}
+\begin{itemize}
+\item \textbf{Dato:} Paquete que vamos a transmitir. Cualquier entidad capaz de transportar información.
+\subitem \textbf{+ Analógico:} Datos que pueden tomar valores en un intervalo de tiempo continuo (\textit{ejemplos}: voz, video, temperatura).
+\subitem \textbf{+ Digital:} Datos que toman valores discretos (\textit{ejemplos:} cadenas de texto, números enteros).
+\item \textbf{Señales:} Representaciones eléctricas o electromagnéticas de los datos.
+\subitem \textbf{+ Analógicas:} Onda electromagnética que varía continuamente y que según sea su espectro puede propagarse a través de una serie de medios.
+\subitem \textbf{+ Digitales:} Secuencia de pulsos de tensión que pueden transmitirse a través de un medio conductor. Es mas económica que la analógica y menos susceptible al ruido, pero sufre más atenuación.
+\item \textbf{Señalización:} Hecho de propagación física de las señales a través de un medio adecuado.
+\item \textbf{Transmisión:} Comunicación de datos mediante la propagación y procesamiento de señales.
+\subitem \textbf{+ Analógica:} es una forma de transmitir señales analógicas con independencia de su contenido; las señales pueden representar
+datos analógicos o datos digitales.
+\subitem \textbf{+ Digital:} es dependiente de su contenido. Se puede transmitir a una distancia limitada.
+\end{itemize}
+
+\subsection{Transmisión: Perturbaciones}
+
+\begin{description}
+\item \textbf{Atenuación.} La energía de la señal decae con la distancia por lo que tenemos que asegurarnos que la señal llegue con suficiente energía como para ser captada por la circuitería del receptor, y además el ruido debe ser menor que la señal original. Debido a que la atenuación varía con la frecuencia las señales analógicas llegan distorsionadas por lo que hay que utilizar un sistema que le devuelva sus características iniciales.
+\item \textbf{Distorsión de retardo.} Fenómeno debido a que la velocidad de propagación de una señal a través de un medio guiado varía con la frecuencia.
+\item \textbf{Ruido.} La señal original resulta modificada debido a distorsiones introducidas por el sistema de transmisión. Es una señal que se inserta entre el emisor y receptor de una señal dada. Hay diferentes tipos de ruido:
+\subitem \textbf{+ Ruido térmico:} Ruido que está siempre presente y en todos los dispositivos electrónicos y medios de transmisión. Es función de la temperatura. Cantidad de ruido termino en un ancho de banda de 1 Hz es: 
+$N_0 = KT (W/Hz)$, donde $K = 1.38 \cdot 10^{23} J/ºK$.
+\subitem \textbf{+ Ruido de intermodulación:} Aparecen por un mal funcionamiento del sistema o uso excesivo de energía en la señal.
+Es un ruido \textbf{correlacionado} -existe cuando la señal está presente-.
+\subitem \textbf{+ Diafonía:} Acoplamiento no deseado de dos o más señales.
+\subitem \textbf{+ Ruido impulsivo:} Son pulsos o picos regulares de corta duración y amplitud relativamente grande.
+\end{description}
+
+\begin{figure}[ht!]
+  \caption{Cuadros comparativos de la transmisión analógica-digital.}
+  \label{fig:dig_ana}  
+  \centering
+  \hbox{
+	\includegraphics[width=0.7\textwidth-\fboxrule-\fboxrule]{imgs/dig_ana1.png}}
+	\vspace{5pt}
+  \hbox{
+	\includegraphics[width=0.7\textwidth-\fboxrule-\fboxrule]{imgs/dig_ana2.png}  
+  }  
+\end{figure}
+
+\subsection{Relación señal/ruido SNR}
+Es la relación que utilizamos para saber cuánto ruido tenemos en nuestra señal de interés. Normalmente la expresamos en dB (\textit{decibeles}). Son valores de \textbf{potencia}, pero también pueden ser representados como valores de tensión o de corriente. \textbf{MAYOR} es el \textbf{SNR}, \textbf{MEJOR} es nuestro sistema de comunicación.
+
+\subsection{Factor de ruido}
+Es la relación que existe entre la entrada y la salida de un equipo amplificador: para las señales \textbf{analógicas}, cuando pasa por un \textbf{amplificador} el ruido aumenta.
+\[F_\text{ruido} = \frac{\text{SNR (entrada)}}{\text{SNR (salida)}}, \quad \text{con} \quad   F_\text{ruido} \geq 1.\]
+
+\subsection{Capacidad del Canal}
+Es la velocidad máxima que se pueden transmitir los datos en un canal de comunicación bajo unos condiciones dadas.
+
+Hay cuatro conceptos en juego relacionados entre sí, que son:
+\begin{itemize}
+\item \textbf{Velocidad de transmisión:} velocidad, expresada en \textit{bits por segundo} (bps), a la que se pueden transmitir los datos.
+\item El \textbf{ancho de banda} estará limitado por el transmisor y por la naturaleza del medio de transmisión; se mide en hercios o ciclos por segundo.
+\item \textbf{El ruido:} nivel medio de ruido a través del camino de transmisión.
+\item \textbf{Tasa de errores:} tasa a la que ocurren los errores. Se considera que ocurrió un error cuando se recibe un 1 habiendo transmitido un 0 o viceversa.
+\end{itemize}
+
+\Huge{Agregar ventajas y desventajas de la transmision digital.}
 
 \end{document}
