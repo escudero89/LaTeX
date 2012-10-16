@@ -77,6 +77,13 @@ Se pueden crear \textbf{redes planas}, es decir redes en las que la comunicació
 Generalmente la comunicación entre dos ordenadores cualesquiera se realiza a través de nodos intermedios que \textbf{encaminan} o \textbf{conmutan} los paquetes. En un enlace punto a punto, el conjunto de router o conmutadores y los enlaces que los unen forman lo que se conoce como \textbf{subred}.
 
 Además, permite crear topologías complejas (\textit{anillo, malla, estrella, etc}).
+
+Los enlaces pueden ser:
+\subitem + \textbf{Simplex:} transmisión en un solo sentido.
+\subitem + \textbf{Half-duplex:} transmisión en ambos sentidos, pero no a la vez.
+\subitem + \textbf{Full-duplex:} transmisión simultánea en ambos sentidos.
+
+En el caso de \textit{full-duplex} y \textit{half-duplex} el enlace puede ser simétrico -misma velocidad en ambos sentidos- o asimétrico. Normalmente, los primeros son simétricos.
 \end{description}
 \textit{Nota:} Las redes de poca cobertura geográfica tienden a utilizar la \textit{difusión}, mientras que las de cobertura más grande usan la \textit{punto a punto}.
 
@@ -118,8 +125,8 @@ Actualmente todas las \textit{arquitecturas de red} se describen utilizando un \
 
 \subsubsection{Conceptos básicos}
 \begin{description}
-\item \textbf{Servicio.} Conjunto de primitivas (\textbf{operaciones}) que una capa proporciona a la capa que está sobre ella. Esta define que operaciones puede realizar la capa en beneficio de sus usuarios, pero no dice nada respecto a su implementación. Se relacionan con las interacciones entre capas.
-\item \textbf{Protocolo.} Conjunto de reglas que rigen el formato y significado de los paquetes que intercambian las entidades iguales en una capa. Se relacionan con los paquetes enviados entre entidades iguales de máquinas diferentes.
+\item \textbf{Servicio.} Conjunto de primitivas (\textbf{operaciones}) que una capa proporciona a la capa que está sobre ella. Este define que operaciones puede realizar la capa en beneficio de sus usuarios, pero no dice nada respecto a su implementación. Se relaciona con la interfaz.
+\item \textbf{Protocolo.} Conjunto de reglas que rigen el formato y significado de los paquetes que intercambian las entidades iguales de máquinas diferentes.
 
 Normalmente todo protocolo requiere el envío de algunos mensajes especiales o información de control adicional a la que se transmite. Generalmente esto se hace añadiendo una \textbf{cabecera} (\textit{a veces también una \textbf{cola}}) al paquete a transmitir.
 
@@ -181,9 +188,9 @@ En un servicio \textbf{confiable} el receptor confirma la recepción de cada men
 
 \subsubsection{Capas del OSI}
 \begin{description}
-\item \textbf{Aplicación:} Capa que acoge a todas las aplicaciones que requieren la red. Es la interfaz que ve el usuario. Envía los datos de usuario a la aplicación de destino usando servicios de las capas inferiores.
+\item \textbf{Aplicación:} Ofrece a las aplicaciones la posibilidad de acceder a los servicios de las demás capas y define los protocolos que utilizan las aplicaciones para intercambiar datos. El usuario normalmente no interactúa directamente con el nivel de aplicación. Suele interactuar con programas que a su vez interactúan con el nivel de aplicación pero ocultando la complejidad subyacente.
 \item \textbf{Presentación:} Encargada de la sintaxis de los datos. Convierte los datos de la red a los datos requeridos por la aplicación.
-\item \textbf{Sesión:} Encargada de proporcionar dialogo para el uso eficiente de las comunicaciones. O sea, sincroniza el intercambio de datos entre capas inferiores y superiores.
+\item \textbf{Sesión:} Sincroniza el intercambio de datos entre capas inferiores y superiores.
 \item \textbf{Transporte:} Esta capa se encarga de que los datos enviados y recibidos lleguen en orden, sin duplicar y sin errores. Puede ser orientado o no a la conexión.
 \item \textbf{Red:} Se encarga de enlazar con la red y encaminar los datos hacia sus lugares o direcciones de destino. Brinda la información de hacia dónde debo ir. Esta y las dos capas inferiores se encargan de todo el proceso externo al propio sistema y que están tanto en terminales como en enlaces o repetidores.
 \item \textbf{Enlace de datos:} Se encarga de que los datos se envíen con seguridad a su destino y libre de errores. Cuando la conexión no es punto a punto, esta capa no puede asegurar su cometido sino la capa superior. Tiene el control de la capa física.
@@ -213,11 +220,10 @@ La descomposición del problema de la comunicación en capas es similar que en e
 
 \subsubsection{Capas de TCP/IP}
 \begin{description}
-\item \textbf{Aplicación:} Proporciona comunicación entre procesos o aplicaciones en computadores distintos.
-\item \textbf{Transporte:} Encargada de transferir datos ente computadores sin detalles de red pero con mecanismos de seguridad.
-\item \textbf{Interred:} Se encarga de direccionar y guiar los datos desde el origen al destino a través de la red o redes intermedias.
-\item \textbf{Enlace de datos:} Interfaz entre el sistema final y la \textit{subred} a la que está conectado.
-\item \textbf{Física:} Define las características del medio, señalización y codificación se las señales.
+\item \textbf{Aplicación:} proporciona comunicación entre procesos o aplicaciones en computadores distintos.
+\item \textbf{Transporte:} encargada de transferir datos ente computadores sin detalles de red pero con mecanismos de seguridad.
+\item \textbf{Internet:} se encarga de direccionar y guiar los datos desde el origen al destino a través de la red o redes intermedias.
+\item \textbf{Host-Red:} acceso al Medio, asimilable a la capa 2 (enlace de datos) y a la capa 1 (física) del modelo OSI.
 \end{description}
 
 \subsubsection{Diferencias entre OSI y TCP/IP}
@@ -265,8 +271,8 @@ datos analógicos o datos digitales.
 \item \textbf{Atenuación.} La energía de la señal decae con la distancia por lo que tenemos que asegurarnos que la señal llegue con suficiente energía como para ser captada por la circuitería del receptor, y además el ruido debe ser menor que la señal original. Debido a que la atenuación varía con la frecuencia las señales analógicas llegan distorsionadas por lo que hay que utilizar un sistema que le devuelva sus características iniciales.
 \item \textbf{Distorsión de retardo.} Fenómeno debido a que la velocidad de propagación de una señal a través de un medio guiado varía con la frecuencia.
 \item \textbf{Ruido.} La señal original resulta modificada debido a distorsiones introducidas por el sistema de transmisión. Es una señal que se inserta entre el emisor y receptor de una señal dada. Hay diferentes tipos de ruido:
-\subitem \textbf{+ Ruido térmico:} Ruido que está siempre presente y en todos los dispositivos electrónicos y medios de transmisión. Es función de la temperatura. Cantidad de ruido termino en un ancho de banda de 1 Hz es: 
-$N_0 = KT (W/Hz)$, donde $K = 1.38 \cdot 10^{23} J/$º$K$.
+\subitem \textbf{+ Ruido térmico:} Ruido que está siempre presente y en todos los dispositivos electrónicos y medios de transmisión. Es función de la temperatura. Cantidad de ruido térmico en un ancho de banda de 1 Hz es: 
+$N_0 = KT$ [W/Hz], donde $K = 1.38 \cdot 10^{23} J/$º$K$.
 \subitem \textbf{+ Ruido de intermodulación:} Aparecen por un mal funcionamiento del sistema o uso excesivo de energía en la señal.
 Es un ruido \textbf{correlacionado} -existe cuando la señal está presente-.
 \subitem \textbf{+ Diafonía:} Acoplamiento no deseado de dos o más señales.
@@ -319,6 +325,22 @@ Hay cuatro conceptos en juego relacionados entre sí, que son:
 \item \textbf{El ruido:} nivel medio de ruido a través del camino de transmisión.
 \item \textbf{Tasa de errores:} tasa a la que ocurren los errores. Se considera que ocurrió un error cuando se recibe un 1 habiendo transmitido un 0 o viceversa.
 \end{itemize}
+
+\subsubsection{Ancho de Banda de Nysquit}
+Nysquit demostró que dado un ancho de banda $B$, la mayor velocidad de transmisión de la señal que se puede conseguir es $2B$, y viceversa. Si las señales a transmitir son binarias, la velocidad de transmisión que se puede conseguir con $B$ Hz es igual a $2B$ bps.
+
+Si tenemos el caso de señales multinivel, la formulación de Nysquit para el cálculo de la capacidad de canal es: $C=2B \log_2 M$, en bps.
+
+Esto es considerando que no hay ruido.
+
+\subsubsection{Fórmula para la capacidad de Shannon}
+
+Dado un nivel de ruido, cuanto mayor es la velocidad de transmisión, mayor es la tasa de errores. Shannon demostró que los canales son ruidosos, por lo tanto, encontró una ecuación que relación la SNR con la cantidad de niveles de modulación: $M_\text{máx}=\sqrt{1+\text{SNR}}$.
+
+Una conclusión de Shannon es que la capacidad \textbf{máxima} del canal \textit{libre de errores}, en bits por segundo, verifica la ecuación:
+\[C=2B\log_2(M_\text{máx})=B\log_2(1+\text{SNR}).\]
+
+Cuanto mayor sea el ancho de banda, más ruido se introducirá en el sistema: cuando $B$ aumenta, $\text{SNR}$ disminuye.
 
 \section{Medios de transmisión}
 
@@ -506,14 +528,6 @@ n_0 \sin (\theta_\text{in}) &= n_1 sin (\theta_1),
 &\Rightarrow n_0 \sin (\theta_\text{in}) = n_1 cos (\theta_c).
 \end{align*} 
 
-\begin{wrapfigure}[10]{r}{=.4\textwidth}
-  \caption{Relación geométrica en la fibra óptica.}
-  \label{fig:pitagoras}  
-  \centering
-  \hbox{
-	\includegraphics[width=.4\textwidth-\fboxrule-\fboxrule]{imgs/pitagoras.jpg}}
-\end{wrapfigure}
-
 Rearreglando, y usando el teorema de pitágoras (ver \textbf{figura \ref{fig:pitagoras}}):
 \begin{align*}
 \sin (\theta_\text{in}) \; \frac{n_1}{n_0} &= \cos(\theta_c), \\
@@ -525,6 +539,13 @@ Rearreglando, y usando el teorema de pitágoras (ver \textbf{figura \ref{fig:pit
 Dado a que los rayos de luz generalmente entran a la fibra por un medio de aire, $n_0=1$. Entonces, la ecuación final sería:
 \[\theta_\text{in (máxima)} = \sin^{-1} \sqrt{n_1^2 - n_2^2}\]
 
+\begin{figure}[ht!]
+  \caption{Relación geométrica en la fibra óptica.}
+  \label{fig:pitagoras}  
+  \centerline{
+	\includegraphics[width=.4\textwidth-\fboxrule-\fboxrule]{imgs/pitagoras.jpg}}
+\end{figure}
+\pagebreak
 \underline{\textbf{Apertura numérica (NA)}}
 
 Describe la habilidad de recojer la luz de una fibra óptica. Entre más grande la magnitud de NA, mayor es la cantidad de luz aceptada por la fibra de la fuente de luz externa. Para una fibra de índice discreto, la NA se define matemáticamente como: $NA = \sin(\theta_{in})$.
@@ -536,6 +557,7 @@ Describe la habilidad de recojer la luz de una fibra óptica. Entre más grande 
 	\includegraphics[width=.8\textwidth-\fboxrule-\fboxrule]{imgs/na.png}}
 \end{figure}
  
+ \pagebreak
 \section{Técnicas para la codificación de señales}
 
 \subsection{Conceptos Básicos}
@@ -677,15 +699,6 @@ La  velocidad de modulación máxima es el doble que en los códigos NRZ; eso si
 \subsubsection{Velocidad de Modulación}
 
 La \textbf{velocidad de transmisión} es $1/T_B$, donde $T_B=$ duración de un bit. La \textbf{velocidad de modulación} es la velocidad a la que se generan los elementos de la señal. En general,
-
-\begin{wrapfigure}{r}{=0.5\textwidth}
-  \caption{Una cadena de unos a 1 Mbps. \textit{Arriba}, un \textbf{NRZI} (velocidad de modulación de $1/T_B$); \textit{abajo}, codificación \textbf{Manchester} (aquí, la velocidad de modulación es $2/T_B$).}
-  \label{fig:vel_modulacion}  
-  \centering
-  \hbox{
-	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/vel_modulacion.png}}
-\end{wrapfigure}
-
 \[D = \frac{R}{L} = \frac{R}{log_2 M},\]
 donde:
 \begin{enumerate}[ ]
@@ -694,6 +707,13 @@ donde:
 \item $L=$ número de bits por elemento de señal.
 \item $M=$ número de elementos de señalización diferentes $=2^L$.
 \end{enumerate}
+
+\begin{figure}[ht!]
+  \caption{Una cadena de unos a 1 Mbps. \textit{Arriba}, un \textbf{NRZI} (velocidad de modulación de $1/T_B$); \textit{abajo}, codificación \textbf{Manchester} (aquí, la velocidad de modulación es $2/T_B$).}
+  \label{fig:vel_modulacion}  
+  \centerline{
+	\includegraphics[width=0.6\textwidth-\fboxrule-\fboxrule]{imgs/vel_modulacion.png}}
+\end{figure}
 
 \subsubsection{Técnicas de Aleatorización}
 
@@ -718,13 +738,12 @@ Con este procedimiento se fuerzan dos \textit{violaciones de código}, que son i
 \item \textbf{HDB3} (\textit{High Density Bipolar-3 zeros}): sustituye cadenas de cuatro ceros por otras con uno o dos pulsos, y al cuarto cero le asigna una \textit{violación de código}. Considera una regla adicional (ver \textbf{figura \ref{fig:hdb3}}) para asegurar que los mismos tengan una polaridad alternante, evitando así la componente continua.
 \end{description}
 
-\begin{wrapfigure}{r}{=0.5\textwidth}
+\begin{figure}[ht!]
   \caption{Reglas de sustitución en HDB3.}
   \label{fig:hdb3}  
-  \centering
-  \hbox{
+  \centerline{
 	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/hdb3.png}}
-\end{wrapfigure}
+\end{figure}
 
 Estos códigos son adecuados para la transmisión a altas velocidades.
 
@@ -740,14 +759,12 @@ Estos códigos son adecuados para la transmisión a altas velocidades.
 
 La situación más habitual de transmisión de datos digitales como señales analógicas es a través de la red telefónica. Aunque no es apta para la transmisión de señales digitales, se pueden conectar dispositivos digitales a través de la red mediante el \textit{módem} (modulador-demodulador), el cual convierte los datos digitales en señales analógicas, y viceversa.
 
-\begin{wrapfigure}{r}{=0.5\textwidth}
+\begin{figure}[ht!]
   \caption{Modulación de datos digitales usando señales analógicas.}
   \label{fig:dat_dig_dat_ana}  
-  \centering
-  \hbox{
-	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/dat_dig_dat_ana.png}}
-\end{wrapfigure}
-
+  \centerline{
+	\includegraphics[width=0.6\textwidth-\fboxrule-\fboxrule]{imgs/dat_dig_dat_ana.png}}
+\end{figure}
 
 \subsubsection{Modulación por Desplazamiento de Amplitud}
 En ASK (\textit{Amplitude-Shift Keying}), los dos valores binarios se representan mediante dos amplitudes diferentes de la portadora. Es usual que una de las amplitudes sea cero. La señal transmitida por cada intevarlo correspondiente a la duración de un bit es:
@@ -820,7 +837,7 @@ La técnica QAM (\textit{Quadrature Amplitude Modulation}) es usado en \textit{A
 \]
 donde $d_1$ y $d_2$ son dos secuencias separadas de una señal de entrada binaria $d(t)$.
 
-A \textbf{constellation diagram} is a representation of a signal modulated by a digital modulation scheme such as quadrature amplitude modulation or phase-shift keying. It displays the signal as a two-dimensional scatter diagram in the complex plane at symbol sampling instants. In a more abstract sense, it represents the possible symbols that may be selected by a given modulation scheme as points in the complex plane. Measured constellation diagrams can be used to recognize the type of interference and distortion in a signal.
+\small{(\textit{extraído de Wikipedia inglés})} Un \textbf{diagrama de constelación} es una representación de una señal modulada por un esquema digital de modulación tal como el QAM. Muestra a la señal en un diagrama de dispersión en el plano complejo a instantes de elementos de señal. Representa, de forma abstracta, los posibles elementos de señal que pueden ser seleccionados por un cierto esquema de modulación como puntos en el plano complejo. 
 
 \begin{figure}[ht!]
   \caption{Un diagrama de constelación para un QAM-16 rectangular.}
@@ -828,5 +845,54 @@ A \textbf{constellation diagram} is a representation of a signal modulated by a 
   \centerline{
 	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/16qam.png}}
 \end{figure}
+
+\subsection{Datos Analógicos, Señales Digitales}
+
+El \textbf{codec} es el dispositivo que se utiliza para la conversión de los datos analógicos en digitales y que, posteriormente, recupera los datos analógicos iniciales a partir de los digitales. Una de las técnicas más importantes usadas en el \textit{codec} es la modulación por pulsos. Dentro de esta categoría tenemos:
+\begin{description}
+\item \textbf{PWM} (\textit{Pulse Width Modulation}): Cierto valor de amplitud determina, cuando toma la muestra, que ancho va a tener un pulso determinado.
+\item \textbf{PPM} (\textit{Pulse Position Modulation}): Dependiendo de donde pongo el pulso en el espacio, va ser el valor de amplitud que tenga la señal.
+\item \textbf{PAM} (\textit{Pulse Amplitud Modulation}): Un valor de amplitud ancho, genera un pulso alto, y uno negativo, uno más pequeño. Sufre mucho el ruido.
+\item \textbf{PCM} (\textit{Pulse Code Modulation}): Codifica de acuerdo al dato que obtengo.
+\end{description}
+
+Obtenemos de esa forma las ventajas (y desventajas) de la \textbf{transmisión digital}.
+
+\pagebreak
+
+\begin{wrapfigure}[14]{r}{.4\textwidth}
+  \caption{Modulación de pulsos: (a) señal analógica; (b) pulso de muestreo; (c) PWM; (d) PPM; (e) PAM; (f) PCM.}
+  \label{fig:pulsos}  
+  \centerline{
+	\includegraphics[width=0.4\textwidth-\fboxrule-\fboxrule]{imgs/pulsos.png}}
+\end{wrapfigure}
+
+\subsubsection{Pulse Code Modulation}
+
+Se basa en el siguiente teorema:
+\begin{quote}
+\textbf{Teorema de muestreo:} Si una señal $f(t)$ se muestrea a intervalos regulares de tiempo con una frecuencia mayor que el doble de la frecuencia más alta de la señal original, las muestras así obtenidas contienen toda la información de la señal original. La función $f(t)$ se puede reconstruir a partir de estas muestras mediante la utilización de un filtro paso bajo.
+\end{quote}
+
+\underline{\textbf{Características:}}
+\begin{itemize}
+\item Se utiliza en sistemas de transmisión digital.
+\item Son pulsos de longitud fija y amplitud fija.
+\item Se usa un sistema binario.
+\end{itemize}
+
+El procedimiento consiste en 3 pasos:
+\begin{enumerate}
+\item \textbf{Muestreo:} Respetando el teorema, tomamos muestras \textit{analógicas} llamadas muestras PAM.
+\item \textbf{Cuantización:} Permite aproximar la muestra
+a uno de los niveles de escala designada. Al cuantizar la señal analógica, pierdo información y por lo tanto pierdo el valor real de la señal. Decimos entonces que se introduce un error de cuantización de la señal, dado por:
+\[\text{SNR}_\text{dB} = 20 \log 2^n + 1.76 \text{ dB} = 6.02n + 1.76 \text{ dB}.\]
+De aquí, que cada bit adicional que se use aumentará la SNR en 6dB.
+\item \textbf{Codificación:} Para convertir las muestras PAM a digital, a cada una de ellas se les debe asignar un código binario. Si las muestras son de $n$ bits, habrá $2^n$ niveles de cuantización posibles.
+\end{enumerate}
+
+Hasta acá obtuvimos una señal digital que consiste en boques de $n$ bits donde cada uno corresponde a la amplitud de un impulso PCM.
+
+\textit{Ejemplo}: Sabiendo que los datos de voz se limitan a frecuencias por debajo de los 4000hz, supongamos que tenemos una señal de voz. Usando muestras de 8 bits, permite $2^8 = 256$ niveles de cuantización, esto implica que para una única señal de voz se necesitan 8000hz, o lo que es lo mismo, 8000 muestras $\times$ 8 bits $= 64$ kbps.
 
 \end{document}

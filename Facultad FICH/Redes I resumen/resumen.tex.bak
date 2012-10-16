@@ -77,6 +77,12 @@ Se pueden crear \textbf{redes planas}, es decir redes en las que la comunicació
 Generalmente la comunicación entre dos ordenadores cualesquiera se realiza a través de nodos intermedios que \textbf{encaminan} o \textbf{conmutan} los paquetes. En un enlace punto a punto, el conjunto de router o conmutadores y los enlaces que los unen forman lo que se conoce como \textbf{subred}.
 
 Además, permite crear topologías complejas (\textit{anillo, malla, estrella, etc}).
+
+En una red punto a punto los enlaces pueden ser:
+\subitem + \textbf{Simplex:} transmisión en un solo sentido.
+\subitem + \textbf{Half-duplex:} transmisión en ambos sentidos, pero no a la vez.
+\subitem + \textbf{Full-duplex:} transmisión simultánea en ambos sentidos.
+En el caso de duplex y half
 \end{description}
 \textit{Nota:} Las redes de poca cobertura geográfica tienden a utilizar la \textit{difusión}, mientras que las de cobertura más grande usan la \textit{punto a punto}.
 
@@ -320,6 +326,22 @@ Hay cuatro conceptos en juego relacionados entre sí, que son:
 \item \textbf{Tasa de errores:} tasa a la que ocurren los errores. Se considera que ocurrió un error cuando se recibe un 1 habiendo transmitido un 0 o viceversa.
 \end{itemize}
 
+\subsubsection{Ancho de Banda de Nysquit}
+Nysquit demostró que dado un ancho de banda $B$, la mayor velocidad de transmisión de la señal que se puede conseguir es $2B$, y viceversa. Si las señales a transmitir son binarias, la velocidad de transmisión que se puede conseguir con $B$ Hz es igual a $2B$ bps.
+
+Si tenemos el caso de señales multinivel, la formulación de Nysquit para el cálculo de la capacidad de canal es: $C=2B \log_2 M$, en bps.
+
+Esto es considerando que no hay ruido.
+
+\subsubsection{Fórmula para la capacidad de Shannon}
+
+Dado un nivel de ruido, cuanto mayor es la velocidad de transmisión, mayor es la tasa de errores. Shannon demostró que los canales son ruidosos, por lo tanto, encontró una ecuación que relación la SNR con la cantidad de niveles de modulación: $M_\text{máx}=\sqrt{1+\text{SNR}}$.
+
+Una conclusión de Shannon es que la capacidad \textbf{máxima} del canal \textit{libre de errores}, en bits por segundo, verifica la ecuación:
+\[C=2B\log_2(M_\text{máx})=B\log_2(1+\text{SNR}).\]
+
+Cuanto mayor sea el ancho de banda, más ruido se introducirá en el sistema: cuando $B$ aumenta, $\text{SNR}$ disminuye.
+
 \section{Medios de transmisión}
 
 Es el camino físico entre el transmisor y el receptor. Este medio puede ser:
@@ -488,6 +510,14 @@ Es el máximo ángulo en el cual los rayos de luz externos pueden chocar con la 
 
 \underline{\textbf{Cálculo del ángulo de aceptación}}
 
+\begin{wrapfigure}[10]{r}{=.4\textwidth}
+  \caption{Relación geométrica en la fibra óptica.}
+  \label{fig:pitagoras}  
+  \centering
+  \hbox{
+	\includegraphics[width=.4\textwidth-\fboxrule-\fboxrule]{imgs/pitagoras.jpg}}
+\end{wrapfigure}
+
 Cuando los rayos de luz entran en la fibra, chocan con la interfaz de aire/vidrio, en la normal $A$. En consecuencia, la luz que entra en la interfaz de aire vidrio/vidrio se propaga de un medio menos denso a un medio más denso. Esto causa, de acuerdo a la \textit{ley de Snell}, que los rayos de luz cambien de dirección y se propaguen diagonalmente por el núcleo a un ángulo $\theta_c$ que es diferente al ángulo de incidencia externo $\theta_\text{in}$. Para que un rayo pueda propagarse por un cable, debe chocar a la interfaz de núcleo/cubierta interno a un ángulo que sea mayor que el ángulo crítico $\theta_c$.
 
 \begin{figure}[ht!]
@@ -505,14 +535,6 @@ n_0 \sin (\theta_\text{in}) &= n_1 sin (\theta_1),
 \sin (\theta_1) &= \sin(90 - \theta_c) = cos (\theta_c), \\
 &\Rightarrow n_0 \sin (\theta_\text{in}) = n_1 cos (\theta_c).
 \end{align*} 
-
-\begin{wrapfigure}[10]{r}{=.4\textwidth}
-  \caption{Relación geométrica en la fibra óptica.}
-  \label{fig:pitagoras}  
-  \centering
-  \hbox{
-	\includegraphics[width=.4\textwidth-\fboxrule-\fboxrule]{imgs/pitagoras.jpg}}
-\end{wrapfigure}
 
 Rearreglando, y usando el teorema de pitágoras (ver \textbf{figura \ref{fig:pitagoras}}):
 \begin{align*}
@@ -677,15 +699,6 @@ La  velocidad de modulación máxima es el doble que en los códigos NRZ; eso si
 \subsubsection{Velocidad de Modulación}
 
 La \textbf{velocidad de transmisión} es $1/T_B$, donde $T_B=$ duración de un bit. La \textbf{velocidad de modulación} es la velocidad a la que se generan los elementos de la señal. En general,
-
-\begin{wrapfigure}{r}{=0.5\textwidth}
-  \caption{Una cadena de unos a 1 Mbps. \textit{Arriba}, un \textbf{NRZI} (velocidad de modulación de $1/T_B$); \textit{abajo}, codificación \textbf{Manchester} (aquí, la velocidad de modulación es $2/T_B$).}
-  \label{fig:vel_modulacion}  
-  \centering
-  \hbox{
-	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/vel_modulacion.png}}
-\end{wrapfigure}
-
 \[D = \frac{R}{L} = \frac{R}{log_2 M},\]
 donde:
 \begin{enumerate}[ ]
@@ -694,6 +707,13 @@ donde:
 \item $L=$ número de bits por elemento de señal.
 \item $M=$ número de elementos de señalización diferentes $=2^L$.
 \end{enumerate}
+
+\begin{figure}[ht!]
+  \caption{Una cadena de unos a 1 Mbps. \textit{Arriba}, un \textbf{NRZI} (velocidad de modulación de $1/T_B$); \textit{abajo}, codificación \textbf{Manchester} (aquí, la velocidad de modulación es $2/T_B$).}
+  \label{fig:vel_modulacion}  
+  \centerline{
+	\includegraphics[width=0.6\textwidth-\fboxrule-\fboxrule]{imgs/vel_modulacion.png}}
+\end{figure}
 
 \subsubsection{Técnicas de Aleatorización}
 
@@ -718,13 +738,12 @@ Con este procedimiento se fuerzan dos \textit{violaciones de código}, que son i
 \item \textbf{HDB3} (\textit{High Density Bipolar-3 zeros}): sustituye cadenas de cuatro ceros por otras con uno o dos pulsos, y al cuarto cero le asigna una \textit{violación de código}. Considera una regla adicional (ver \textbf{figura \ref{fig:hdb3}}) para asegurar que los mismos tengan una polaridad alternante, evitando así la componente continua.
 \end{description}
 
-\begin{wrapfigure}{r}{=0.5\textwidth}
+\begin{figure}[ht!]
   \caption{Reglas de sustitución en HDB3.}
   \label{fig:hdb3}  
-  \centering
-  \hbox{
+  \centerline{
 	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/hdb3.png}}
-\end{wrapfigure}
+\end{figure}
 
 Estos códigos son adecuados para la transmisión a altas velocidades.
 
@@ -738,16 +757,14 @@ Estos códigos son adecuados para la transmisión a altas velocidades.
 
 \subsection{Datos Digitales, Señales Analógicas}
 
-La situación más habitual de transmisión de datos digitales como señales analógicas es a través de la red telefónica. Aunque no es apta para la transmisión de señales digitales, se pueden conectar dispositivos digitales a través de la red mediante el \textit{módem} (modulador-demodulador), el cual convierte los datos digitales en señales analógicas, y viceversa.
-
-\begin{wrapfigure}{r}{=0.5\textwidth}
+\begin{figure}[ht!]
   \caption{Modulación de datos digitales usando señales analógicas.}
   \label{fig:dat_dig_dat_ana}  
-  \centering
-  \hbox{
-	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/dat_dig_dat_ana.png}}
-\end{wrapfigure}
+  \centerline{
+	\includegraphics[width=0.6\textwidth-\fboxrule-\fboxrule]{imgs/dat_dig_dat_ana.png}}
+\end{figure}
 
+La situación más habitual de transmisión de datos digitales como señales analógicas es a través de la red telefónica. Aunque no es apta para la transmisión de señales digitales, se pueden conectar dispositivos digitales a través de la red mediante el \textit{módem} (modulador-demodulador), el cual convierte los datos digitales en señales analógicas, y viceversa.
 
 \subsubsection{Modulación por Desplazamiento de Amplitud}
 En ASK (\textit{Amplitude-Shift Keying}), los dos valores binarios se representan mediante dos amplitudes diferentes de la portadora. Es usual que una de las amplitudes sea cero. La señal transmitida por cada intevarlo correspondiente a la duración de un bit es:
@@ -820,7 +837,7 @@ La técnica QAM (\textit{Quadrature Amplitude Modulation}) es usado en \textit{A
 \]
 donde $d_1$ y $d_2$ son dos secuencias separadas de una señal de entrada binaria $d(t)$.
 
-A \textbf{constellation diagram} is a representation of a signal modulated by a digital modulation scheme such as quadrature amplitude modulation or phase-shift keying. It displays the signal as a two-dimensional scatter diagram in the complex plane at symbol sampling instants. In a more abstract sense, it represents the possible symbols that may be selected by a given modulation scheme as points in the complex plane. Measured constellation diagrams can be used to recognize the type of interference and distortion in a signal.
+\small{(\textit{extraído de Wikipedia inglés})} Un \textbf{diagrama de constelación} es una representación de una señal modulada por un esquema digital de modulación tal como el QAM. Muestra a la señal en un diagrama de dispersión en el plano complejo a instantes de elementos de señal. Representa, de forma abstracta, los posibles elementos de señal que pueden ser seleccionados por un cierto esquema de modulación como puntos en el plano complejo. 
 
 \begin{figure}[ht!]
   \caption{Un diagrama de constelación para un QAM-16 rectangular.}
@@ -828,5 +845,52 @@ A \textbf{constellation diagram} is a representation of a signal modulated by a 
   \centerline{
 	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/16qam.png}}
 \end{figure}
+
+\subsection{Datos Analógicos, Señales Digitales}
+
+El \textbf{codec} es el dispositivo que se utiliza para la conversión de los datos analógicos en digitales y que, posteriormente, recupera los datos analógicos iniciales a partir de los digitales. Una de las técnicas más importantes usadas en el \textit{codec} es la modulación por pulsos. Dentro de esta categoría tenemos:
+\begin{description}
+\item \textbf{PWM} (\textit{Pulse Width Modulation}): Cierto valor de amplitud determina, cuando toma la muestra, que ancho va a tener un pulso determinado.
+\item \textbf{PPM} (\textit{Pulse Position Modulation}): Dependiendo de donde pongo el pulso en el espacio, va ser el valor de amplitud que tenga la señal.
+\item \textbf{PAM} (\textit{Pulse Amplitud Modulation}): Un valor de amplitud ancho, genera un pulso alto, y uno negativo, uno más pequeño. Sufre mucho el ruido.
+\item \textbf{PCM} (\textit{Pulse Code Modulation}): Codifica de acuerdo al dato que obtengo.
+\end{description}
+
+\begin{wrapfigure}[15]{r}{.5\textwidth}
+  \caption{Modulación de pulsos: (a) señal analógica; (b) pulso de muestreo; (c) PWM; (d) PPM; (e) PAM; (f) PCM.}
+  \label{fig:pulsos}  
+  \centerline{
+	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/pulsos.png}}
+\end{wrapfigure}
+
+Obtenemos de esa forma las ventajas (y desventajas) de la \textbf{transmisión digital}.
+
+\subsubsection{Pulse Code Modulation}
+
+Se basa en el siguiente teorema:
+\begin{quote}
+\textbf{Teorema de muestreo:} Si una señal $f(t)$ se muestrea a intervalos regulares de tiempo con una frecuencia mayor que el doble de la frecuencia más alta de la señal original, las muestras así obtenidas contienen toda la información de la señal original. La función $f(t)$ se puede reconstruir a partir de estas muestras mediante la utilización de un filtro paso bajo.
+\end{quote}
+
+\underline{\textbf{Características:}}
+\begin{description}
+\item Se utiliza en sistemas de transmisión digital.
+\item Son pulsos de longitud fija y amplitud fija.
+\item Se usa un sistema binario.
+\end{description}
+
+El procedimiento consiste en 3 pasos:
+\begin{enumerate}
+\item \textbf{Muestreo:} Respetando el teorema, tomamos muestras \textit{analógicas} llamadas muestras PAM.
+\item \textbf{Cuantización:} Permite aproximar la muestra
+a uno de los niveles de escala designada. Al cuantizar la señal analógica, pierdo información y por lo tanto pierdo el valor real de la señal. Decimos entonces que se introduce un error de cuantización de la señal, dado por:
+\[\text{SNR}_\text{dB} = 20 \log 2^n + 1.76 \text{ dB} = 6.02n + 1.76 \text{ dB}.\]
+De aquí, que cada bit adicional que se use aumentará la SNR en 6dB.
+\item \textbf{Codificación:} Para convertir las muestras PAM a digital, a cada una de ellas se les debe asignar un código binario. Si las muestras son de $n$ bits, habrá $2^n$ niveles de cuantización posibles.
+\end{enumerate}
+
+Hasta acá obtuvimos una señal digital que consiste en boques de $n$ bits donde cada uno corresponde a la amplitud de un impulso PCM.
+
+\textit{Ejemplo}: Sabiendo que los datos de voz se limitan a frecuencias por debajo de los 4000hz, supongamos que tenemos una señal de voz. Usando muestras de 8 bits, permite $2^8 = 256$ niveles de cuantización, esto implica que para una única señal de voz se necesitan 8000hz, o lo que es lo mismo, 8000 muestras $\times$ 8 bits $= 64$ kbps.
 
 \end{document}
