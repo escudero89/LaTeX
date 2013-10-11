@@ -78,11 +78,12 @@ Generalmente la comunicación entre dos ordenadores cualesquiera se realiza a tr
 
 Además, permite crear topologías complejas (\textit{anillo, malla, estrella, etc}).
 
-En una red punto a punto los enlaces pueden ser:
+Los enlaces pueden ser:
 \subitem + \textbf{Simplex:} transmisión en un solo sentido.
 \subitem + \textbf{Half-duplex:} transmisión en ambos sentidos, pero no a la vez.
 \subitem + \textbf{Full-duplex:} transmisión simultánea en ambos sentidos.
-En el caso de duplex y half
+
+En el caso de \textit{full-duplex} y \textit{half-duplex} el enlace puede ser simétrico -misma velocidad en ambos sentidos- o asimétrico. Normalmente, los primeros son simétricos.
 \end{description}
 \textit{Nota:} Las redes de poca cobertura geográfica tienden a utilizar la \textit{difusión}, mientras que las de cobertura más grande usan la \textit{punto a punto}.
 
@@ -124,8 +125,8 @@ Actualmente todas las \textit{arquitecturas de red} se describen utilizando un \
 
 \subsubsection{Conceptos básicos}
 \begin{description}
-\item \textbf{Servicio.} Conjunto de primitivas (\textbf{operaciones}) que una capa proporciona a la capa que está sobre ella. Esta define que operaciones puede realizar la capa en beneficio de sus usuarios, pero no dice nada respecto a su implementación. Se relacionan con las interacciones entre capas.
-\item \textbf{Protocolo.} Conjunto de reglas que rigen el formato y significado de los paquetes que intercambian las entidades iguales en una capa. Se relacionan con los paquetes enviados entre entidades iguales de máquinas diferentes.
+\item \textbf{Servicio.} Conjunto de primitivas (\textbf{operaciones}) que una capa proporciona a la capa que está sobre ella. Este define que operaciones puede realizar la capa en beneficio de sus usuarios, pero no dice nada respecto a su implementación. Se relaciona con la interfaz.
+\item \textbf{Protocolo.} Conjunto de reglas que rigen el formato y significado de los paquetes que intercambian las entidades iguales de máquinas diferentes.
 
 Normalmente todo protocolo requiere el envío de algunos mensajes especiales o información de control adicional a la que se transmite. Generalmente esto se hace añadiendo una \textbf{cabecera} (\textit{a veces también una \textbf{cola}}) al paquete a transmitir.
 
@@ -187,9 +188,9 @@ En un servicio \textbf{confiable} el receptor confirma la recepción de cada men
 
 \subsubsection{Capas del OSI}
 \begin{description}
-\item \textbf{Aplicación:} Capa que acoge a todas las aplicaciones que requieren la red. Es la interfaz que ve el usuario. Envía los datos de usuario a la aplicación de destino usando servicios de las capas inferiores.
+\item \textbf{Aplicación:} Ofrece a las aplicaciones la posibilidad de acceder a los servicios de las demás capas y define los protocolos que utilizan las aplicaciones para intercambiar datos. El usuario normalmente no interactúa directamente con el nivel de aplicación. Suele interactuar con programas que a su vez interactúan con el nivel de aplicación pero ocultando la complejidad subyacente.
 \item \textbf{Presentación:} Encargada de la sintaxis de los datos. Convierte los datos de la red a los datos requeridos por la aplicación.
-\item \textbf{Sesión:} Encargada de proporcionar dialogo para el uso eficiente de las comunicaciones. O sea, sincroniza el intercambio de datos entre capas inferiores y superiores.
+\item \textbf{Sesión:} Sincroniza el intercambio de datos entre capas inferiores y superiores.
 \item \textbf{Transporte:} Esta capa se encarga de que los datos enviados y recibidos lleguen en orden, sin duplicar y sin errores. Puede ser orientado o no a la conexión.
 \item \textbf{Red:} Se encarga de enlazar con la red y encaminar los datos hacia sus lugares o direcciones de destino. Brinda la información de hacia dónde debo ir. Esta y las dos capas inferiores se encargan de todo el proceso externo al propio sistema y que están tanto en terminales como en enlaces o repetidores.
 \item \textbf{Enlace de datos:} Se encarga de que los datos se envíen con seguridad a su destino y libre de errores. Cuando la conexión no es punto a punto, esta capa no puede asegurar su cometido sino la capa superior. Tiene el control de la capa física.
@@ -219,11 +220,10 @@ La descomposición del problema de la comunicación en capas es similar que en e
 
 \subsubsection{Capas de TCP/IP}
 \begin{description}
-\item \textbf{Aplicación:} Proporciona comunicación entre procesos o aplicaciones en computadores distintos.
-\item \textbf{Transporte:} Encargada de transferir datos ente computadores sin detalles de red pero con mecanismos de seguridad.
-\item \textbf{Interred:} Se encarga de direccionar y guiar los datos desde el origen al destino a través de la red o redes intermedias.
-\item \textbf{Enlace de datos:} Interfaz entre el sistema final y la \textit{subred} a la que está conectado.
-\item \textbf{Física:} Define las características del medio, señalización y codificación se las señales.
+\item \textbf{Aplicación:} proporciona comunicación entre procesos o aplicaciones en computadores distintos.
+\item \textbf{Transporte:} encargada de transferir datos ente computadores sin detalles de red pero con mecanismos de seguridad.
+\item \textbf{Internet:} se encarga de direccionar y guiar los datos desde el origen al destino a través de la red o redes intermedias.
+\item \textbf{Host-Red:} acceso al Medio, asimilable a la capa 2 (enlace de datos) y a la capa 1 (física) del modelo OSI.
 \end{description}
 
 \subsubsection{Diferencias entre OSI y TCP/IP}
@@ -271,8 +271,8 @@ datos analógicos o datos digitales.
 \item \textbf{Atenuación.} La energía de la señal decae con la distancia por lo que tenemos que asegurarnos que la señal llegue con suficiente energía como para ser captada por la circuitería del receptor, y además el ruido debe ser menor que la señal original. Debido a que la atenuación varía con la frecuencia las señales analógicas llegan distorsionadas por lo que hay que utilizar un sistema que le devuelva sus características iniciales.
 \item \textbf{Distorsión de retardo.} Fenómeno debido a que la velocidad de propagación de una señal a través de un medio guiado varía con la frecuencia.
 \item \textbf{Ruido.} La señal original resulta modificada debido a distorsiones introducidas por el sistema de transmisión. Es una señal que se inserta entre el emisor y receptor de una señal dada. Hay diferentes tipos de ruido:
-\subitem \textbf{+ Ruido térmico:} Ruido que está siempre presente y en todos los dispositivos electrónicos y medios de transmisión. Es función de la temperatura. Cantidad de ruido termino en un ancho de banda de 1 Hz es: 
-$N_0 = KT (W/Hz)$, donde $K = 1.38 \cdot 10^{23} J/$º$K$.
+\subitem \textbf{+ Ruido térmico:} Ruido que está siempre presente y en todos los dispositivos electrónicos y medios de transmisión. Es función de la temperatura. Cantidad de ruido térmico en un ancho de banda de 1 Hz es: 
+$N_0 = KT$ [W/Hz], donde $K = 1.38 \cdot 10^{23} J/$º$K$.
 \subitem \textbf{+ Ruido de intermodulación:} Aparecen por un mal funcionamiento del sistema o uso excesivo de energía en la señal.
 Es un ruido \textbf{correlacionado} -existe cuando la señal está presente-.
 \subitem \textbf{+ Diafonía:} Acoplamiento no deseado de dos o más señales.
@@ -510,14 +510,6 @@ Es el máximo ángulo en el cual los rayos de luz externos pueden chocar con la 
 
 \underline{\textbf{Cálculo del ángulo de aceptación}}
 
-\begin{wrapfigure}[10]{r}{=.4\textwidth}
-  \caption{Relación geométrica en la fibra óptica.}
-  \label{fig:pitagoras}  
-  \centering
-  \hbox{
-	\includegraphics[width=.4\textwidth-\fboxrule-\fboxrule]{imgs/pitagoras.jpg}}
-\end{wrapfigure}
-
 Cuando los rayos de luz entran en la fibra, chocan con la interfaz de aire/vidrio, en la normal $A$. En consecuencia, la luz que entra en la interfaz de aire vidrio/vidrio se propaga de un medio menos denso a un medio más denso. Esto causa, de acuerdo a la \textit{ley de Snell}, que los rayos de luz cambien de dirección y se propaguen diagonalmente por el núcleo a un ángulo $\theta_c$ que es diferente al ángulo de incidencia externo $\theta_\text{in}$. Para que un rayo pueda propagarse por un cable, debe chocar a la interfaz de núcleo/cubierta interno a un ángulo que sea mayor que el ángulo crítico $\theta_c$.
 
 \begin{figure}[ht!]
@@ -547,6 +539,13 @@ Rearreglando, y usando el teorema de pitágoras (ver \textbf{figura \ref{fig:pit
 Dado a que los rayos de luz generalmente entran a la fibra por un medio de aire, $n_0=1$. Entonces, la ecuación final sería:
 \[\theta_\text{in (máxima)} = \sin^{-1} \sqrt{n_1^2 - n_2^2}\]
 
+\begin{figure}[ht!]
+  \caption{Relación geométrica en la fibra óptica.}
+  \label{fig:pitagoras}  
+  \centerline{
+	\includegraphics[width=.4\textwidth-\fboxrule-\fboxrule]{imgs/pitagoras.jpg}}
+\end{figure}
+\pagebreak
 \underline{\textbf{Apertura numérica (NA)}}
 
 Describe la habilidad de recojer la luz de una fibra óptica. Entre más grande la magnitud de NA, mayor es la cantidad de luz aceptada por la fibra de la fuente de luz externa. Para una fibra de índice discreto, la NA se define matemáticamente como: $NA = \sin(\theta_{in})$.
@@ -558,6 +557,7 @@ Describe la habilidad de recojer la luz de una fibra óptica. Entre más grande 
 	\includegraphics[width=.8\textwidth-\fboxrule-\fboxrule]{imgs/na.png}}
 \end{figure}
  
+ \pagebreak
 \section{Técnicas para la codificación de señales}
 
 \subsection{Conceptos Básicos}
@@ -757,14 +757,14 @@ Estos códigos son adecuados para la transmisión a altas velocidades.
 
 \subsection{Datos Digitales, Señales Analógicas}
 
+La situación más habitual de transmisión de datos digitales como señales analógicas es a través de la red telefónica. Aunque no es apta para la transmisión de señales digitales, se pueden conectar dispositivos digitales a través de la red mediante el \textit{módem} (modulador-demodulador), el cual convierte los datos digitales en señales analógicas, y viceversa.
+
 \begin{figure}[ht!]
   \caption{Modulación de datos digitales usando señales analógicas.}
   \label{fig:dat_dig_dat_ana}  
   \centerline{
 	\includegraphics[width=0.6\textwidth-\fboxrule-\fboxrule]{imgs/dat_dig_dat_ana.png}}
 \end{figure}
-
-La situación más habitual de transmisión de datos digitales como señales analógicas es a través de la red telefónica. Aunque no es apta para la transmisión de señales digitales, se pueden conectar dispositivos digitales a través de la red mediante el \textit{módem} (modulador-demodulador), el cual convierte los datos digitales en señales analógicas, y viceversa.
 
 \subsubsection{Modulación por Desplazamiento de Amplitud}
 En ASK (\textit{Amplitude-Shift Keying}), los dos valores binarios se representan mediante dos amplitudes diferentes de la portadora. Es usual que una de las amplitudes sea cero. La señal transmitida por cada intevarlo correspondiente a la duración de un bit es:
@@ -856,14 +856,16 @@ El \textbf{codec} es el dispositivo que se utiliza para la conversión de los da
 \item \textbf{PCM} (\textit{Pulse Code Modulation}): Codifica de acuerdo al dato que obtengo.
 \end{description}
 
-\begin{wrapfigure}[15]{r}{.5\textwidth}
+Obtenemos de esa forma las ventajas (y desventajas) de la \textbf{transmisión digital}.
+
+\pagebreak
+
+\begin{wrapfigure}[14]{r}{.4\textwidth}
   \caption{Modulación de pulsos: (a) señal analógica; (b) pulso de muestreo; (c) PWM; (d) PPM; (e) PAM; (f) PCM.}
   \label{fig:pulsos}  
   \centerline{
-	\includegraphics[width=0.5\textwidth-\fboxrule-\fboxrule]{imgs/pulsos.png}}
+	\includegraphics[width=0.4\textwidth-\fboxrule-\fboxrule]{imgs/pulsos.png}}
 \end{wrapfigure}
-
-Obtenemos de esa forma las ventajas (y desventajas) de la \textbf{transmisión digital}.
 
 \subsubsection{Pulse Code Modulation}
 
@@ -873,11 +875,11 @@ Se basa en el siguiente teorema:
 \end{quote}
 
 \underline{\textbf{Características:}}
-\begin{description}
+\begin{itemize}
 \item Se utiliza en sistemas de transmisión digital.
 \item Son pulsos de longitud fija y amplitud fija.
 \item Se usa un sistema binario.
-\end{description}
+\end{itemize}
 
 El procedimiento consiste en 3 pasos:
 \begin{enumerate}
