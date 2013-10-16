@@ -1,0 +1,167 @@
+\select@language {spanish}
+\contentsline {part}{I\hspace {1em}Introducci\IeC {\'o}n}{6}{part.1}
+\contentsline {section}{\numberline {1}\IeC {\textquestiondown }Qu\IeC {\'e} es la Inteligencia Computacional?}{6}{section.1}
+\contentsline {section}{\numberline {2}\IeC {\textquestiondown }Qu\IeC {\'e} son las Redes Neuronales?}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}Beneficios de las RNA}{6}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Cerebro Humano}{7}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Modelos de Neuronas}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Arquitecturas de RNAs}{9}{subsection.2.4}
+\contentsline {section}{\numberline {3}Procesos de Aprendizaje}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Nociones B\IeC {\'a}sicas}{10}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Algoritmos de Aprendizaje}{10}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Por Correcci\IeC {\'o}n de Error}{10}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Basado en Memoria}{10}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Boltzmann}{10}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Hebbiano}{11}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}Competitivo}{11}{subsubsection.3.2.5}
+\contentsline {subsection}{\numberline {3.3}Paradigmas de Aprendizaje}{11}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Tareas de aprendizaje}{11}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Aplicaciones de las RNAs}{12}{subsubsection.3.4.1}
+\contentsline {section}{\numberline {4}Perceptr\IeC {\'o}n Simple}{12}{section.4}
+\contentsline {subsection}{\numberline {4.1}Algoritmo de aprendizaje}{12}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Entrenamiento por m\IeC {\'e}todo de gradiente}{12}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Algoritmo de Least-Mean-Square}{13}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Ejemplo gr\IeC {\'a}fico de resoluci\IeC {\'o}n del problema \texttt {OR}}{13}{subsubsection.4.2.2}
+\contentsline {section}{\numberline {5}Bases estad\IeC {\'\i }sticas de reconocimiento de patrones}{13}{section.5}
+\contentsline {subsection}{\numberline {5.1}Definiciones}{13}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Aproximaciones al reconocimiento de patrones}{14}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Aproximaci\IeC {\'o}n Estad\IeC {\'\i }stica}{14}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Aproximaci\IeC {\'o}n Sint\IeC {\'a}ctica}{14}{subsubsection.5.2.2}
+\contentsline {subsection}{\numberline {5.3}Paradigma de trabajo funcional:}{14}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Clasificador estad\IeC {\'\i }stico}{15}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Tipos de probabilidades}{15}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Clasificador de Bayes}{15}{subsubsection.5.4.2}
+\contentsline {section}{\numberline {6}Perceptr\IeC {\'o}n Multicapa}{15}{section.6}
+\contentsline {subsection}{\numberline {6.1}Introducci\IeC {\'o}n}{15}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Algoritmo de retropropagaci\IeC {\'o}n}{16}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}C\IeC {\'a}lculo de las salidas en cada capa}{16}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Criterio de Error}{17}{subsubsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.3}Resumen del algoritmo de retropropagaci\IeC {\'o}n}{19}{subsubsection.6.2.3}
+\contentsline {subsection}{\numberline {6.3}Tasa de Aprendizaje: Constante de Momento}{19}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Algunas heur\IeC {\'\i }sticas para mejorar la \textit {performance}}{19}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Generalizaci\IeC {\'o}n}{20}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Validaci\IeC {\'o}n Cruzada}{20}{subsection.6.6}
+\contentsline {subsubsection}{\numberline {6.6.1}M\IeC {\'e}todo de Detenci\IeC {\'o}n Temprana de Entrenamiento}{20}{subsubsection.6.6.1}
+\contentsline {subsubsection}{\numberline {6.6.2}Caracter\IeC {\'\i }sticas}{20}{subsubsection.6.6.2}
+\contentsline {subsubsection}{\numberline {6.6.3}Variantes de la Validaci\IeC {\'o}n Cruzada}{21}{subsubsection.6.6.3}
+\contentsline {section}{\numberline {7}Red Neuronal de funci\IeC {\'o}n de Base Radial}{21}{section.7}
+\contentsline {subsection}{\numberline {7.1}Introducci\IeC {\'o}n}{21}{subsection.7.1}
+\contentsline {subsubsection}{\numberline {7.1.1}Construcci\IeC {\'o}n}{21}{subsubsection.7.1.1}
+\contentsline {subsection}{\numberline {7.2}Entrenamiento en la Capa RBF}{22}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Algoritmos de adaptaci\IeC {\'o}n}{22}{subsubsection.7.2.1}
+\contentsline {subsection}{\numberline {7.3}Entrenamiento en la tercera capa}{23}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Entrenamiento de pesos usando LMS}{23}{subsubsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.2}Entrenamiento de pesos usando la pseudo-inversa del vector $\phi (\mathbf {x}_l)$}{23}{subsubsection.7.3.2}
+\contentsline {subsection}{\numberline {7.4}Comparaci\IeC {\'o}n entre las RBF y los MLP}{23}{subsection.7.4}
+\contentsline {section}{\numberline {8}Redes Competitivas}{24}{section.8}
+\contentsline {subsection}{\numberline {8.1}Mapas Auto-Organizativos}{24}{subsection.8.1}
+\contentsline {subsubsection}{\numberline {8.1.1}Dos modelos b\IeC {\'a}sicos de mapeo}{24}{subsubsection.8.1.1}
+\contentsline {subsubsection}{\numberline {8.1.2}Algoritmo de formaci\IeC {\'o}n}{24}{subsubsection.8.1.2}
+\contentsline {paragraph}{Ordenamiento.}{25}{section*.9}
+\contentsline {paragraph}{Convergencia.}{26}{section*.10}
+\contentsline {subsection}{\numberline {8.2}Learning Vector Quantifization (LVQ)}{26}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {8.2.1}Algoritmo de aprendizaje b\IeC {\'a}sico}{26}{subsubsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.2}Diferencias con el SOM}{27}{subsubsection.8.2.2}
+\contentsline {section}{\numberline {9}Redes Neuronales Din\IeC {\'a}micas}{27}{section.9}
+\contentsline {subsection}{\numberline {9.1}Introducci\IeC {\'o}n}{27}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Clasificaci\IeC {\'o}n}{27}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}Red de Hopfield}{28}{subsection.9.3}
+\contentsline {subsubsection}{\numberline {9.3.1}Caracter\IeC {\'\i }sticas}{28}{subsubsection.9.3.1}
+\contentsline {subsubsection}{\numberline {9.3.2}Fases de Operaci\IeC {\'o}n}{28}{subsubsection.9.3.2}
+\contentsline {paragraph}{1) Fase de Almacenamiento}{28}{section*.12}
+\contentsline {paragraph}{2) Fase de Recuperaci\IeC {\'o}n}{28}{section*.13}
+\contentsline {subsubsection}{\numberline {9.3.3}Estados espurios}{28}{subsubsection.9.3.3}
+\contentsline {subsubsection}{\numberline {9.3.4}Capacidad de almacenamiento}{29}{subsubsection.9.3.4}
+\contentsline {subsubsection}{\numberline {9.3.5}Generalidades}{29}{subsubsection.9.3.5}
+\contentsline {subsection}{\numberline {9.4}Arquitecturas de RR}{29}{subsection.9.4}
+\contentsline {subsubsection}{\numberline {9.4.1}Modelo NARX}{29}{subsubsection.9.4.1}
+\contentsline {subsubsection}{\numberline {9.4.2}Modelo de Espacio de Estados}{29}{subsubsection.9.4.2}
+\contentsline {subsubsection}{\numberline {9.4.3}MLP recurrente (RMLP)}{30}{subsubsection.9.4.3}
+\contentsline {subsubsection}{\numberline {9.4.4}Redes de Segundo Orden}{30}{subsubsection.9.4.4}
+\contentsline {subsection}{\numberline {9.5}Redes Din\IeC {\'a}micas de Elman y Jordan}{30}{subsection.9.5}
+\contentsline {subsection}{\numberline {9.6}Retropropagaci\IeC {\'o}n a trav\IeC {\'e}s del tiempo}{30}{subsection.9.6}
+\contentsline {part}{II\hspace {1em}L\IeC {\'o}gica borrosa}{32}{part.2}
+\contentsline {section}{\numberline {1}L\IeC {\'o}gica}{32}{section.1}
+\contentsline {subsection}{\numberline {1.1}L\IeC {\'o}gica Proposicional}{32}{subsection.1.1}
+\contentsline {paragraph}{Inferencia.}{32}{section*.14}
+\contentsline {subsubsection}{\numberline {1.1.1}Reglas de Inferencia}{32}{subsubsection.1.1.1}
+\contentsline {subsection}{\numberline {1.2}L\IeC {\'o}gica de Predicados de Primer Orden}{33}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Reglas de Inferencia}{33}{subsubsection.1.2.1}
+\contentsline {subsection}{\numberline {1.3}Sistemas de producci\IeC {\'o}n con encadenamiento hacia adelante}{33}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Componentes:}{33}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Fases:}{34}{subsubsection.1.3.2}
+\contentsline {section}{\numberline {2}L\IeC {\'o}gica Borrosa}{34}{section.2}
+\contentsline {subsection}{\numberline {2.1}Introducci\IeC {\'o}n}{34}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Motivaci\IeC {\'o}n}{34}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Conjuntos borrosos y binarios}{35}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Operaciones b\IeC {\'a}sicas}{35}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Operaciones elementales}{36}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Distancias borrosas}{36}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Caracterizaci\IeC {\'o}n de los conjuntos borrosos}{37}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Conjunto binario de nivel $\alpha $}{37}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Conjunto convexo}{37}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Conjunto normal}{37}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Cardinalidad de un conjunto}{37}{subsubsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}Propiedades a tener en cuenta}{37}{subsubsection.2.3.5}
+\contentsline {subsubsection}{\numberline {2.3.6}El conjunto borroso medio}{38}{subsubsection.2.3.6}
+\contentsline {subsubsection}{\numberline {2.3.7}Entrop\IeC {\'\i }a borrosa}{38}{subsubsection.2.3.7}
+\contentsline {subsubsection}{\numberline {2.3.8}Teorema de la entrop\IeC {\'\i }a borrosa}{38}{subsubsection.2.3.8}
+\contentsline {subsubsection}{\numberline {2.3.9}Teorema del subconjunto borroso}{39}{subsubsection.2.3.9}
+\contentsline {subsubsection}{\numberline {2.3.10}Teorema de la entrop\IeC {\'\i }a y el subconjunto borroso}{39}{subsubsection.2.3.10}
+\contentsline {section}{\numberline {3}Memorias Asociativas Borrosas}{39}{section.3}
+\contentsline {subsection}{\numberline {3.1}Introducci\IeC {\'o}n}{39}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Fuzzificaci\IeC {\'o}n}{39}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Codificaci\IeC {\'o}n}{40}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Multiplicaci\IeC {\'o}n borrosa de Vector-Matrix: Composici\IeC {\'o}n m\IeC {\'a}x-m\IeC {\'\i }n}{40}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Fuzzy Hebbs FAMs}{40}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Teorema de Bidireccionalidad de la correlaci\IeC {\'o}n-m\IeC {\'\i }nimo}{41}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Algunas consideraciones pr\IeC {\'a}cticas}{41}{subsubsection.3.3.4}
+\contentsline {subsection}{\numberline {3.4}Composici\IeC {\'o}n}{41}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Sobreposici\IeC {\'o}n de reglas FAM}{41}{subsubsection.3.4.1}
+\contentsline {subsection}{\numberline {3.5}Defuzzificaci\IeC {\'o}n}{42}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Conjuntos de pertenencia continuos}{42}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}C\IeC {\'a}lculo de defuzzificaci\IeC {\'o}n para los centroides trapezoidales}{42}{subsubsection.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}M\IeC {\'u}ltiples antecedentes por consecuente}{42}{subsubsection.3.6.2}
+\contentsline {subsection}{\numberline {3.7}Otras alternativas}{43}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Comparaci\IeC {\'o}n entre NN vs FS vs ES}{43}{subsection.3.8}
+\contentsline {subsubsection}{\numberline {3.8.1}Sobre Mamdani, Takagi-Sugeno-Kang y SAM}{44}{subsubsection.3.8.1}
+\contentsline {part}{III\hspace {1em}Inteligencia Colectiva}{45}{part.3}
+\contentsline {section}{\numberline {1}Resolver problemas mediante b\IeC {\'u}squeda}{45}{section.1}
+\contentsline {subsection}{\numberline {1.1}Nociones B\IeC {\'a}sicas}{45}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Definici\IeC {\'o}n de agente}{45}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Diferencia entre agente y programa/objeto}{45}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Definici\IeC {\'o}n de agente racional}{45}{subsubsection.1.1.3}
+\contentsline {subsubsection}{\numberline {1.1.4}Clasificaci\IeC {\'o}n}{45}{subsubsection.1.1.4}
+\contentsline {subsection}{\numberline {1.2}Agentes resolvedores de problemas}{46}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Problemas y soluciones bien definidos}{46}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}\IeC {\'A}rbol de B\IeC {\'u}squeda}{46}{subsubsection.1.3.1}
+\contentsline {subsection}{\numberline {1.4}Medir el rendimiento de la resoluci\IeC {\'o}n del problema}{47}{subsection.1.4}
+\contentsline {section}{\numberline {2}Planificaci\IeC {\'o}n}{48}{section.2}
+\contentsline {subsection}{\numberline {2.1}Lenguaje de los problemas de planificaci\IeC {\'o}n}{48}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Operadores \texttt {STRIPS}}{48}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Planificador de Orden Parcial}{49}{subsection.2.3}
+\contentsline {section}{\numberline {3}Computaci\IeC {\'o}n Evolutiva}{49}{section.3}
+\contentsline {subsection}{\numberline {3.1}Algoritmos gen\IeC {\'e}ticos}{50}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}La evoluci\IeC {\'o}n como un algoritmo}{50}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Elementos de un algoritmo evolutivo}{50}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Dise\IeC {\~n}o de una soluci\IeC {\'o}n mediante algoritmos evolutivos}{51}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Representaci\IeC {\'o}n de los individuos}{51}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Estrategias de selecci\IeC {\'o}n}{51}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Operadores de variaci\IeC {\'o}n y reproducci\IeC {\'o}n}{51}{subsubsection.3.4.3}
+\contentsline {subsection}{\numberline {3.5}Caracter\IeC {\'\i }sticas principales y variantes}{52}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Caracter\IeC {\'\i }sticas principales}{52}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Tratamiento de las restricciones del problema}{52}{subsubsection.3.5.2}
+\contentsline {subsection}{\numberline {3.6}Programaci\IeC {\'o}n Gen\IeC {\'e}tica}{53}{subsection.3.6}
+\contentsline {section}{\numberline {4}Enjambres de part\IeC {\'\i }culas y colonias de hormigas}{53}{section.4}
+\contentsline {subsection}{\numberline {4.1}Aut\IeC {\'o}matas de estados finitos y aut\IeC {\'o}matas celulares}{53}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Optimizaci\IeC {\'o}n por Enjambre de Part\IeC {\'\i }culas}{54}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Inspiraci\IeC {\'o}n biol\IeC {\'o}gica de los m\IeC {\'e}todos de inteligencia colectiva}{54}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Estructura social}{54}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Algoritmo}{54}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Convergencia}{56}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}Par\IeC {\'a}metros del Sistema}{56}{subsubsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.6}Comparaci\IeC {\'o}n con los algoritmos gen\IeC {\'e}ticos}{56}{subsubsection.4.2.6}
+\contentsline {subsection}{\numberline {4.3}Colonias de Hormigas}{56}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Inspiraci\IeC {\'o}n biol\IeC {\'o}gica}{56}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Feromonas}{57}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Algoritmo b\IeC {\'a}sico}{57}{subsubsection.4.3.3}
