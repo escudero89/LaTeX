@@ -1,0 +1,78 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\thispagestyle{empty}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{parskip}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{enumerate}
+
+\usepackage{hyperref}
+
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{wrapfig}
+
+\usepackage{graphicx}
+\restylefloat{figure}
+
+\usepackage{cancel}
+
+\usepackage{multicol}
+\setlength{\columnsep}{22pt}
+
+\usepackage{colortbl}
+
+\author{Cristian Escudero}
+\title{Resumen II\\Inteligencia Computacional}
+\begin{document}
+
+\section*{Lógica borrosa 2 (Unidad V)}
+\begin{quote}
+Memorias asociativas borrosas como mapeos, reglas borrosas simples y compuestas, ejemplos. Codificación de reglas borrosas: discretización, memorias asociativas borrosas hebbianas, codificaciones por correlación-mínimo y correlación-producto, bidireccionalidad. Composición de reglas. Métodos de máximo y centroide borroso. Inferencia de Takagi-Sugeno-Kang. Conjuntos de membresía continuos, representación y composición de varios antecedentes por consecuente.
+\end{quote}
+
+\section*{Inteligencia colectiva 1 (Unidad VI)}
+\begin{quote}
+Formulación de problemas de búsqueda. Estrategias de búsquedas informadas y no informadas. Complejidad temporal y espacial, completitud y optimalidad. Resolución de problemas mediante planeamiento. Lenguaje para problemas de planificación. Planificación de orden parcial. Métodos evolutivos: inspiración biológica, estructura, representación del problema, función de aptitud, mecanismos de selección, operadores elementales de variación y reproducción. Variantes de la computación evolutiva: algoritmos genéticos, programación genética, estrategias de evolución. Algoritmos multiobjetivo.
+\end{quote}
+
+\section*{Inteligencia colectiva 2 (Unidad VII))}
+\begin{quote}
+Autómatas de estados finitos y autómatas celulares. Agentes inteligentes. Inspiración biológica de los métodos de inteligencia colectiva. Modelos de vida artificial: comportamiento emergente, autoorganización. Colonias de hormigas: representación del problema, feromonas, búsqueda de alimento, modelo estocástico, experimento de los dos puentes. Enjambre de partículas: representación del problema, restricciones, tamaño de partícula, inicialización, ecuaciones de movimiento, distribuciones de proximidad, topología de las poblaciones.
+\end{quote}
+
+\section*{Aplicaciones (Unidad VIII)}
+\begin{quote}
+Configuración del problema y aplicación de las técnicas de inteligencia computacional en: clasificación de patrones, agrupación de patrones, aproximación de funciones, optimización, búsqueda de soluciones, regresión, predicción de series temporales, control de procesos, identificación de sistemas, compresión de señales, memorias y recuperación de información. Interrelaciones entre las técnicas de inteligencia computacional: sistemas híbridos.
+\end{quote}
+
+\pagebreak
+\maketitle
+
+\section{Inteligencia colectiva 1 (Unidad VI)}
+\begin{quote}
+Formulación de problemas de búsqueda. Estrategias de búsquedas informadas y no informadas. Complejidad temporal y espacial, completitud y optimalidad. Resolución de problemas mediante planeamiento. Lenguaje para problemas de planificación. Planificación de orden parcial. Métodos evolutivos: inspiración biológica, estructura, representación del problema, función de aptitud, mecanismos de selección, operadores elementales de variación y reproducción. Variantes de la computación evolutiva: algoritmos genéticos, programación genética, estrategias de evolución. Algoritmos multiobjetivo.
+\end{quote}
+
+\subsection{Nociones Básicas}
+\begin{description}
+\item \textbf{Agentes reactivos.} Basan sus acciones en una aplicación directa desde los estados a las acciones. No funcionan bien en entornos en los que esta aplicación sea demasiado grande para almacenarla y que tarde mucho en aprenderla.
+\item \textbf{Agentes basados en objetivos.} Pueden tener éxito considerando las acciones futuras y lo deseable de sus resultados.
+\item \textbf{Agente resolvedor de problemas.} Está basado en el anterior; deciden qué hacer para encontrar \textit{secuencias de acciones} que conduzcan a los \textit{estados deseables}.
+\item \textbf{Algoritmos no informados.} No dan información sobre el problema salvo su definición.
+\end{description}
+
+\subsection{Agentes resolvedores de problemas}
+
+El primer paso para solucionar un problema es la \textbf{formulación de un objetivo}, basado en la situación actual y la medida de rendimiento del agente. Un \textbf{objetivo} es un conjunto de estados del mundo (estados en los cuales el objetivo se encuentra satisfecho.
+
+
+\end{document}

@@ -1,0 +1,625 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\thispagestyle{empty}
+
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{parskip}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{enumerate}
+
+\usepackage{hyperref}
+
+\usepackage{float}
+\restylefloat{figure}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{wrapfig}
+
+\usepackage{graphicx}
+\restylefloat{figure}
+
+\usepackage{cancel}
+
+\usepackage{multicol}
+\setlength{\columnsep}{22pt}
+
+\usepackage{colortbl}
+
+\usepackage{cases}
+
+\usepackage{verbatim}
+
+\title{Economía y Costos}
+\author{Cristian Escudero \\ \small{Resumen}}
+
+\begin{document}
+\maketitle
+
+\part{Elementos de Micro y Macroeconomía}
+% Gracias marce por este tipo de encabezado que desconocía
+\section{La Economía y la necesidad de elegir}
+
+La esencia de los problemas económicos se basa en la existencia de unos recursos escasos y unas necesidades virtualmente ilimitadas.
+
+\subsection{El Concepto de Economía}
+
+La satisfacción de necesidades \textbf{materiales} y \textbf{no-materiales} de una sociedad obliga a sus miembros a llevar a cabo determinadas \textbf{actividades productivas}; en ellas, se producen los bienes y servicios que se necesitan, y que posteriormente se distribuyen entre los miembros de la sociedad.
+
+En la \textbf{producción}, la empresa tiene que decidir qué bienes se van a elaborar y qué medios se van a usar para producirlos. En el \textbf{consumo} las familias  tienen que decidir cómo van a distribuir los ingresos familiares entre los distintos bienes y servicios que se le ofrecen para satisfacer sus necesidades.
+
+\subsubsection{Algunas definiciones}
+
+\begin{description}
+\item \textbf{Economía.} Se ocupa de la manera en que se administran los recursos escasos para producir bienes y servicios, y distribuirlos para que sean consumidos.
+\\
+\item \textbf{Microeconomía.} Estudia el comportamiento de las \textbf{unidades económicas} (\textit{consumidores, productores}), y sus interrelaciones.
+\item \textbf{Macroeconomía.} Estudia el funcionamiento de la economía en su conjunto. Permite obtener una visión simiplificada de la economía para poder conocer y tomar decisiones sobre la actividad económica de un país o conjunto de países determinados.
+\\
+\item \textbf{Economía positiva.} Ciencia que busca \textbf{explicaciones objetivas} del funcionamiento de los fenómenos económicos. \textit{Si se dan tales circunstancias, ocurrirán tales acontecimientos.} 
+\item \textbf{Economía normativa.} Ofrece mandatos para la acción basados en \textbf{juicios de valor} acerca de lo que es deseable; se ocupa de ``\textit{lo que debería ser}''.
+\end{description}
+
+\subsection{El problema económico: La escasez}
+
+Existe un deseo de adquirir una cantidad de bienes y servicios mayor que la disponible.
+
+\subsection{Las necesidades, los bienes económicos y los servicios}
+
+\begin{description}
+\item \textbf{Necesidad humana:} sensación de carencia de algo unida al deseo de satisfacerla.
+\item \textbf{Bien:} es todo aquello que satisface, directa o indirectamente, los deseos o necesidades de los seres humanos.
+\item \textbf{Servicios:} aquellas actviidades que, \textbf{sin crear} objetos materiales, se destinan directa o indirectamente a satisfacer necesidades humanas.
+\end{description}
+
+\subsubsection{Tipo de necesidades:}
+
+\begin{enumerate}
+\item Según de \textbf{quien} surgen:
+\begin{enumerate}
+\item Necesidades del \textbf{individuo:}
+\begin{itemize}
+\item \textbf{Naturales:} ejemplo, \textit{comer}.
+\item \textbf{Sociales:} se tienen por vivir en la sociedad; ejemplo, \textit{celebrar bodas}.
+\end{itemize}
+\item Necesidades de la \textbf{sociedad:}
+\begin{itemize}
+\item \textbf{Colectivas:} parten del individuo; ejemplo, \textit{transporte}.
+\item \textbf{Públicas:} surgen de la misma sociedad; ejemplo, \textit{órden público}.
+\end{itemize}
+\end{enumerate}
+\item Según su \textbf{naturaleza}:
+\begin{enumerate}
+\item Necesidades \textbf{primarias:} de ellas depende la conservación de la vida; ejemplo, \textit{los alimentos}.
+\item Necesidades \textbf{secundarias:} tienden a aumentar el bienestar individual, variando según la época y el entorno cultural; ejemplo, \textit{el turismo}.
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Tipo de bienes:}
+
+\begin{enumerate}
+\item Según su \textbf{carácter:}
+\begin{enumerate}
+\item \textbf{Libres:} son muy abundantes y no son propiedad de nadie; ejemplo, \textit{aire}.
+\item \textbf{Económicos:} son escasos en relación a los deseos por usarlos o consumirlos. Son apropiables. Se clasifican a la vez en:
+\begin{itemize}
+\item \textbf{Privados:} son producidos y poseídos privadamente.
+\item \textbf{Públicos:} su consumo se lleva a cabo simultáneamente por varios sujetos. Su costo es no mayor al necesario para dárselo a una sola persona.
+\end{itemize}
+\end{enumerate}
+\item Según su \textbf{naturaleza:}
+\begin{enumerate}
+\item \textbf{De capital o de inversión:} no atienden directamente a las necesidades humanas.
+\item \textbf{De consumo:} destinados a satisfacer directamente las necesidades humanas. Se clasifican en:
+\begin{itemize}
+\item \textbf{Duraderos:} permiten un uso prolongado; ejemplo, \textit{electrodomésticos}.
+\item \textbf{No duraderos:} se ven afectados directamente por el paso del tiempo; ejemplo, \textit{alimentos}.
+\end{itemize}
+\end{enumerate}
+\item Según su \textbf{función:}
+\begin{enumerate}
+\item \textbf{Intermedios:} deben sufrir nuevas transformaciones antes de convertirse en bienes de consumo o de capital.
+\item \textbf{Finales:} ya han sufrido todas las transformaciones necesarias para su uso o consumo.
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Los recursos o Factores Productivos (FP)}
+
+Son los factores o elementos básicos utilizados en la producción de bienes y servicios. Se clasifican en:
+\begin{itemize}
+\item \textbf{Tierra:} en el sentido amplio; ejemplo, \textit{minerales}.
+\item \textbf{Trabajo:} se refiere a las facultades físicas e intelectuales de los seres humanos que intervienen en el \textbf{proceso productivo} (PP). Son los FP básicos. Es la parte de la \textbf{población} que desarrolla las tareas productivas.
+\item \textbf{Capital:} comprende los inmuebles, maquinarias o instalaciones de cualquier género utilizados en el PP.
+\end{itemize}
+
+\subsubsection{Trabajo y población}
+
+La población se clasifica en:
+\begin{enumerate}
+\item \textbf{Población activa:} intervienen en el PP.
+\begin{enumerate}
+\item \textbf{Ocupados.}
+\begin{itemize}
+\item \textit{En sentido estricto.}
+\item \textit{Activos marginales:} están empleados temporalmente.
+\end{itemize}
+\item \textbf{Desocupados:} pueden realizar trabajo pero no lo encuentran.
+\end{enumerate}
+\item \textbf{Población inactiva:} realizan solo funciones de consumo; ejemplo, \textit{jubilidados, estudiantes.}
+\end{enumerate}
+
+\subsubsection{Tipos de capital}
+
+\begin{enumerate}
+\item Capital \textbf{físico} o \textbf{real}:
+\begin{itemize}
+\item Capital \textbf{fijo:} instrumentos de toda clase empleados en la producción; ejemplo, \textit{maquinaria}.
+\item Capital \textbf{circulante:} bienes en proceso de preparación para el consumo; ejemplo, \textit{materias primas}.
+\end{itemize}
+\item Capital \textbf{humano:} todo lo que contribuya a elevar la capacidad productiva de los seres humanos; ejemplo, \textit{capacitación}.
+\item Capital \textbf{financiero:} fondos disponibles para la compra de capital físico o activos financieros.
+\end{enumerate}
+
+\subsection{La necesidad de elegir y el Costo de Oportunidad (CO)}
+
+\begin{description}
+\item \textbf{CO de un bien o un servicio}: cantidad de otros bienes o servicios a la que se debe renunciar para obtener ese bien o servicio.
+\item \textbf{Frontera de Posibilidades de Producción (FPP):} refleja las opciones ofrecidas a la sociedad y la necesidad de elegir entre ellas. Una economía \textbf{está situada} sobre la FPP cuando todos los factores del que dispone se están utilizando \textbf{eficazmente} para la producción de bienes y servicios.
+\end{description}
+
+\underline{Nota:} Un sistema productivo es \textbf{eficiente} cuando no se puede incrementar la producción de un bien sin disminuir la de otro.
+
+\section{Los agentes económicos}
+
+\subsection{La actividad económica y los agentes económicos (AE)}
+
+Los AE se clasifican siguiendo tres grandes \textbf{sectores}:
+
+\begin{enumerate}
+\item \textbf{Primario:} actividades que se realizan próximas a las bases de los recursos naturales; ejemplo, \textit{pesca, agricultura, minería}.
+\item \textbf{Secundario:} actividades industriales, mediante las cuales son transformados los bienes. Tienen como objeto la transformación de los bienes y dan como resultado otros bienes; ejemplo, \textit{industria, construcción}.
+\item \textbf{Terciario:} actividades encaminadas a satisfacer necesidades de servicios productivos que no produzcan bienes materiales. No elabora ni transforma bienes; ejemplo, \textit{transporte, publicidad}.
+\end{enumerate}
+
+\subsection{Las Empresas, las Economías Domésticas y el Sector Público}
+
+Son los AE fundamentales.
+
+\begin{description}
+\item \textbf{Empresa:} unidad de producción básica. Contrata FP con el fin de producir y vender bienes y servicios.
+\item \textbf{Economías Domésticas} (o \textit{familias}): por un lado consumen bienes y servcios, y por el otro ofrecen FP a las empresas.
+\\
+\item \textbf{Sector público:} establece el marco jurídico-institucional en el que se desarrolla la actividad económica. Es responsable de establecer la \textbf{política económica}.
+\end{description}
+
+\section{Sistema económico }
+
+\subsection{El concepto de sistema económico (SE)}
+
+Conjunto de relaciones básicas, técnicas e institucionales que caracterizan la \textbf{organización económica} de una sociedad. Condiciona las decisiones fundamentales que se toman en toda la sociedad y las directrices de su actividad. Todo SE debe tratar de dar respuesta a estas tres preguntas:
+
+\begin{enumerate}
+\item \textbf{¿Qué y cuántos bienes y servicios se van a producir?}
+\item \textbf{¿Cómo se van a producir?}
+\item \textbf{¿Para quién se van a producir?}
+\end{enumerate}
+
+\subsection{Los sistemas económicos y el intercambio}
+
+El \textbf{intercambio} hace posible la \textbf{especialización} y la \textbf{división de trabajo}, que contribuye a la \textbf{eficiencia}, es decir, obtener la máxima producción usando la mínima cantidad de recursos.
+
+El \textbf{trueque} implica una transacción en la que dos individuos intercambian entre sí un bien por otro. Se desprenden del producto del que tienen excedentes y adquieren productos que necesitan. Para ello, el trueque requiere: 
+
+\begin{itemize}
+\item Coincidencia de las necesidades entre los implicados.
+\item Divisibilidad de los bienes a intercambiar.
+\end{itemize}
+
+Estas limitaciones lo hacen prácticamente inviable entre muchos participantes. Pero estas desaparecen cuando el intercambio es realizado mediante el \textbf{dinero}.
+
+\begin{description}
+\item \textbf{Dinero:} todo medio de pago generalmente aceptado que puede intercambiarse por bienes y servicios y utilizarse para saldar deudas. El intercambio es entonces mucho más fácil y eficiente, pues ya no se requiere que coincidan las necesidades. El dinero permite la conservación y acumulación de valor.
+\end{description}
+
+\newpage
+\part{Índice de Precios al Consumidor (IPC)}
+
+Listado de preguntas y respuestas acerca el IPC:
+
+\begin{enumerate}
+\item \textbf{¿Cuál es el principal objetivo del IPC?}
+\subitem Medir la \textbf{evolución} de los bienes y servicios representativos del gasto de consumo de los hogares en la zona de referencia.
+\item \textbf{¿Quién elabora el IPC?}
+\subitem El Instituto Nacional de Estadísticas y Censos (INDEC), por lo que es un índice \textbf{oficial}.
+\item \textbf{¿Qué es la ``canasta'' del IPC?}
+\subitem Conjunto de bienes y servicios recopilados para el cálculo del IPC, obtenidos considerando la composición del gasto de consumo anual de los hogares elegidos.
+\item \textbf{¿Tienen todos los bienes y servicios de la canasta la misma importancia en el cálculo del IPC?}
+\subitem \textbf{No.} Están ponderados en base a un patrón de gasto ``representativo'' de lo consumido en los hogares de la zona de referencia.
+\item \textbf{¿Cómo influye la existencia de ponderaciones en el cálculo de las variaciones mensuales de precios?}
+\subitem No incide de igual manera la suba de precios de los productos que tengan entre ellos distintas ponderaciones.
+\item \textbf{¿Es lo mismo el IPC que el Índice de Costo de Vida (ICV)?}
+\subitem \textbf{No.} Un ICV es un concepto \textbf{teórico} que trata de reflejar los cambios en el monto de gastos que un consumidor promedio destina para mantener constante su nivel de satisfacción, por lo que remarca de forma \textbf{siempre cambiante} las preferencias actuales de los consumidores. El ICP \textbf{no considera todos los gastos} de los consumidores que tienen que ver con el mantenimiento de su nivel de vida, a la vez que sus ponderaciones son \textbf{fijas}.
+\end{enumerate}
+
+\newpage
+
+\part{Régimen Tributario Argentino}
+
+\setcounter{section}{0}
+
+\section{Sistema Tributario Argentino}
+
+En un SE conviven el \textbf{Sector Público}, el \textbf{Privado} y el \textbf{Externo}.
+
+\subsection{Sector Público}
+
+Existen dos visiones alternativas:
+\begin{enumerate}
+\item \textbf{Visión Restringida:} solo refiere al \textbf{Sector Presupuestario} de la \textbf{Política Pública}; es decir, ingresos y gastos que se canalizan a través de la \textbf{Institución Presupuestaria}. Refleja las funciones tradicionales del Estado, siendo su gasto regido por autorizaciones del Poder Legislativo.
+\item \textbf{Visión Ampliada:} integra acciones típicamente gubernamentales y a las \textbf{Empresas Públicas}.
+\end{enumerate}
+
+El Estado requiere recursos; para ello, impone leyes que determinan las obligaciones de sus contribuyentes. Tenemos entonces tres conceptos fundamentales:
+
+\begin{enumerate}
+\item \textbf{Presupuesto.} Acto de gobierno en el que se prevén los recursos y gastos estatales para un período futuro determinado, generalmente de un año.
+\item \textbf{Gastos.} Conjunto de repartos que realiza el Estado para satisfacer necesidades públicas.
+\item \textbf{Recursos.} Conjunto de ingresos que obtiene el Estado para la atención de sus gastos. Los recursos se pueden clasificar en:
+\begin{itemize}
+\item \textbf{Ordinarios:} obtenidos regularmente por el Estado para hacer frente al conjunto de gastos previstos; ejemplo, \textit{impuestos}.
+\item \textbf{Extraordinarios:} son de carácter esporádico y se destinan a cubrir gastos excepcionales; ejemplo, \textit{financiación ajena}.
+\end{itemize}
+Otra clasificación es según de dónde el Estado obtiene sus recursos:
+\begin{itemize}
+\item \textbf{Originarios:} obtenidos de fuentes propias de riqueza del Estado; ejemplo, \textit{utilidades de las empresas públicas}.
+\item \textbf{Derivados:} obtenidos de los integrantes de la comunidad (economías privadas).
+\end{itemize}
+\end{enumerate}
+
+\section{Recursos Tributarios}
+
+Son las prestaciones exigidas por el Estado mediante sus leyes impuestas, para cubrir los gastos que demanda el cumplimiento de sus fines. Se pueden clasificar en:
+
+\begin{enumerate}
+\item \textbf{Impuestos:} prestaciones en dinero exigidas por el Estado a quienes se hallan en las situaciones consideradas por la ley como \textbf{hechos imponibles}, no existiendo contraprestración \textbf{directa} por parte del Estado; ejemplos, \textit{impuesto a las ganancias, IVA}.
+\item \textbf{Tasas:} prestaciones en dinero generadas por una actividad del Estado relacionada con el contribuyente; ejemplos, \textit{tasas administrativas, tasas de alumbrado, barrido y limpieza}.
+\item \textbf{Contribuciones especiales:} prestaciones obligatorias derivadas de la realización de obras públicas que generen beneficios individuales o de grupos sociales; ejemplo, \textit{contribuciones de mejora de una calle}.
+\end{enumerate}
+
+\underline{Nota:} Las tasas y las contribuciones son tributos \textbf{vinculados} -dependen del accionar del Estado-, mientras que los impuestos son \textbf{no-vinculados}.
+
+En la obligación tributaria tenemos los siguientes elementos:
+
+\begin{description}
+\item \textbf{Sujeto Activo:} el que tiene derecho a cobrar el tributo.
+\item \textbf{Sujeto Pasivo:} el que tiene la obligación de pagar el tributo. Existen dos categorías:
+\begin{itemize}
+\item Contribuyente por deuda propia; ejemplo, \textit{comerciante}.
+\item Responsable por deuda ajena; ejemplo, \textit{agentes de retención}.
+\end{itemize}
+\item \textbf{Hecho imponible:} circunstancia prevista en la ley que da origen a la obligación tributaria.
+\item \textbf{Base imponible:} parte del hecho sobre la que se aplica el gravamen.
+\item \textbf{Alícuota:} porcentaje que se aplica sobre la base imponible y que determina el monto del tributo a pagar por el sujeto pasivo.
+\end{description}
+
+\subsection{Clasificación de los Impuestos}
+
+Podemos clasificarlos de las siguientes maneras:
+\begin{enumerate}
+\item Si los bienes y actividades dentro de su jurisdicción son percibidos por:
+\begin{itemize}
+\item \textbf{Nacionales:} la Nación; ejemplos, \textit{impuestos a las ganancias, a los bienes personales, al valor agregado, externos}.
+\item \textbf{Provinciales:} las Provincias; ejemplos, \textit{impuestos de sellos, sobre los ingresos brutos, automotor, inmobiliario} y \textit{derecho de registro e inspección}.
+\end{itemize}
+\item Si son trasladables -el contribuyente afectado puede derivar su carga hasta que repercuta en otro-:
+\begin{itemize}
+\item \textbf{Directos:} no pueden trasladarse; ejemplo, \textit{impuesto a las ganancias}.
+\item \textbf{Indirectos:} pueden trasladarse; ejemplo, \textit{IVA}.
+\end{itemize}
+\item Según cómo sea su incorporación al sistema tributario:
+\begin{itemize}
+\item \textbf{Ordinarios:} incorporados de forma permanente; ejemplo, \textit{IVA}.
+\item \textbf{Extraordinarios:} incorporados durante un tiempo determinado.
+\end{itemize}
+\item Si consideran las condiciones personales del contribuyente:
+\begin{itemize}
+\item \textbf{Reales:} no son consideradas; ejemplo, \textit{impuesto inmobiliario}.
+\item \textbf{Personales:} son consideradas; ejemplo, \textit{impuesto sobre los bienes personales}.
+\end{itemize}
+\item Según dónde se impongan:
+\begin{itemize}
+\item \textbf{Internos:} percibidos dentro de los límites del país; ejemplo, \textit{impuesto a los ingresos brutos}.
+\item \textbf{Externos:} percibidos con motivo de la entrada o salida de bienes de las fronteras; ejemplo, \textit{impuesto aduanero}.
+\end{itemize}
+\item Según dónde se gravan:
+\begin{itemize}
+\item \textbf{Progresivos:} sobre la renta (capacidad contributiva del sujeto); ejemplo, \textit{impuesto a las ganancias}.
+\item \textbf{Regresivos:} sobre el consumo; ejemplo, \textit{IVA}.
+\end{itemize}
+\end{enumerate}
+
+\subsection{Impuestos Nacionales}
+
+\subsubsection{Impuestos a las ganancias}
+
+Grava los rendimientos, rentas o enriquecimientos susceptibles de una periodicidad que implique la permanencia de la fuente que los produce y su habilitación.
+
+Es de \textbf{liquidación anual} -se liquida, se presentan las declaraciones juradas y se paga una vez al año-. Son sujetos las \textbf{personas físicas, jurídicas} y las \textbf{sucesiones indivisas}.
+
+La ley distingue entre cuatro categorías de ganancia, según de dónde provenga su renta:
+\begin{itemize}
+\item \textbf{Primera Categoría:} del suelo.
+\item \textbf{Segunda Categoría:} del capital.
+\item \textbf{Tercera Categoría:} del las empresas.
+\item \textbf{Cuarta Categoría:} del trabajo personal.
+\end{itemize}
+
+Existen cuatro deducciones que la ley permite realizar de sus ganancias a las personas físicas:
+\begin{enumerate}
+\item \textbf{Mínimo no imponible:} requiere que la persona física sea residente del país.
+\item \textbf{Cargas de familia:} los afectados deben ser residentes del país, estar efectivamente a cargo del contribuyente, y no tener ingresos anuales mayores a $\approx \$13.000$.
+\item \textbf{Deducción especial:} obtenga ganancias de la tercera o cuarta categoría, y abone los aportes obligatorios propios de trabajador autónomo (\textit{a la caja de jubilaciones y pensiones}).
+\item \textbf{Servicio doméstico:} cuando el trabajador realice los aportes de ley correspondientes a tener contratada una empleada del servicio doméstico.
+\end{enumerate}
+
+\underline{\textbf{Retenciones y Anticipos de ganancias:}}
+
+\begin{description}
+\item \textbf{Retenciones:} el \textit{agente pagador} efectúa retenciones de las sumas a pagar y las deposita por cuenta del sujeto que sufre la retención, quien las deduce de cierto impuesto determinado llegado el momento.
+\item \textbf{Anticipos de ganancias:} son adelantos de los próximos impuestos a pagar realizados por el propio contribuyente.
+\end{description}
+
+\subsubsection{Impuesto sobre los bienes personales}
+
+Grava los bienes personales. Es de \textbf{liquidación anual}. Son sujetos las \textbf{personas físicas} y las \textbf{sucesiones indivisas} radicadas en el país (\textit{con bienes en el exterior o en el interior}) y/o radicadas en el extranjero (\textit{con bienes en el interior}).
+
+\subsubsection{Impuesto al valor agregado}
+
+Grava las ventas e importaciones definitivas de cosas mueblas y determinadas obras, locaciones y prestaciones de servicios efectuadas en el país. Es \textbf{plurifásico} -grava todas las fases de la operatoria de un producto-. Tiene \textbf{liquidación mensual}.
+
+La operatoria del impuesto se hace a través de los débitos y créditos fiscales:
+\begin{description}
+\item \textbf{Débitos fiscales:} representan deudas del responsable hacia el fisco, y se calculan aplicando la alícuota que corresponda sobre el monto de las operaciones gravadas; ejemplo, \textit{cuando se realiza una \textbf{venta} en la que se agrega el IVA}.
+\item \textbf{Créditos fiscales:} representan la suma de los impuestos facturados por las compras y erogaciones (pagos) del responsable; ejemplo, \textit{cuando se realiza una \textbf{compra} a la que se le aplica el IVA}.
+\end{description}
+
+La diferencia resultante se ingresa al favor del fisco o del contribuyente, según corresponda.
+
+Existen cuatro categorías de \textbf{sujetos}:
+\begin{multicols}{2}
+\begin{itemize}
+\item Responable Inscripto.
+\item Sujeto Exento.
+\item Monotributista.
+\item Consumidor Final.
+\end{itemize}
+\end{multicols}
+
+\underline{Extra:} según su recaudación permite conocer las características de progresividad o regresividad de un sistema impositivo, y contribuye de manera significativa la masa de recursos impositivos de un país.
+
+\subsubsection{Impuestos externos}
+
+Gravan \textbf{ciertos consumos específicos} que son enumerados expresamente por la ley respectiva. Son sujetos el \textbf{fabricante,} el \textbf{importador} y el \textbf{fraccionador}.
+
+\subsection{Impuestos Provinciales}
+
+\subsubsection{Impuestos de sellos}
+
+Grava los \textbf{documentos que avalan transacciones jurídicas} (ejemplos, \textit{hipotecas, contratos, pagarés}). Las alícuotas y normas relacionadas varían según la jurisdicción.
+
+\subsubsection{Impuesto sobre los ingresos brutos}
+
+Grava el \textbf{ejercicio de la actividad económica con propósitos de lucro} en una determinada jurisdicción. Existe un convenio inter-jurisdiccional para evitar múltiples imposiciones.
+
+\subsubsection{Impuesto a los automotores}
+
+Grava la situación jurídica de ser propietario del \textbf{automotor}.
+
+\subsubsection{Impuesto inmobiliario}
+
+Grava la situación jurídica de ser propietario de un \textbf{bien inmueble}.
+
+\subsubsection{Derecho de registro e inspección}
+
+Tributo \textbf{municipal}, que toma como base para el cálculo la misma que el \textit{impuesto sobre los ingresos brutos}. Es de \textbf{liquidación mensual}.
+
+\subsection{Régimen de Facturación y Registración}
+
+Los \textbf{responsables inscriptos} (RIs) pueden emitir facturas/recibos ``\textbf{A}'', para otros RIs, y ``\textbf{B}'', entregados a consumidores finales, sujetos exentos y monotributistas. Los demás tipos de contribuyentes (excluídos RIs) podrán emitir solo facturas ``\textbf{C}'', cualquiera sea el carácter del comprador.
+
+Las comprobantes ``\textbf{A con CBU informal}'' se utiliza cuando el RI debe pasar por un período de prueba antes de poder emitir facturas del tipo ``\textbf{A}''. Las tipos ``\textbf{M}'' es emitida por los RI cuando el comprobante es menor a los $\$1000$.
+
+\newpage
+\part{Introducción a la Economía}
+\setcounter{section}{0}
+
+\section{Las actividades económicas y los agentes económicos}
+
+La \textbf{actividad económica} se concreta en la producción de una amplia gama de bienes y servicios cuyo destino último es la satisfacción de las necesidades humanas.
+
+La organización de los FP así como la dirección de sus actividades dentro de las unidades económicas recae sobre los \textbf{AE}.
+
+\paragraph{Sistema económico.}
+Conjunto de los AE, FP y las interrelaciones entre ellos con el objeto de producir bienes y servicios destinados a la satisfacción de las necesidades humanas dentro de un determinado contexto social.
+
+\subsection{Los agentes económicos}
+
+Los AE se pueden dividir en \textbf{privados} (\textit{empresas, economías domésticas}) y \textbf{públicos}.
+
+\begin{description}
+\item \textbf{Economías Domésticas:} pretenden maximizar la satisfacción que obtienen en el consumo, sometidos a las restricciones que les vienen impuestas por el presupuesto que disponen.
+\item \textbf{Las Empresas:} persiguen maximizar los beneficios monetarios que obtienen con su actividad económica, ya sea en remuneraciones a los FP o insumos necesarios.
+\end{description}
+
+\subsection{Los factores de producción}
+
+\begin{description}
+\item \textbf{Tierra o recursos naturales:} para que se convierta en un FP, debe reunir dos requisitos, que \textbf{tecnológicamente} sea \textbf{utilizable}, y que su utilización sea \textbf{económicamente rentable}. Los recursos naturales se dividen en:
+\begin{itemize}
+\item \textbf{Renovables.} No desaparecen en el proceso de la producción y pueden reutilizarse; ejemplo, \textit{vías navegables}.
+\item \textbf{No renovables.} Pierden su utilidad al emplearlos en los procesos de producción; ejemplo, \textit{petróleo}.
+\end{itemize}
+\item \textbf{Trabajo:} es necesario hacer una diferencia entre:
+\begin{itemize}
+\item \textbf{Esfuerzo físico.} Resulta inflexible a corto plazo.
+\item \textbf{Capacidades intelectuales.} Son ampliables en plazos breves, a través de la capacitación intensiva del factor trabajo. Lo denominamos \textit{capital humano}.
+\end{itemize}
+\item \textbf{Capital:} está formado por el \textit{stock} de bienes de cualquier SE destinado a aumentar la eficiencia del PP. Presenta tres características desde el punto de vista económico:
+\begin{enumerate}
+\item Los recursos utilizados para producir bienes de capital no satisfarán necesidades hoy, sino que servirán para generar nuevos bienes en el futuro.
+\item La posibilidad de su \textbf{reproducción} e \textbf{incremento} por parte del mismo SE, el cual determina las necesidades y destina los recursos a su ampliación.
+\item La existencia de varios tipos de capital (\textit{físico, humano, financiero}).
+\end{enumerate}
+\end{description}
+
+\section{La elección como consecuencia de la escasez}
+
+\subsection{Frontera de posibilidades de producción}
+
+La \textit{forma y posición de la curva} -curva de \textbf{pendiente negativa}- implica que para obtener más de un bien, necesariamente tendremos menos del otro bien; el hecho de que sea \textbf{cóncava} es porque los recursos no son igualmente eficientes produciendo cualquier tipo de bien: ``\textbf{ley de rendimientos decrecientes}''.
+
+La noción de \textbf{eficiencia económica} delimita dos zonas:
+\begin{enumerate}
+\item \textit{Debajo de la curva}: la economía está aprovechando de forma ineficiente sus recursos.
+\item \textit{Arriba de la curva}: inalcanzable, al menos con los recursos y la \textbf{tecnología} empleada.
+\end{enumerate}
+
+Los puntos situados sobre la curva de FPP son considerados puntos \textbf{eficientes}.
+
+\subsection{La circulación económica}
+
+El análisis del \textbf{flujo circular de la renta} trata de establecer que tipo de vínculos se establecen entre los diversos AE, a partir de una serie de supuestos simplificadores acerca del carácter de los mismos, conformando así un modelo de análisis.
+
+\subsubsection{El Producto y la Renta}
+
+Llamaremos \textbf{producto} al valor total de todos los bienes y servicios \textbf{finales} generados en un período determinado, es decir, \textit{descontando del valor total de la producción a los bienes y servicios intermedios o bienes que se utilizan para producir otros}. Es un agregado económico que se utiliza para medir la riqueza generada en un período por parte de un SE. Es un concepto macroeconómico que se corresponde con la sumatoria del VA que se introduce en cada etapa del PP.
+
+Denominaremos \textbf{renta} a la sumatoria de las retribuciones que efectúen las empresas a las economías domésticas.
+
+El \textbf{ahorro} es la parte no consumida del ingreso.
+
+\subsubsection{Fenómeno circulatorio: flujos nominales y reales}
+
+\begin{description}
+\item \textbf{Flujos reales:} son los que representan a las corrientes reales de la economía. Es decir, los \textit{bienes y servicios} elaborados por las empresas, y los \textit{FP} ofrecidos por las economías domésticas.
+\item \textbf{Flujos nominales:} flujo monetario que fluye en sentido inverso a los flujos reales. En este caso son los \textit{pagos por bienes y servicios} (empresas) y \textit{pagos por compras de FP} (economías domésticas).
+\end{description}
+
+\section*{Definiciones Extras}
+
+\begin{itemize}
+\item La economía como \textbf{ciencia social} evoluciona:
+\begin{itemize}
+\item a partir del continuo y permanente estudio de los comportamientos humanos ante los hechos económicos-sociales;
+\item cada vez que la tecnología evoluciona o produce cambios que posibilitan una mejor y más eficiente utilización de los FP;
+\item confirmando o desechando hipótesis de estudios científicos relacionados con el desarrollo y evolución de los hechos económicos.
+\end{itemize}
+
+\item El \textbf{Producto Bruto Interno} (PBI) es una medida macroeconómica, dada por la sumatoria de las retribuciones a los FP -ingresos, \textit{bienes y servicios finales e intermedios}-. Se utiliza para medir el crecimiento de un país. Es \textbf{distinto} al \textbf{producto} como sumatoria de VA.
+
+\item La \textbf{inflación} es el aumento sostenido y continuo del nivel general de precios. Su origen está en:
+\begin{itemize}
+\item los incrementos en los costos de producción de las empresas;
+\item cuestiones estructurales que se suceden por desajustes sectoriales;
+\item y exceso de demanda sobre la oferta, por expansión de los medios de pago.
+\end{itemize}
+
+\item ¿\textit{Medir las distintas variaciones de la canasta y el valor de IPC determina la inflación}? No. Es \textbf{uno} de los factores para medir el proceso inflacionario.
+\item Diferencias entre:
+\begin{itemize}
+\item \textbf{Crecimiento:} aumento de la población y riqueza de un país.
+\item \textbf{Desarrollo:} que el \textit{crecimiento} esté bien distribuído.
+\item \textbf{Desarrollo sustentable:} que el \textit{desarrollo} satisfaga tanto necesidades de la sociedad actual, como las de la futura.
+\end{itemize}
+Un país alcanza una \textbf{situación de desarrollo} porque:
+\begin{itemize}
+\item el PBI obtenido en un período se distribuyó de manera tal que el conjunto social de superó la satisfacción de sus necesidades respecto a períodos anteriores;
+\item y la generación actual, en promedio, ha alcanzado un nivel de satisfacción de necesidades que supera las de primer y segundo grado.
+\end{itemize}
+
+\item El \textbf{monotributista} es quien ha optado por un \textbf{Régimen Simplificado para Pequeños Contribuyentes}. Paga una cuota fija mensual, que incluye una componente:
+\begin{itemize}
+\item \textbf{impositiva} (en reemplazo del \textit{IVA} y al \textit{impuesto a las ganancias});
+\item \textbf{previsional} o \textbf{jubilatorio} (en reemplazo de los aportes previsionales al régimen de autónomos);
+\item y un aporte a la \textbf{obra social}.
+\end{itemize}
+Además deberá pagar aparte el \textbf{impuesto sobre los ingresos brutos} a nivel provincial.
+
+\item Quienes propician la intervención del \textbf{sector público} en la economía argumentan que:
+\begin{enumerate}
+\item El funcionamiento del mercado necesita de un conjunto de normas y regulaciones, para evitar la \textbf{competencia imperfecta}.
+\item Las consecuencias negativas de los PP no son reconocidas en una economía manejada por las reglas del mercado (externalización de los costos).
+\item El mercader por sí solo no resuelve cuestiones referidas a la prestación de determinados bienes y/o servicios.
+\item El mercado no reconoce la necesidad de provisión de ``\textit{bienes públicos}''.
+\end{enumerate}
+
+\item ``\textit{Dejen que las fuerzas del mercado fluyan libremente que...}''
+\begin{enumerate}
+\item Los precios de bienes y servicios serán los que determinan la Oferta y la Demanda actuando libremente.
+\item La eficiencia en la producción será una característica del SE.
+\item La intervención del Estado en el mercado no debe darse salvo para resguardar el cumplimiento de las normas que regulen su funcionamiento.
+\end{enumerate}
+
+\item La tasa de interés que cobrará un banco a una empresa al momento de gestionar un crédito dependerá de:
+\begin{itemize}
+\item la cantidad de dinero circulante en una economía;
+\item el nivel de solvencia del acreedor;
+\item la capacidad de pago del solicitante del crédito.
+\end{itemize}
+\end{itemize}
+
+\newpage
+\section*{Siglas y abreviaciones}
+
+\begin{itemize}
+\item \textbf{AE}: Agente/s Económico/s.
+\item \textbf{CO}: Costo de Oportunidad.
+\item \textbf{FP}: Factores Productivos.
+\item \textbf{FPP}: Frontera de Posibilidades de Producción.
+\item \textbf{IPC}: Índice de Precios al Consumidor.
+\item \textbf{PP}: Proceso Productivo.
+\item \textbf{RI}: Responsable/s Inscripto/s.
+\item \textbf{SE}: Sistema Económico.
+\item \textbf{VA}: Valor Agregado.
+\end{itemize}
+
+\newpage
+
+
+\begin{enumerate}
+\item Qué estudia economía normativa y la positiva. \textbf{CHECK.}
+\item Cuál es el indicador macroeconómico más utilizado para medir el crecimiento de un país. \textbf{CHECK.}
+\item Concepto económico Producto. \textbf{CHECK.}
+\item Qué son las necesidades de los seres humanos. \textbf{CHECK.}
+\item Cuando un sistema impositivo es progresivo. \textbf{CHECK.}
+\item La economía como ciencia social evoluciona... \textbf{CHECK.}
+\item La inflación es un concepto que encuentra su origen en... \textbf{CHECK.}
+\item El dinero en la economía cumple funciones de... \textbf{CHECK.}
+\item Un país alcanzo una situación de desarollo porque... \textbf{CHECK.}
+\item El IPC es un indicador... \textbf{CHECK.}
+\item Qué sostiene la Economía Ambiental o Ecológica. \textbf{CHECK.}
+\item Que caracteriza el impuesto al Valor Agregado. \textbf{CHECK.}
+\item El monotributista que lo paga tiene... \textbf{CHECK.}
+\item Argumentos de porque el sector público debe intervenir en la economía.  \textbf{CHECK.}
+\item Qué es el VAN. \textbf{CHECK.}
+\item Cómo se usa el TIR. \textbf{CHECK.}
+\item Qué es una operación financiera. \textbf{CHECK.}
+\item Consideraciones al elaborar un presupuesto. \textbf{CHECK.}
+\item En todo presupuesto Estatal los ingresos u orígenes de fondos deben... \textbf{CHECK.}
+\item Funcionamiento impuesto a las Ganancias. \textbf{CHECK.}
+\item Qué es el proceso de capitalización. \textbf{CHECK.}
+\item "Dejen que las fuerzas del mercado fluyan libremente que..." \textbf{CHECK.}
+\item De qué depende la tasa de interés que cobrará un banco a una empresa al momento de gestionar un crédito. \textbf{CHECK.}
+\item Impuestos que deben abonar comerciantes en régimenes simplifcado para pequeños contribuyentes. \textbf{CHECK.}
+\item Efecto inflacionario, como afecta a las tasas efectiva y nominal. \textbf{CHECK.}
+\end{enumerate}
+
+\end{document}
